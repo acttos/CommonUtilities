@@ -8,7 +8,6 @@
 
 ```
 #import "CommonUtilities.h"
-
 ```
 
 ## 功能介绍
@@ -160,10 +159,8 @@
 
 ```
 
-# 开源协议
+## 开源协议
 
-****
-
-基于[GPL(General Public License)](https://en.wikipedia.org/wiki/GNU_General_Public_License)协议开源。
+基于[GPL(General Public License)](http://www.gnu.org/licenses/gpl.html)协议开源。
 
 
