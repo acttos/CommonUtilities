@@ -10,6 +10,11 @@
 
 @interface CUFile : NSObject
 
+/**
+ *  返回当前App的Documents路径
+ *
+ *  @return Documents的URL
+ */
 +(NSURL *)getDocumentsDirectory;
 
 @end
