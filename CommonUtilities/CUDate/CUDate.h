@@ -19,7 +19,7 @@
 /**
  *  根据给定日期创建时间戳
  *
- *  @param date 需要转换为时间戳的NSDate对象
+ *  @param date 需要转换为时间戳的NSDate对象,date为nil时，取当前时刻
  *
  *  @return 转换后的时间戳，精确到毫秒
  */
