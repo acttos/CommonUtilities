@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D3193611DD9B4A8004D1049 /* CUStorage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156B71C918646002611D2 /* CUStorage.h */; };
+		7D3193621DD9B4B0004D1049 /* CUColor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156AD1C9181C6002611D2 /* CUColor.h */; };
+		7D3193631DD9B4B8004D1049 /* CUFile.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156B31C9185CE002611D2 /* CUFile.h */; };
+		7D3193641DD9B4BE004D1049 /* CUJSON.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */; };
+		7D3193651DD9B4C5004D1049 /* CUDate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156B01C9184A3002611D2 /* CUDate.h */; };
 		7D3A4AD11CAD14BC009FF33E /* CUJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A4AD01CAD14BC009FF33E /* CUJSON.m */; };
 		7DE156A11C917A69002611D2 /* CommonUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156A01C917A69002611D2 /* CommonUtilities.h */; };
 		7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156AE1C9181C6002611D2 /* CUColor.m */; };
@@ -22,6 +27,11 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				7D3193651DD9B4C5004D1049 /* CUDate.h in CopyFiles */,
+				7D3193641DD9B4BE004D1049 /* CUJSON.h in CopyFiles */,
+				7D3193631DD9B4B8004D1049 /* CUFile.h in CopyFiles */,
+				7D3193621DD9B4B0004D1049 /* CUColor.h in CopyFiles */,
+				7D3193611DD9B4A8004D1049 /* CUStorage.h in CopyFiles */,
 				7DE156A11C917A69002611D2 /* CommonUtilities.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
