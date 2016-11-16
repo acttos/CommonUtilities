@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "CUtil"
+  s.name         = "CommonUtilities"
   s.version      = "0.0.1"
-  s.summary      = "CUtil is a common utilities collection. It is designed as a tool-box for iOS development."
+  s.summary      = "CommonUtilities is a common utilities collection. It is designed as a tool-box for iOS development."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "CommonUtilities", "CommonUtilities/**/*.{h,m}"
+  s.source_files  = "CommonUtilities", "CommonUtilities/*.{h,m}", "CommonUtilities/**/*.{h,m}"
   s.exclude_files = "CommonUtilities/Exclude"
 
   s.public_header_files = "CommonUtilities/*.h"

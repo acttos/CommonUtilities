@@ -13,6 +13,13 @@
 		7D3193641DD9B4BE004D1049 /* CUJSON.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */; };
 		7D3193651DD9B4C5004D1049 /* CUDate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156B01C9184A3002611D2 /* CUDate.h */; };
 		7D3A4AD11CAD14BC009FF33E /* CUJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A4AD01CAD14BC009FF33E /* CUJSON.m */; };
+		7DA39D3B1DDB207500685C57 /* CUStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B71C918646002611D2 /* CUStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA39D3C1DDB207500685C57 /* CUColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156AD1C9181C6002611D2 /* CUColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA39D3D1DDB207500685C57 /* CUFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B31C9185CE002611D2 /* CUFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B01C9184A3002611D2 /* CUDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA39D401DDB207500685C57 /* CommonUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156A01C917A69002611D2 /* CommonUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DA39D411DDB207500685C57 /* CUDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D1D93441CE07EC8001318BF /* CUDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DE156A11C917A69002611D2 /* CommonUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156A01C917A69002611D2 /* CommonUtilities.h */; };
 		7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156AE1C9181C6002611D2 /* CUColor.m */; };
 		7DE156B21C9184A3002611D2 /* CUDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156B11C9184A3002611D2 /* CUDate.m */; };
@@ -142,6 +149,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		7DA39D3A1DDB206800685C57 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DA39D401DDB207500685C57 /* CommonUtilities.h in Headers */,
+				7DA39D3B1DDB207500685C57 /* CUStorage.h in Headers */,
+				7DA39D3C1DDB207500685C57 /* CUColor.h in Headers */,
+				7DA39D3D1DDB207500685C57 /* CUFile.h in Headers */,
+				7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */,
+				7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */,
+				7DA39D411DDB207500685C57 /* CUDefine.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		7DE1569C1C917A69002611D2 /* CommonUtilities */ = {
 			isa = PBXNativeTarget;
@@ -150,6 +174,7 @@
 				7DE156991C917A69002611D2 /* Sources */,
 				7DE1569A1C917A69002611D2 /* Frameworks */,
 				7DE1569B1C917A69002611D2 /* CopyFiles */,
+				7DA39D3A1DDB206800685C57 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -245,6 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "include/$(PROJECT_NAME)";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -282,6 +308,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "include/$(PROJECT_NAME)";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -292,6 +319,10 @@
 		7DE156A71C917A69002611D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"include/$(PROJECT_NAME)",
+					/usr/local/include,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -301,6 +332,10 @@
 		7DE156A81C917A69002611D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"include/$(PROJECT_NAME)",
+					/usr/local/include,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
