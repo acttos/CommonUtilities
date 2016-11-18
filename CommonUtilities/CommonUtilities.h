@@ -2,14 +2,19 @@
 //  CommonUtilities.h
 //  CommonUtilities
 //
-//  Created by Actto on 3/10/16.
+//  Created by Acttos on 18/11/2016.
 //  Copyright © 2016 Actto. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef CommonUtilities_h
+#define CommonUtilities_h
+
+#import <UIKit/UIKit.h>
 
 #import "CUStorage.h"
 #import "CUColor.h"
 #import "CUFile.h"
 #import "CUJSON.h"
 #import "CUDate.h"
+
+#endif /* CommonUtilities_h */
