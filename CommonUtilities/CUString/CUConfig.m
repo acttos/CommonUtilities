@@ -7,6 +7,7 @@
 //
 
 #import "CUConfig.h"
+#import "CUDefine.h"
 
 @implementation CUConfig
 
@@ -14,6 +15,8 @@
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSArray * allLanguages = [defaults objectForKey:@"AppleLanguages"];
     NSString * preferredLang = [allLanguages objectAtIndex:0];
+    
+    Logger(@"Prefered Lang:%@",preferredLang);
     
     return preferredLang;
 }
@@ -30,7 +33,10 @@
     NSString *i18NPrefix = [CUConfig getDeviceLanguageCode];
     NSString *i18NSuffix = [CUConfig getDeviceCountryCode];
     
-    return [NSString stringWithFormat:@"%@_%@", i18NPrefix, i18NSuffix];
+    NSString *result = [NSString stringWithFormat:@"%@_%@", i18NPrefix, i18NSuffix];
+    
+    Logger(@"Return:%@", result);
+    return result;
 }
 
 + (BOOL)isChineseLang {
