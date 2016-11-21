@@ -158,7 +158,7 @@ CommonUtilities是一个日常iOS开发通用工具类的Framework，采用Objec
 
 ## 开源协议
 
-[[CommonUtilities]](https://github.com/majinshou/CommonUtilities) 基于 [The MIT License(MIT)]](https://mit-license.org/) 协议开源。
+[[CommonUtilities]](https://github.com/majinshou/CommonUtilities) 基于 [The MIT License(MIT)](https://mit-license.org/) 协议开源。
 <br/>
 <br/>
 
