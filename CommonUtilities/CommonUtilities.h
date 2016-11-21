@@ -15,7 +15,3 @@
 #import "CUJSON.h"
 #import "CUDate.h"
 #import "CUDefine.h"
-
-@interface CommonUtilities : NSObject
-
-@end

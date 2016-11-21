@@ -19,10 +19,10 @@
 		7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B01C9184A3002611D2 /* CUDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DA39D411DDB207500685C57 /* CUDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D1D93441CE07EC8001318BF /* CUDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DAD9CC81DE2971800FB254F /* CommonUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAD9CC61DE2971800FB254F /* CommonUtilities.h */; };
-		7DAD9CC91DE2971800FB254F /* CommonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9CC71DE2971800FB254F /* CommonUtilities.m */; };
-		7DAD9CCC1DE297E000FB254F /* CUConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAD9CCA1DE297E000FB254F /* CUConfig.h */; };
+		7DAD9CC81DE2971800FB254F /* CommonUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAD9CC61DE2971800FB254F /* CommonUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DAD9CCC1DE297E000FB254F /* CUConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAD9CCA1DE297E000FB254F /* CUConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DAD9CCD1DE297E000FB254F /* CUConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9CCB1DE297E000FB254F /* CUConfig.m */; };
+		7DAD9CCE1DE2AF0E00FB254F /* CUConfig.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DAD9CCA1DE297E000FB254F /* CUConfig.h */; };
 		7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156AE1C9181C6002611D2 /* CUColor.m */; };
 		7DE156B21C9184A3002611D2 /* CUDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156B11C9184A3002611D2 /* CUDate.m */; };
 		7DE156B51C9185CE002611D2 /* CUFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156B41C9185CE002611D2 /* CUFile.m */; };
@@ -38,6 +38,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				7DAD9CCE1DE2AF0E00FB254F /* CUConfig.h in CopyFiles */,
 				7D3193651DD9B4C5004D1049 /* CUDate.h in CopyFiles */,
 				7D3193641DD9B4BE004D1049 /* CUJSON.h in CopyFiles */,
 				7D3193631DD9B4B8004D1049 /* CUFile.h in CopyFiles */,
@@ -53,7 +54,6 @@
 		7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CUJSON.h; path = CUString/CUJSON.h; sourceTree = "<group>"; };
 		7D3A4AD01CAD14BC009FF33E /* CUJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CUJSON.m; path = CUString/CUJSON.m; sourceTree = "<group>"; };
 		7DAD9CC61DE2971800FB254F /* CommonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtilities.h; sourceTree = "<group>"; };
-		7DAD9CC71DE2971800FB254F /* CommonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtilities.m; sourceTree = "<group>"; };
 		7DAD9CCA1DE297E000FB254F /* CUConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CUConfig.h; path = CUString/CUConfig.h; sourceTree = "<group>"; };
 		7DAD9CCB1DE297E000FB254F /* CUConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CUConfig.m; path = CUString/CUConfig.m; sourceTree = "<group>"; };
 		7DE1569D1C917A69002611D2 /* libCommonUtilities.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCommonUtilities.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +109,6 @@
 				7DE156A91C917A7A002611D2 /* CUDate */,
 				7D1D93441CE07EC8001318BF /* CUDefine.h */,
 				7DAD9CC61DE2971800FB254F /* CommonUtilities.h */,
-				7DAD9CC71DE2971800FB254F /* CommonUtilities.m */,
 			);
 			path = CommonUtilities;
 			sourceTree = "<group>";
@@ -177,10 +176,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DAD9CC81DE2971800FB254F /* CommonUtilities.h in Headers */,
 				7DA39D3B1DDB207500685C57 /* CUStorage.h in Headers */,
 				7DA39D3C1DDB207500685C57 /* CUColor.h in Headers */,
 				7DA39D3D1DDB207500685C57 /* CUFile.h in Headers */,
-				7DAD9CC81DE2971800FB254F /* CommonUtilities.h in Headers */,
 				7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */,
 				7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */,
 				7DAD9CCC1DE297E000FB254F /* CUConfig.h in Headers */,
@@ -266,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DE156B91C918646002611D2 /* CUStorage.m in Sources */,
-				7DAD9CC91DE2971800FB254F /* CommonUtilities.m in Sources */,
 				7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */,
 				7DAD9CCD1DE297E000FB254F /* CUConfig.m in Sources */,
 				7D3A4AD11CAD14BC009FF33E /* CUJSON.m in Sources */,
@@ -368,7 +366,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(inherited)/**/*.h",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
@@ -380,7 +381,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(inherited)/**/*.h",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";

@@ -25,6 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
+		    CommonUtilities is a common utilities collection. It is designed as a tool-box for iOS development.
                     This project is a framework of Common Utilities using in iOS development with Objective-C.
                    DESC
 
@@ -93,7 +94,7 @@ Pod::Spec.new do |s|
   s.source_files  = "CommonUtilities", "CommonUtilities/*.{h,m}", "CommonUtilities/**/*.{h,m}"
   s.exclude_files = "CommonUtilities/Exclude"
 
-  s.public_header_files = "CommonUtilities/*.h"
+  s.public_header_files = "CommonUtilities/*.h", "CommonUtilities/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
