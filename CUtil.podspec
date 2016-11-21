@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "CommonUtilities"
+  s.name         = "CUtil"
   s.version      = "0.0.1"
-  s.summary      = "CommonUtilities is a common utilities collection. It is designed as a tool-box for iOS development."
+  s.summary      = "CUtil is a common utilities collection. It is designed as a tool-box for iOS development."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-		    CommonUtilities is a common utilities collection. It is designed as a tool-box for iOS development.
+		    CUtil is a common utilities collection. It is designed as a tool-box for iOS development.
                     This project is a framework of Common Utilities using in iOS development with Objective-C.
                    DESC
 
