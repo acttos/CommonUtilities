@@ -2,19 +2,20 @@
 //  CommonUtilities.h
 //  CommonUtilities
 //
-//  Created by Acttos on 18/11/2016.
+//  Created by Acttos on 21/11/2016.
 //  Copyright © 2016 Actto. All rights reserved.
 //
 
-#ifndef CommonUtilities_h
-#define CommonUtilities_h
-
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 #import "CUStorage.h"
+#import "CUConfig.h"
 #import "CUColor.h"
 #import "CUFile.h"
 #import "CUJSON.h"
 #import "CUDate.h"
+#import "CUDefine.h"
 
-#endif /* CommonUtilities_h */
+@interface CommonUtilities : NSObject
+
+@end

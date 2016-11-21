@@ -19,11 +19,14 @@
 		7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B01C9184A3002611D2 /* CUDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DA39D411DDB207500685C57 /* CUDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D1D93441CE07EC8001318BF /* CUDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DAD9CC81DE2971800FB254F /* CommonUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAD9CC61DE2971800FB254F /* CommonUtilities.h */; };
+		7DAD9CC91DE2971800FB254F /* CommonUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9CC71DE2971800FB254F /* CommonUtilities.m */; };
+		7DAD9CCC1DE297E000FB254F /* CUConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAD9CCA1DE297E000FB254F /* CUConfig.h */; };
+		7DAD9CCD1DE297E000FB254F /* CUConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9CCB1DE297E000FB254F /* CUConfig.m */; };
 		7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156AE1C9181C6002611D2 /* CUColor.m */; };
 		7DE156B21C9184A3002611D2 /* CUDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156B11C9184A3002611D2 /* CUDate.m */; };
 		7DE156B51C9185CE002611D2 /* CUFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156B41C9185CE002611D2 /* CUFile.m */; };
 		7DE156B91C918646002611D2 /* CUStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156B81C918646002611D2 /* CUStorage.m */; };
-		7DFC3F541DDF051800E90E28 /* CommonUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DFC3F531DDF04FB00E90E28 /* CommonUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DFC3F571DDF074800E90E28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC3F561DDF074800E90E28 /* Foundation.framework */; };
 		7DFC3F591DDF074E00E90E28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC3F581DDF074E00E90E28 /* UIKit.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +52,10 @@
 		7D1D93441CE07EC8001318BF /* CUDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUDefine.h; sourceTree = "<group>"; };
 		7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CUJSON.h; path = CUString/CUJSON.h; sourceTree = "<group>"; };
 		7D3A4AD01CAD14BC009FF33E /* CUJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CUJSON.m; path = CUString/CUJSON.m; sourceTree = "<group>"; };
+		7DAD9CC61DE2971800FB254F /* CommonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtilities.h; sourceTree = "<group>"; };
+		7DAD9CC71DE2971800FB254F /* CommonUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtilities.m; sourceTree = "<group>"; };
+		7DAD9CCA1DE297E000FB254F /* CUConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CUConfig.h; path = CUString/CUConfig.h; sourceTree = "<group>"; };
+		7DAD9CCB1DE297E000FB254F /* CUConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CUConfig.m; path = CUString/CUConfig.m; sourceTree = "<group>"; };
 		7DE1569D1C917A69002611D2 /* libCommonUtilities.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCommonUtilities.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE156AD1C9181C6002611D2 /* CUColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CUColor.h; path = CUColor/CUColor.h; sourceTree = "<group>"; };
 		7DE156AE1C9181C6002611D2 /* CUColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CUColor.m; path = CUColor/CUColor.m; sourceTree = "<group>"; };
@@ -58,7 +65,6 @@
 		7DE156B41C9185CE002611D2 /* CUFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CUFile.m; path = CUFile/CUFile.m; sourceTree = "<group>"; };
 		7DE156B71C918646002611D2 /* CUStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CUStorage.h; path = CUStorage/CUStorage.h; sourceTree = "<group>"; };
 		7DE156B81C918646002611D2 /* CUStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CUStorage.m; path = CUStorage/CUStorage.m; sourceTree = "<group>"; };
-		7DFC3F531DDF04FB00E90E28 /* CommonUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtilities.h; sourceTree = "<group>"; };
 		7DFC3F561DDF074800E90E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7DFC3F581DDF074E00E90E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -102,7 +108,8 @@
 				7DE156AA1C917A84002611D2 /* CUString */,
 				7DE156A91C917A7A002611D2 /* CUDate */,
 				7D1D93441CE07EC8001318BF /* CUDefine.h */,
-				7DFC3F531DDF04FB00E90E28 /* CommonUtilities.h */,
+				7DAD9CC61DE2971800FB254F /* CommonUtilities.h */,
+				7DAD9CC71DE2971800FB254F /* CommonUtilities.m */,
 			);
 			path = CommonUtilities;
 			sourceTree = "<group>";
@@ -121,6 +128,8 @@
 			children = (
 				7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */,
 				7D3A4AD01CAD14BC009FF33E /* CUJSON.m */,
+				7DAD9CCA1DE297E000FB254F /* CUConfig.h */,
+				7DAD9CCB1DE297E000FB254F /* CUConfig.m */,
 			);
 			name = CUString;
 			sourceTree = "<group>";
@@ -171,9 +180,10 @@
 				7DA39D3B1DDB207500685C57 /* CUStorage.h in Headers */,
 				7DA39D3C1DDB207500685C57 /* CUColor.h in Headers */,
 				7DA39D3D1DDB207500685C57 /* CUFile.h in Headers */,
-				7DFC3F541DDF051800E90E28 /* CommonUtilities.h in Headers */,
+				7DAD9CC81DE2971800FB254F /* CommonUtilities.h in Headers */,
 				7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */,
 				7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */,
+				7DAD9CCC1DE297E000FB254F /* CUConfig.h in Headers */,
 				7DA39D411DDB207500685C57 /* CUDefine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DE156B91C918646002611D2 /* CUStorage.m in Sources */,
+				7DAD9CC91DE2971800FB254F /* CommonUtilities.m in Sources */,
 				7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */,
+				7DAD9CCD1DE297E000FB254F /* CUConfig.m in Sources */,
 				7D3A4AD11CAD14BC009FF33E /* CUJSON.m in Sources */,
 				7DE156B21C9184A3002611D2 /* CUDate.m in Sources */,
 				7DE156B51C9185CE002611D2 /* CUFile.m in Sources */,
