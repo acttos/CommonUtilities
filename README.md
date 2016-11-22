@@ -4,9 +4,31 @@ CommonUtilities是一个日常iOS开发通用工具类的Framework，采用Objec
 所有代码来源并总结于平时工作中，会不定期更新，欢迎提出意见和建议。
 
 ## 使用方法
-引入CommonUtilities.h即可使用各个工具所包含的方法
 
-``` #import "CommonUtilities.h" ```
+CommonUtilities已经支持通过Cocoapods进行安装：
+
+在工程的Podfile中添加：
+
+```
+pod 'CUtil', '~> 0.0.2'
+```
+
+或者省略版本号
+
+```
+pod 'CUtil'
+```
+然后在需要使用到CommonUtilities的地方添加引入Model：
+
+```
+@import CUtil;
+```
+
+如果工程并未支持Pod，可以手动引用头文件：
+
+```
+#import "CommonUtilities.h"
+```
 
 
 ## 功能介绍
@@ -153,12 +175,46 @@ CommonUtilities是一个日常iOS开发通用工具类的Framework，采用Objec
  *  @return 格式化后的字符串
  */
 +(NSString *)stringOfDate:(NSDate *)date withFormat:(NSString *)format;
+```
+
+### 系统配置操作相关
+> CUConfig.h
+
+```
+/**
+ * 获取当前系统首选的语言标识
+ */
++ (NSString *)getDeviceLanguage;
+/**
+ * 获取当前系统的语言编码
+ */
++ (NSString *)getDeviceLanguageCode;
+/**
+ * 获取当先系统的国家和地区编码
+ */
++ (NSString *)getDeviceCountryCode;
+/**
+ * 以i18N的格式输出当前系统的语言和地域，如"en_US,zh_CN,zh_TW,en_FR"
+ */
++ (NSString *)getLocalStringIni18N;
+/**
+ * 是否为中文环境
+ */
++ (BOOL)isChineseLang;
+/**
+ * 是否为阿拉伯语环境
+ */
++ (BOOL)isArabicLang;
+/**
+ * 是否为法语环境
+ */
++ (BOOL)isFrenchLang;
 
 ```
 
 ## 开源协议
 
-[[CommonUtilities]](https://github.com/majinshou/CommonUtilities) 基于 [The MIT License(MIT)](https://mit-license.org/) 协议开源。
+[ [CommonUtilities] ](https://github.com/majinshou/CommonUtilities) 基于 [ [The MIT License(MIT)] ](https://mit-license.org/) 协议开源。
 <br/>
 <br/>
 
