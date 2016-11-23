@@ -1,7 +1,7 @@
 ## 介绍
 
 CommonUtilities是一个日常iOS开发通用工具类的Framework，采用Objective-C开发。
-所有代码来源并总结于平时工作中，会不定期更新，欢迎提出意见和建议。
+所有代码来源并总结于平时工作中，会不定期更新，欢迎[提出意见和建议](mailto:acttosma@gmail.com)。
 
 ## 使用方法
 
@@ -10,7 +10,7 @@ CommonUtilities已经支持通过Cocoapods进行安装：
 在工程的Podfile中添加：
 
 ```
-pod 'CUtil', '~> 0.0.3'
+pod 'CUtil', '~> 0.0.5'
 ```
 
 或者省略版本号
@@ -210,6 +210,58 @@ pod 'CUtil'
  */
 + (BOOL)isFrenchLang;
 
+```
+
+### 视图相关
+> CULabel.h
+
+```
+/**
+ 计算一个UILabel视图在父视图中的大小和位置，UILabel的高度和宽度在实际布局中，还是很有实际意义的。
+
+ @param label 要用于计算的UILabel实例
+ @param view UILabel实例的父视图
+ @return UILabel在父视图中的大小和位置参数
+ */
++(CGSize)sizeOfLabel:(UILabel *)label inView:(UIView *)view;
+```
+
+> CUTipsView.h
+
+```
+/**
+ 已全屏幕的方式展现出一个带有转动菊花的Waiting视图
+
+ @param tag 视图对应的tag，方便隐藏时使用
+ @param _message Waiting视图中显示的文字消息
+ */
++(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message;
+
+/**
+ 显示一个根据给定frame生成的带有转动菊花的Waiting视图
+
+ @param tag 视图对应的tag，方便隐藏时使用
+ @param _frame 视图整体的大小和位置参数
+ @param _message Waiting视图中显示的文字消息
+ */
++(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
+
+/**
+ 在视图顶部显示的一个Tips视图，可包含文字和图片，该Tips视图会自动以向上滑出的方式消失
+
+ @param _yOffset Tips视图距离屏幕顶部的偏移量，一般为0.0f
+ @param aImage Tips视图中的图片，位于aMessage的左侧
+ @param aMessage Tips视图中显示的文字消息
+ @param view Tips视图的父View
+ */
++(void)showPopDownTipsViewWithImage:(UIImage *)aImage message:(NSString *)aMessage yOffset:(CGFloat)_yOffset inView:(UIView *)view;
+
+/**
+ 隐藏某个tag对应的视图，并从父视图中移除
+
+ @param tag 视图对应的tag
+ */
++(void)hideViewInWindowWithTag:(NSUInteger)tag;
 ```
 
 ## 开源协议
