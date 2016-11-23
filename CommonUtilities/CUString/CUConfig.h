@@ -3,7 +3,7 @@
 //  CommonUtilities
 //
 //  Created by Acttos on 21/11/2016.
-//  Copyright © 2016 Actto. All rights reserved.
+//  Copyright © 2016 Acttos.org. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
