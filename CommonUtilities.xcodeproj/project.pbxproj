@@ -13,18 +13,12 @@
 		7D3193641DD9B4BE004D1049 /* CUJSON.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */; };
 		7D3193651DD9B4C5004D1049 /* CUDate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156B01C9184A3002611D2 /* CUDate.h */; };
 		7D3A4AD11CAD14BC009FF33E /* CUJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A4AD01CAD14BC009FF33E /* CUJSON.m */; };
-		7D560F921DE55B38005F5F0E /* CULabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D560F901DE55B38005F5F0E /* CULabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D560F931DE55B38005F5F0E /* CULabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D560F911DE55B38005F5F0E /* CULabel.m */; };
-		7D560F961DE55CE1005F5F0E /* CUTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D560F941DE55CE1005F5F0E /* CUTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D560F971DE55CE1005F5F0E /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D560F951DE55CE1005F5F0E /* CUTipsView.m */; };
-		7DA39D3B1DDB207500685C57 /* CUStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B71C918646002611D2 /* CUStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DA39D3C1DDB207500685C57 /* CUColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156AD1C9181C6002611D2 /* CUColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DA39D3D1DDB207500685C57 /* CUFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B31C9185CE002611D2 /* CUFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B01C9184A3002611D2 /* CUDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DA39D411DDB207500685C57 /* CUDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D1D93441CE07EC8001318BF /* CUDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DAD9CC81DE2971800FB254F /* CommonUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAD9CC61DE2971800FB254F /* CommonUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DAD9CCC1DE297E000FB254F /* CUConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAD9CCA1DE297E000FB254F /* CUConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D560FC21DE59DB6005F5F0E /* CULabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D560F901DE55B38005F5F0E /* CULabel.h */; };
+		7D560FC31DE59DB6005F5F0E /* CUTipsView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D560F941DE55CE1005F5F0E /* CUTipsView.h */; };
+		7D560FC41DE59DB6005F5F0E /* CUDefine.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D1D93441CE07EC8001318BF /* CUDefine.h */; };
+		7D560FC51DE59DB6005F5F0E /* CommonUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DAD9CC61DE2971800FB254F /* CommonUtilities.h */; };
 		7DAD9CCD1DE297E000FB254F /* CUConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9CCB1DE297E000FB254F /* CUConfig.m */; };
 		7DAD9CCE1DE2AF0E00FB254F /* CUConfig.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DAD9CCA1DE297E000FB254F /* CUConfig.h */; };
 		7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156AE1C9181C6002611D2 /* CUColor.m */; };
@@ -42,6 +36,10 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				7D560FC21DE59DB6005F5F0E /* CULabel.h in CopyFiles */,
+				7D560FC31DE59DB6005F5F0E /* CUTipsView.h in CopyFiles */,
+				7D560FC41DE59DB6005F5F0E /* CUDefine.h in CopyFiles */,
+				7D560FC51DE59DB6005F5F0E /* CommonUtilities.h in CopyFiles */,
 				7DAD9CCE1DE2AF0E00FB254F /* CUConfig.h in CopyFiles */,
 				7D3193651DD9B4C5004D1049 /* CUDate.h in CopyFiles */,
 				7D3193641DD9B4BE004D1049 /* CUJSON.h in CopyFiles */,
@@ -191,26 +189,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		7DA39D3A1DDB206800685C57 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7DAD9CC81DE2971800FB254F /* CommonUtilities.h in Headers */,
-				7DA39D3B1DDB207500685C57 /* CUStorage.h in Headers */,
-				7DA39D3C1DDB207500685C57 /* CUColor.h in Headers */,
-				7DA39D3D1DDB207500685C57 /* CUFile.h in Headers */,
-				7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */,
-				7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */,
-				7D560F961DE55CE1005F5F0E /* CUTipsView.h in Headers */,
-				7D560F921DE55B38005F5F0E /* CULabel.h in Headers */,
-				7DAD9CCC1DE297E000FB254F /* CUConfig.h in Headers */,
-				7DA39D411DDB207500685C57 /* CUDefine.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		7DE1569C1C917A69002611D2 /* CommonUtilities */ = {
 			isa = PBXNativeTarget;
@@ -219,7 +197,6 @@
 				7DE156991C917A69002611D2 /* Sources */,
 				7DE1569A1C917A69002611D2 /* Frameworks */,
 				7DE1569B1C917A69002611D2 /* CopyFiles */,
-				7DA39D3A1DDB206800685C57 /* Headers */,
 				7DFC3F5A1DDF086E00E90E28 /* Build Framework Script */,
 			);
 			buildRules = (
