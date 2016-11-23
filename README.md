@@ -10,7 +10,7 @@ CommonUtilities已经支持通过Cocoapods进行安装：
 在工程的Podfile中添加：
 
 ```
-pod 'CUtil', '~> 0.0.2'
+pod 'CUtil', '~> 0.0.3'
 ```
 
 或者省略版本号

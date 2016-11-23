@@ -15,5 +15,5 @@
 #import "CUJSON.h"
 #import "CUDate.h"
 #import "CUDefine.h"
-#import "CUTipsView.h"
 #import "CULabel.h"
+#import "CUTipsView.h"

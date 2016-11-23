@@ -13,9 +13,9 @@
 		7D3193641DD9B4BE004D1049 /* CUJSON.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3A4ACF1CAD14BC009FF33E /* CUJSON.h */; };
 		7D3193651DD9B4C5004D1049 /* CUDate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DE156B01C9184A3002611D2 /* CUDate.h */; };
 		7D3A4AD11CAD14BC009FF33E /* CUJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A4AD01CAD14BC009FF33E /* CUJSON.m */; };
-		7D560F921DE55B38005F5F0E /* CULabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D560F901DE55B38005F5F0E /* CULabel.h */; };
+		7D560F921DE55B38005F5F0E /* CULabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D560F901DE55B38005F5F0E /* CULabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D560F931DE55B38005F5F0E /* CULabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D560F911DE55B38005F5F0E /* CULabel.m */; };
-		7D560F961DE55CE1005F5F0E /* CUTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D560F941DE55CE1005F5F0E /* CUTipsView.h */; };
+		7D560F961DE55CE1005F5F0E /* CUTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D560F941DE55CE1005F5F0E /* CUTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D560F971DE55CE1005F5F0E /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D560F951DE55CE1005F5F0E /* CUTipsView.m */; };
 		7DA39D3B1DDB207500685C57 /* CUStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156B71C918646002611D2 /* CUStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DA39D3C1DDB207500685C57 /* CUColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE156AD1C9181C6002611D2 /* CUColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -201,9 +201,9 @@
 				7DA39D3C1DDB207500685C57 /* CUColor.h in Headers */,
 				7DA39D3D1DDB207500685C57 /* CUFile.h in Headers */,
 				7DA39D3E1DDB207500685C57 /* CUJSON.h in Headers */,
+				7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */,
 				7D560F961DE55CE1005F5F0E /* CUTipsView.h in Headers */,
 				7D560F921DE55B38005F5F0E /* CULabel.h in Headers */,
-				7DA39D3F1DDB207500685C57 /* CUDate.h in Headers */,
 				7DAD9CCC1DE297E000FB254F /* CUConfig.h in Headers */,
 				7DA39D411DDB207500685C57 /* CUDefine.h in Headers */,
 			);
