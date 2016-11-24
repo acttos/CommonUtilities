@@ -45,6 +45,7 @@ pod 'CUtil'
  *  @param data 需要存储的数据
  */
 - (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
+
 /**
  *  根据service名称获取写入系统Keychain的数据
  *
@@ -68,6 +69,7 @@ pod 'CUtil'
  *  @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue;
+
 /**
  *  根据传递的16进制数据生成UIColor实例，该UIColor包含指定的透明度
  *
@@ -77,6 +79,7 @@ pod 'CUtil'
  *  @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue alpha:(CGFloat)alpha;
+
 /**
  *  根据传递的色值字符串生成UIColor实例
  *
@@ -85,6 +88,7 @@ pod 'CUtil'
  *  @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString;
+
 /**
  *  根据传递的色值字符串生成UIColor实例，该UIColor包含指定的透明度
  *
@@ -121,6 +125,7 @@ pod 'CUtil'
  *  @return NSArray对应的JSON字符串
  */
 +(NSString *)JSONStringFromArray:(NSArray *)array;
+
 /**
  *  根据给定的NSDictionary实例生成JSON字符串
  *
@@ -129,6 +134,7 @@ pod 'CUtil'
  *  @return NSDictionary对应的JSON字符串
  */
 +(NSString *)JSONStringFromDictionary:(NSDictionary *)dictionary;
+
 /**
  *  将任意对象转换成JSON字符串，当给定object为nil或者不可解析为JSON时，返回错误
  *
@@ -150,6 +156,7 @@ pod 'CUtil'
  *  @return 当前时间的时间戳，精确到毫秒
  */
 +(long long)generateMillisecondTime;
+
 /**
  *  根据给定日期创建时间戳
  *
@@ -158,6 +165,7 @@ pod 'CUtil'
  *  @return 转换后的时间戳，精确到毫秒
  */
 +(long long)generateMillisecondTimeWithDate:(NSDate *)date;
+
 /**
  *  将毫秒的时间转化为NSDate实例
  *
@@ -166,6 +174,7 @@ pod 'CUtil'
  *  @return 给定时间戳对应的NSDate对象
  */
 +(NSDate *)generateDateWithMilliseconds:(long long)milliseconds;
+
 /**
  *  将NSDate对象进行格式化，采用当前时区
  *
@@ -245,6 +254,7 @@ pod 'CUtil'
  */
 +(CGSize)sizeOfLabel:(UILabel *)label inView:(UIView *)view;
 ```
+
 
 > CUTipsView.h
 
