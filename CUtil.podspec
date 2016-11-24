@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CUtil"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "CUtil is a common utilities collection. It is designed as a tool-box for iOS development."
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/acttos/CommonUtilities.git", :tag => "0.0.7" }
+  s.source       = { :git => "https://github.com/acttos/CommonUtilities.git", :tag => "0.0.8" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
