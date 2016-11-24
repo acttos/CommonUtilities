@@ -19,6 +19,8 @@
 		7D560FC31DE59DB6005F5F0E /* CUTipsView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D560F941DE55CE1005F5F0E /* CUTipsView.h */; };
 		7D560FC41DE59DB6005F5F0E /* CUDefine.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D1D93441CE07EC8001318BF /* CUDefine.h */; };
 		7D560FC51DE59DB6005F5F0E /* CommonUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DAD9CC61DE2971800FB254F /* CommonUtilities.h */; };
+		7DA018B41DE6953C00B761C2 /* CUCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA018B31DE694DB00B761C2 /* CUCode.m */; };
+		7DA018B51DE6954400B761C2 /* CUCode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DA018B21DE694DB00B761C2 /* CUCode.h */; };
 		7DAD9CCD1DE297E000FB254F /* CUConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD9CCB1DE297E000FB254F /* CUConfig.m */; };
 		7DAD9CCE1DE2AF0E00FB254F /* CUConfig.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DAD9CCA1DE297E000FB254F /* CUConfig.h */; };
 		7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE156AE1C9181C6002611D2 /* CUColor.m */; };
@@ -36,6 +38,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				7DA018B51DE6954400B761C2 /* CUCode.h in CopyFiles */,
 				7D560FC21DE59DB6005F5F0E /* CULabel.h in CopyFiles */,
 				7D560FC31DE59DB6005F5F0E /* CUTipsView.h in CopyFiles */,
 				7D560FC41DE59DB6005F5F0E /* CUDefine.h in CopyFiles */,
@@ -59,6 +62,8 @@
 		7D560F911DE55B38005F5F0E /* CULabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CULabel.m; sourceTree = "<group>"; };
 		7D560F941DE55CE1005F5F0E /* CUTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUTipsView.h; sourceTree = "<group>"; };
 		7D560F951DE55CE1005F5F0E /* CUTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUTipsView.m; sourceTree = "<group>"; };
+		7DA018B21DE694DB00B761C2 /* CUCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CUCode.h; sourceTree = "<group>"; };
+		7DA018B31DE694DB00B761C2 /* CUCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUCode.m; sourceTree = "<group>"; };
 		7DAD9CC61DE2971800FB254F /* CommonUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtilities.h; sourceTree = "<group>"; };
 		7DAD9CCA1DE297E000FB254F /* CUConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CUConfig.h; path = CUString/CUConfig.h; sourceTree = "<group>"; };
 		7DAD9CCB1DE297E000FB254F /* CUConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CUConfig.m; path = CUString/CUConfig.m; sourceTree = "<group>"; };
@@ -99,6 +104,15 @@
 			path = CUView;
 			sourceTree = "<group>";
 		};
+		7DA018B11DE694DB00B761C2 /* CUCode */ = {
+			isa = PBXGroup;
+			children = (
+				7DA018B21DE694DB00B761C2 /* CUCode.h */,
+				7DA018B31DE694DB00B761C2 /* CUCode.m */,
+			);
+			path = CUCode;
+			sourceTree = "<group>";
+		};
 		7DE156941C917A68002611D2 = {
 			isa = PBXGroup;
 			children = (
@@ -119,11 +133,12 @@
 		7DE1569F1C917A69002611D2 /* CommonUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				7DE156B61C918614002611D2 /* CUStorage */,
+				7DA018B11DE694DB00B761C2 /* CUCode */,
 				7DE156AC1C917B03002611D2 /* CUColor */,
-				7DE156AB1C917A8D002611D2 /* CUFile */,
-				7DE156AA1C917A84002611D2 /* CUString */,
 				7DE156A91C917A7A002611D2 /* CUDate */,
+				7DE156AB1C917A8D002611D2 /* CUFile */,
+				7DE156B61C918614002611D2 /* CUStorage */,
+				7DE156AA1C917A84002611D2 /* CUString */,
 				7D560F8D1DE55B17005F5F0E /* CUView */,
 				7D1D93441CE07EC8001318BF /* CUDefine.h */,
 				7DAD9CC61DE2971800FB254F /* CommonUtilities.h */,
@@ -263,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA018B41DE6953C00B761C2 /* CUCode.m in Sources */,
 				7DE156B91C918646002611D2 /* CUStorage.m in Sources */,
 				7DE156AF1C9181C6002611D2 /* CUColor.m in Sources */,
 				7D560F971DE55CE1005F5F0E /* CUTipsView.m in Sources */,
