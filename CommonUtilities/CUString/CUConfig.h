@@ -10,7 +10,6 @@
 
 @interface CUConfig : NSObject
 
-
 /**
  获取当前系统首选的语言标识
 
