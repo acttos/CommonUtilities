@@ -1,7 +1,7 @@
 ## 介绍
 
-CommonUtilities是一个日常iOS开发通用工具类的Framework，采用Objective-C开发。
-所有代码来源并总结于平时工作中，会不定期更新，欢迎[提出意见和建议](mailto:acttosma@gmail.com)。
+CommonUtilities是一个日常的、适用于iOS开发的、通用的、工具类的Framework，采用Objective-C编写。
+所有代码来源并总结于平时，会不定期更新，欢迎[提出意见和建议](mailto:acttosma@gmail.com)。
 
 ## 使用方法
 
@@ -18,7 +18,7 @@ pod 'CUtil', '~> 0.0.7'
 ```
 pod 'CUtil'
 ```
-然后在需要使用到CommonUtilities的地方添加引入Model：
+然后在需要使用到CommonUtilities的地方添加引入Module：
 
 ```
 @import CUtil;
