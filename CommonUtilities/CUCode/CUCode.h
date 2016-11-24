@@ -43,6 +43,22 @@
 + (NSString *) MD5CodeWithData:(NSData *) data;
 
 /**
+ 根据给定的path对应的文件进行MD5摘要
+
+ @param path 文件的path
+ @return 文件的MD5摘要
+ */
++ (NSString *) MD5CodeWithFileAtPath:(NSString *) path;
+
+/**
+ 根据给定的url对应的文件进行MD5摘要
+ 
+ @param url 文件的url
+ @return 文件的MD5摘要
+ */
++ (NSString *) MD5CodeWithFileAtURL:(NSURL *) url;
+
+/**
  将给定的字符串进行SHA1摘要
 
  @param sourceString 源字符串
@@ -57,5 +73,21 @@
  @return 进行了SHA1摘要后的字符串
  */
 + (NSString*) SHA1CodeWithData:(NSData*)data;
+
+/**
+ 根据给定的path对应的文件进行SHA1摘要
+ 
+ @param path 文件的path
+ @return 文件的SHA1摘要
+ */
++ (NSString *) SHA1CodeWithFileAtPath:(NSString *) path;
+
+/**
+ 根据给定的url对应的文件进行SHA1摘要
+ 
+ @param url 文件的url
+ @return 文件的SHA1摘要
+ */
++ (NSString *) SHA1CodeWithFileAtURL:(NSURL *) url;
 
 @end

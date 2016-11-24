@@ -8,12 +8,15 @@
 
 #import "CUCode.h"
 
+#import "CUDefine.h"
+
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation CUCode
 
 + (NSString*) BASE64EncodeWithString:(NSString*)string {
     if(string == nil || [string length] == 0) {
+        Logger(@"The parameter 'string' can NOT be empty, return nil.");
         return nil;
     }
     
@@ -23,6 +26,7 @@
 
 + (NSString*) BASE64DecodeWithString:(NSString*)string {
     if(string == nil || [string length] == 0) {
+        Logger(@"The parameter 'string' can NOT be empty, return nil.");
         return nil;
     }
     
@@ -33,6 +37,11 @@
 }
 
 + (NSString *) MD5CodeWithString:(NSString *)sourceString {
+    if (sourceString == nil || sourceString.length == 0) {
+        Logger(@"The parameter 'sourceString' can NOT be empty, return nil.");
+        return nil;
+    }
+    
     const char *cStr = [sourceString UTF8String];
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
     
@@ -48,6 +57,7 @@
 
 + (NSString *) MD5CodeWithData:(NSData *) data {
     if(data == nil || data.length == 0) {
+        Logger(@"The parameter 'data' can NOT be nil, return nil.");
         return nil;
     }
     
@@ -64,7 +74,32 @@
     return  output;
 }
 
++ (NSString *) MD5CodeWithFileAtPath:(NSString *) path {
+    if (nil == path || path.length == 0) {
+        Logger(@"The parameter 'path' can NOT be empty, return nil.");
+        return nil;
+    }
+    
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    return [CUCode MD5CodeWithData:data];
+}
+
++ (NSString *) MD5CodeWithFileAtURL:(NSURL *) url {
+    if (nil == url) {
+        Logger(@"The parameter 'url' can NOT be nil, return nil.");
+        return nil;
+    }
+    
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return [CUCode MD5CodeWithData:data];
+}
+
 + (NSString *) SHA1CodeWithString:(NSString *)sourceString {
+    if (sourceString == nil || sourceString.length == 0) {
+        Logger(@"The parameter 'sourceString' can NOT be empty, return nil.");
+        return nil;
+    }
+    
     const char *cStr = [sourceString UTF8String];
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
     
@@ -80,6 +115,7 @@
 
 + (NSString*) SHA1CodeWithData:(NSData*)data {
     if(data == nil || data.length == 0) {
+        Logger(@"The parameter 'data' can NOT be nil, return nil.");
         return nil;
     }
     
@@ -94,6 +130,27 @@
     }
     
     return output;
+}
+
++ (NSString *) SHA1CodeWithFileAtPath:(NSString *) path {
+    if (nil == path || path.length == 0) {
+        Logger(@"The parameter 'path' can NOT be empty, return nil.");
+        return nil;
+    }
+    
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    return [CUCode SHA1CodeWithData:data];
+
+}
+
++ (NSString *) SHA1CodeWithFileAtURL:(NSURL *) url {
+    if (nil == url) {
+        Logger(@"The parameter 'url' can NOT be nil, return nil.");
+        return nil;
+    }
+    
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return [CUCode SHA1CodeWithData:data];
 }
 
 @end
