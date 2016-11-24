@@ -18,6 +18,7 @@
  *  @return NSArray对应的JSON字符串
  */
 +(NSString *)JSONStringFromArray:(NSArray *)array;
+
 /**
  *  根据给定的NSDictionary实例生成JSON字符串
  *
@@ -26,6 +27,7 @@
  *  @return NSDictionary对应的JSON字符串
  */
 +(NSString *)JSONStringFromDictionary:(NSDictionary *)dictionary;
+
 /**
  *  将任意对象转换成JSON字符串，当给定object为nil或者不可解析为JSON时，返回错误
  *

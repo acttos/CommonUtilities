@@ -18,6 +18,7 @@
  *  @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue;
+
 /**
  *  根据传递的16进制数据生成UIColor实例，该UIColor包含指定的透明度
  *
@@ -27,6 +28,7 @@
  *  @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue alpha:(CGFloat)alpha;
+
 /**
  *  根据传递的色值字符串生成UIColor实例
  *
@@ -35,6 +37,7 @@
  *  @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString;
+
 /**
  *  根据传递的色值字符串生成UIColor实例，该UIColor包含指定的透明度
  *

@@ -17,6 +17,7 @@
  *  @param data 需要存储的数据
  */
 - (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
+
 /**
  *  根据service名称获取写入系统Keychain的数据
  *

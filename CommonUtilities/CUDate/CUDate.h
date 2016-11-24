@@ -16,6 +16,7 @@
  *  @return 当前时间的时间戳，精确到毫秒
  */
 +(long long)generateMillisecondTime;
+
 /**
  *  根据给定日期创建时间戳
  *
@@ -24,6 +25,7 @@
  *  @return 转换后的时间戳，精确到毫秒
  */
 +(long long)generateMillisecondTimeWithDate:(NSDate *)date;
+
 /**
  *  将毫秒的时间转化为NSDate实例
  *
@@ -32,6 +34,7 @@
  *  @return 给定时间戳对应的NSDate对象
  */
 +(NSDate *)generateDateWithMilliseconds:(long long)milliseconds;
+
 /**
  *  将NSDate对象进行格式化，采用当前时区
  *
