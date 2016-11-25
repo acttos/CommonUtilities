@@ -13,6 +13,10 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation CUCode
++ (NSString *)uniqueId {
+    CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
+    return (NSString *)CFBridgingRelease(CFUUIDCreateString (kCFAllocatorDefault,uuidRef));
+}
 
 + (NSString*) BASE64EncodeWithString:(NSString*)string {
     if(string == nil || [string length] == 0) {

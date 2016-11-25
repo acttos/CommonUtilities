@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface CUCode : NSObject
++ (NSString *)uniqueId;
 
 /**
  将给定的字符串进行BASE64编码
