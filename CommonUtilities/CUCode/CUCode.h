@@ -24,6 +24,7 @@
  采用Keychain来保存唯一ID,如果之前有保存过，则覆盖旧值
 
  @param identifier 用来保存的唯一ID
+ @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (void)saveInKeychainWithIdentifier:(NSString *)identifier;
 
@@ -32,6 +33,7 @@
  从Keychain中加载保存的唯一ID
 
  @return Key中保存的唯一ID，如果之前未保存过，返回nil
+ @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (NSString *)loadIdentifierFromKeychain;
 

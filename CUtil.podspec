@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "CUtil is a common utilities collection. It is designed as a tool-box for iOS development."
   s.author       = { "acttos" => "majinshou@gmail.com" }
   s.social_media_url = "https://twitter.com/hulu0319"
-  s.homepage     = "https://github.com/acttos/CommonUtilities.git"
+  s.homepage     = "https://github.com/acttos/CommonUtilities"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
 

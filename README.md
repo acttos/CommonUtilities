@@ -43,6 +43,7 @@ pod 'CUtil', '~> 0.0.9'
  *
  *  @param key  用来存储数据的Key
  *  @param data 需要存储的数据
+ *  @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
 
@@ -52,6 +53,7 @@ pod 'CUtil', '~> 0.0.9'
  *  @param key 获取数据对应的Key
  *
  *  @return 存储在keychain中的数据
+ *  @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (id)loadFromKeychainWithKey:(NSString *)key;
 
@@ -310,6 +312,7 @@ pod 'CUtil', '~> 0.0.9'
  采用Keychain来保存唯一ID,如果之前有保存过，则覆盖旧值
 
  @param identifier 用来保存的唯一ID
+ @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (void)saveInKeychainWithIdentifier:(NSString *)identifier;
 
@@ -318,6 +321,7 @@ pod 'CUtil', '~> 0.0.9'
  从Keychain中加载保存的唯一ID
 
  @return Key中保存的唯一ID，如果之前未保存过，返回nil
+ @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (NSString *)loadIdentifierFromKeychain;
 

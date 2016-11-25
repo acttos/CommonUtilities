@@ -15,6 +15,7 @@
  *
  *  @param key  用来存储数据的Key
  *  @param data 需要存储的数据
+ *  @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
 
@@ -24,6 +25,7 @@
  *  @param key 获取数据对应的Key
  *
  *  @return 存储在keychain中的数据
+ *  @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (id)loadFromKeychainWithKey:(NSString *)key;
 
