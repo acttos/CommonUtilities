@@ -8,8 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
+#define kDefault_Unique_Identifier_Key_In_Keychain @"kDefault_Unique_Identifier_Key_In_Keychain"
+
 @interface CUCode : NSObject
-+ (NSString *)uniqueId;
+
+/**
+ 生成一个全球唯一的Id ^_-，可结合
+
+ @return 全球唯一的编号
+ */
++ (NSString *)uniqueIdentifier;
+
+
+/**
+ 采用Keychain来保存唯一ID,如果之前有保存过，则覆盖旧值
+
+ @param identifier 用来保存的唯一ID
+ */
++ (void)saveInKeychainWithIdentifier:(NSString *)identifier;
+
+
+/**
+ 从Keychain中加载保存的唯一ID
+
+ @return Key中保存的唯一ID，如果之前未保存过，返回nil
+ */
++ (NSString *)loadIdentifierFromKeychain;
 
 /**
  将给定的字符串进行BASE64编码

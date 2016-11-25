@@ -16,7 +16,7 @@
  *  @param key  用来存储数据的Key
  *  @param data 需要存储的数据
  */
-- (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
++ (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
 
 /**
  *  根据service名称获取写入系统Keychain的数据
@@ -25,6 +25,6 @@
  *
  *  @return 存储在keychain中的数据
  */
-- (id)loadFromKeychainWithKey:(NSString *)key;
++ (id)loadFromKeychainWithKey:(NSString *)key;
 
 @end

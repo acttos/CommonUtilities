@@ -7,15 +7,32 @@
 //
 
 #import "CUCode.h"
-
-#import "CUDefine.h"
-
+#import <UIKit/UIKit.h>
 #import <CommonCrypto/CommonDigest.h>
 
+#import "CUDefine.h"
+#import "CUStorage.h"
+
 @implementation CUCode
-+ (NSString *)uniqueId {
+
++ (NSString *)uniqueIdentifier {
+    NSString *result = nil;
     CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
-    return (NSString *)CFBridgingRelease(CFUUIDCreateString (kCFAllocatorDefault,uuidRef));
+    result = (NSString *)CFBridgingRelease(CFUUIDCreateString (kCFAllocatorDefault,uuidRef));
+    
+    if (result == nil || [result isEqualToString:@""]) {
+        result = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    }
+    
+    return result;
+}
+
++ (void)saveInKeychainWithIdentifier:(NSString *)identifier {
+    [CUStorage storeInKeychainWithKey:kDefault_Unique_Identifier_Key_In_Keychain data:identifier];
+}
+
++ (NSString *)loadIdentifierFromKeychain {
+    return [CUStorage loadFromKeychainWithKey:kDefault_Unique_Identifier_Key_In_Keychain];
 }
 
 + (NSString*) BASE64EncodeWithString:(NSString*)string {

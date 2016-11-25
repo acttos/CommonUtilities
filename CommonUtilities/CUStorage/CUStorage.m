@@ -11,7 +11,7 @@
 
 @implementation CUStorage
 
-- (void)storeInKeychainWithKey:(NSString *)key data:(id)data {
++ (void)storeInKeychainWithKey:(NSString *)key data:(id)data {
     //Get search dictionary
     NSMutableDictionary *keychainQuery = [self getKeychainWithKey:key];
     //Delete old item before add new item
@@ -22,7 +22,7 @@
     SecItemAdd((__bridge CFDictionaryRef)keychainQuery, NULL);
 }
 
-- (NSMutableDictionary *)getKeychainWithKey:(NSString *)key {
++ (NSMutableDictionary *)getKeychainWithKey:(NSString *)key {
     return [NSMutableDictionary dictionaryWithObjectsAndKeys:
             (__bridge id)kSecClassGenericPassword,(__bridge id)kSecClass,
             key, (__bridge id)kSecAttrService,
@@ -31,15 +31,16 @@
             nil];
 }
 
-- (id)loadFromKeychainWithKey:(NSString *)key {
++ (id)loadFromKeychainWithKey:(NSString *)key {
     id ret = nil;
     NSMutableDictionary *keychainQuery = [self getKeychainWithKey:key];
-    //Configure the search setting
-    //Since in our simple case we are expecting only a single attribute to be returned (the password) we can set the attribute kSecReturnData to kCFBooleanTrue
+    
     [keychainQuery setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
     [keychainQuery setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
     CFDataRef keyData = NULL;
-    if (SecItemCopyMatching((__bridge CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData) == noErr) {
+    
+    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData);
+    if (status == errSecSuccess) {
         @try {
             ret = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge NSData *)keyData];
         } @catch (NSException *e) {
@@ -47,8 +48,10 @@
         } @finally {
         }
     }
-    if (keyData)
+    if (keyData) {
         CFRelease(keyData);
+    }
+    
     return ret;
 }
 
