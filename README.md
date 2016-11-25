@@ -10,13 +10,13 @@ CommonUtilities已经支持通过Cocoapods进行安装：
 在工程的Podfile中添加：
 
 ```
-pod 'CUtil', '~> 0.0.7'
-```
-
-或者省略版本号
-
-```
 pod 'CUtil'
+```
+
+或者指定版本号，不指定版本号会默认安装最新版本
+
+```
+pod 'CUtil', '~> 0.0.9'
 ```
 然后在需要使用到CommonUtilities的地方添加引入Module：
 
@@ -44,7 +44,7 @@ pod 'CUtil'
  *  @param key  用来存储数据的Key
  *  @param data 需要存储的数据
  */
-- (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
++ (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
 
 /**
  *  根据service名称获取写入系统Keychain的数据
@@ -53,7 +53,7 @@ pod 'CUtil'
  *
  *  @return 存储在keychain中的数据
  */
-- (id)loadFromKeychainWithKey:(NSString *)key;
++ (id)loadFromKeychainWithKey:(NSString *)key;
 
 ```
 
@@ -298,6 +298,29 @@ pod 'CUtil'
 > CUCode.h
 
 ```
+/**
+ 生成一个全球唯一的Id ^_-，可结合
+
+ @return 全球唯一的编号
+ */
++ (NSString *)uniqueIdentifier;
+
+
+/**
+ 采用Keychain来保存唯一ID,如果之前有保存过，则覆盖旧值
+
+ @param identifier 用来保存的唯一ID
+ */
++ (void)saveInKeychainWithIdentifier:(NSString *)identifier;
+
+
+/**
+ 从Keychain中加载保存的唯一ID
+
+ @return Key中保存的唯一ID，如果之前未保存过，返回nil
+ */
++ (NSString *)loadIdentifierFromKeychain;
+
 /**
  将给定的字符串进行BASE64编码
 
