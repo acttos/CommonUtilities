@@ -18,7 +18,7 @@
 +(NSURL *)getDocumentsDirectory;
 
 /**
- 在制定的path目录存储data数据
+ 在指定的path目录存储data数据
 
  @param data 要存储的数据
  @param path 存储数据的具体路径

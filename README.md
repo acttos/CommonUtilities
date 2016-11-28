@@ -116,6 +116,14 @@ pod 'CUtil', '~> 0.0.9'
  *  @return Documents的URL
  */
 +(NSURL *)getDocumentsDirectory;
+
+/**
+ 在指定的path目录存储data数据
+
+ @param data 要存储的数据
+ @param path 存储数据的具体路径
+ */
++ (void)saveFile:(NSData *)data atPath:(NSString *)path;
 ```
 
 ### JSON解析相关
