@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D852B571DEC314A006E9EB3 /* CUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D852B4E1DEC314A006E9EB3 /* CUtil.framework */; };
+		7D852B5C1DEC314A006E9EB3 /* CUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */; };
+		7D852B991DEC3401006E9EB3 /* CUCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B7E1DEC3401006E9EB3 /* CUCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852B9A1DEC3401006E9EB3 /* CUCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B7F1DEC3401006E9EB3 /* CUCode.m */; };
+		7D852B9B1DEC3401006E9EB3 /* CUColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B811DEC3401006E9EB3 /* CUColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852B9C1DEC3401006E9EB3 /* CUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B821DEC3401006E9EB3 /* CUColor.m */; };
+		7D852B9D1DEC3401006E9EB3 /* CUDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B841DEC3401006E9EB3 /* CUDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852B9E1DEC3401006E9EB3 /* CUDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B851DEC3401006E9EB3 /* CUDate.m */; };
+		7D852B9F1DEC3401006E9EB3 /* CUDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B861DEC3401006E9EB3 /* CUDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852BA01DEC3401006E9EB3 /* CUFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B881DEC3401006E9EB3 /* CUFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852BA11DEC3401006E9EB3 /* CUFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B891DEC3401006E9EB3 /* CUFile.m */; };
+		7D852BA21DEC3401006E9EB3 /* CUStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B8B1DEC3401006E9EB3 /* CUStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852BA31DEC3401006E9EB3 /* CUStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B8C1DEC3401006E9EB3 /* CUStorage.m */; };
+		7D852BA41DEC3401006E9EB3 /* CUConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B8E1DEC3401006E9EB3 /* CUConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852BA51DEC3401006E9EB3 /* CUConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B8F1DEC3401006E9EB3 /* CUConfig.m */; };
+		7D852BA61DEC3401006E9EB3 /* CUJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B901DEC3401006E9EB3 /* CUJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852BA71DEC3401006E9EB3 /* CUJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B911DEC3401006E9EB3 /* CUJSON.m */; };
+		7D852BA81DEC3401006E9EB3 /* CUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B921DEC3401006E9EB3 /* CUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852BA91DEC3401006E9EB3 /* CULabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B941DEC3401006E9EB3 /* CULabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852BAA1DEC3401006E9EB3 /* CULabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B951DEC3401006E9EB3 /* CULabel.m */; };
+		7D852BAB1DEC3401006E9EB3 /* CUTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B961DEC3401006E9EB3 /* CUTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B971DEC3401006E9EB3 /* CUTipsView.m */; };
+		7D852BAD1DEC3401006E9EB3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D852B981DEC3401006E9EB3 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D852B581DEC314A006E9EB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7DE156951C917A68002611D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D852B4D1DEC314A006E9EB3;
+			remoteInfo = CUtil;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D852B4E1DEC314A006E9EB3 /* CUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D852B561DEC314A006E9EB3 /* CUtilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUtilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUtilTests.m; sourceTree = "<group>"; };
+		7D852B5D1DEC314A006E9EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D852B7E1DEC3401006E9EB3 /* CUCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUCode.h; sourceTree = "<group>"; };
+		7D852B7F1DEC3401006E9EB3 /* CUCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUCode.m; sourceTree = "<group>"; };
+		7D852B811DEC3401006E9EB3 /* CUColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUColor.h; sourceTree = "<group>"; };
+		7D852B821DEC3401006E9EB3 /* CUColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUColor.m; sourceTree = "<group>"; };
+		7D852B841DEC3401006E9EB3 /* CUDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUDate.h; sourceTree = "<group>"; };
+		7D852B851DEC3401006E9EB3 /* CUDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUDate.m; sourceTree = "<group>"; };
+		7D852B861DEC3401006E9EB3 /* CUDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUDefine.h; sourceTree = "<group>"; };
+		7D852B881DEC3401006E9EB3 /* CUFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUFile.h; sourceTree = "<group>"; };
+		7D852B891DEC3401006E9EB3 /* CUFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUFile.m; sourceTree = "<group>"; };
+		7D852B8B1DEC3401006E9EB3 /* CUStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUStorage.h; sourceTree = "<group>"; };
+		7D852B8C1DEC3401006E9EB3 /* CUStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUStorage.m; sourceTree = "<group>"; };
+		7D852B8E1DEC3401006E9EB3 /* CUConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUConfig.h; sourceTree = "<group>"; };
+		7D852B8F1DEC3401006E9EB3 /* CUConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUConfig.m; sourceTree = "<group>"; };
+		7D852B901DEC3401006E9EB3 /* CUJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUJSON.h; sourceTree = "<group>"; };
+		7D852B911DEC3401006E9EB3 /* CUJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUJSON.m; sourceTree = "<group>"; };
+		7D852B921DEC3401006E9EB3 /* CUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUtil.h; sourceTree = "<group>"; };
+		7D852B941DEC3401006E9EB3 /* CULabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CULabel.h; sourceTree = "<group>"; };
+		7D852B951DEC3401006E9EB3 /* CULabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CULabel.m; sourceTree = "<group>"; };
+		7D852B961DEC3401006E9EB3 /* CUTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUTipsView.h; sourceTree = "<group>"; };
+		7D852B971DEC3401006E9EB3 /* CUTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUTipsView.m; sourceTree = "<group>"; };
+		7D852B981DEC3401006E9EB3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DFC3F561DDF074800E90E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7DFC3F581DDF074E00E90E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D852B4A1DEC314A006E9EB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D852B531DEC314A006E9EB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D852B571DEC314A006E9EB3 /* CUtil.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D852B5A1DEC314A006E9EB3 /* CUtilTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */,
+				7D852B5D1DEC314A006E9EB3 /* Info.plist */,
+			);
+			path = CUtilTests;
+			sourceTree = "<group>";
+		};
+		7D852B7C1DEC3401006E9EB3 /* CUtil */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B7D1DEC3401006E9EB3 /* CUCode */,
+				7D852B801DEC3401006E9EB3 /* CUColor */,
+				7D852B831DEC3401006E9EB3 /* CUDate */,
+				7D852B871DEC3401006E9EB3 /* CUFile */,
+				7D852B8A1DEC3401006E9EB3 /* CUStorage */,
+				7D852B8D1DEC3401006E9EB3 /* CUString */,
+				7D852B931DEC3401006E9EB3 /* CUView */,
+				7D852B921DEC3401006E9EB3 /* CUtil.h */,
+				7D852B861DEC3401006E9EB3 /* CUDefine.h */,
+				7D852B981DEC3401006E9EB3 /* Info.plist */,
+			);
+			path = CUtil;
+			sourceTree = "<group>";
+		};
+		7D852B7D1DEC3401006E9EB3 /* CUCode */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B7E1DEC3401006E9EB3 /* CUCode.h */,
+				7D852B7F1DEC3401006E9EB3 /* CUCode.m */,
+			);
+			path = CUCode;
+			sourceTree = "<group>";
+		};
+		7D852B801DEC3401006E9EB3 /* CUColor */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B811DEC3401006E9EB3 /* CUColor.h */,
+				7D852B821DEC3401006E9EB3 /* CUColor.m */,
+			);
+			path = CUColor;
+			sourceTree = "<group>";
+		};
+		7D852B831DEC3401006E9EB3 /* CUDate */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B841DEC3401006E9EB3 /* CUDate.h */,
+				7D852B851DEC3401006E9EB3 /* CUDate.m */,
+			);
+			path = CUDate;
+			sourceTree = "<group>";
+		};
+		7D852B871DEC3401006E9EB3 /* CUFile */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B881DEC3401006E9EB3 /* CUFile.h */,
+				7D852B891DEC3401006E9EB3 /* CUFile.m */,
+			);
+			path = CUFile;
+			sourceTree = "<group>";
+		};
+		7D852B8A1DEC3401006E9EB3 /* CUStorage */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B8B1DEC3401006E9EB3 /* CUStorage.h */,
+				7D852B8C1DEC3401006E9EB3 /* CUStorage.m */,
+			);
+			path = CUStorage;
+			sourceTree = "<group>";
+		};
+		7D852B8D1DEC3401006E9EB3 /* CUString */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B8E1DEC3401006E9EB3 /* CUConfig.h */,
+				7D852B8F1DEC3401006E9EB3 /* CUConfig.m */,
+				7D852B901DEC3401006E9EB3 /* CUJSON.h */,
+				7D852B911DEC3401006E9EB3 /* CUJSON.m */,
+			);
+			path = CUString;
+			sourceTree = "<group>";
+		};
+		7D852B931DEC3401006E9EB3 /* CUView */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B941DEC3401006E9EB3 /* CULabel.h */,
+				7D852B951DEC3401006E9EB3 /* CULabel.m */,
+				7D852B961DEC3401006E9EB3 /* CUTipsView.h */,
+				7D852B971DEC3401006E9EB3 /* CUTipsView.m */,
+			);
+			path = CUView;
+			sourceTree = "<group>";
+		};
+		7DE156941C917A68002611D2 = {
+			isa = PBXGroup;
+			children = (
+				7D852B7C1DEC3401006E9EB3 /* CUtil */,
+				7D852B5A1DEC314A006E9EB3 /* CUtilTests */,
+				7DE1569E1C917A69002611D2 /* Products */,
+				7DFC3F551DDF074800E90E28 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7DE1569E1C917A69002611D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D852B4E1DEC314A006E9EB3 /* CUtil.framework */,
+				7D852B561DEC314A006E9EB3 /* CUtilTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DFC3F551DDF074800E90E28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC3F581DDF074E00E90E28 /* UIKit.framework */,
+				7DFC3F561DDF074800E90E28 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7D852B4B1DEC314A006E9EB3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D852BAB1DEC3401006E9EB3 /* CUTipsView.h in Headers */,
+				7D852BA81DEC3401006E9EB3 /* CUtil.h in Headers */,
+				7D852BA61DEC3401006E9EB3 /* CUJSON.h in Headers */,
+				7D852BA21DEC3401006E9EB3 /* CUStorage.h in Headers */,
+				7D852BA91DEC3401006E9EB3 /* CULabel.h in Headers */,
+				7D852B9B1DEC3401006E9EB3 /* CUColor.h in Headers */,
+				7D852BA41DEC3401006E9EB3 /* CUConfig.h in Headers */,
+				7D852B9D1DEC3401006E9EB3 /* CUDate.h in Headers */,
+				7D852BA01DEC3401006E9EB3 /* CUFile.h in Headers */,
+				7D852B991DEC3401006E9EB3 /* CUCode.h in Headers */,
+				7D852B9F1DEC3401006E9EB3 /* CUDefine.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7D852B4D1DEC314A006E9EB3 /* CUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D852B631DEC314A006E9EB3 /* Build configuration list for PBXNativeTarget "CUtil" */;
+			buildPhases = (
+				7D852B491DEC314A006E9EB3 /* Sources */,
+				7D852B4A1DEC314A006E9EB3 /* Frameworks */,
+				7D852B4B1DEC314A006E9EB3 /* Headers */,
+				7D852B4C1DEC314A006E9EB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CUtil;
+			productName = CUtil;
+			productReference = 7D852B4E1DEC314A006E9EB3 /* CUtil.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7D852B551DEC314A006E9EB3 /* CUtilTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D852B641DEC314A006E9EB3 /* Build configuration list for PBXNativeTarget "CUtilTests" */;
+			buildPhases = (
+				7D852B521DEC314A006E9EB3 /* Sources */,
+				7D852B531DEC314A006E9EB3 /* Frameworks */,
+				7D852B541DEC314A006E9EB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D852B591DEC314A006E9EB3 /* PBXTargetDependency */,
+			);
+			name = CUtilTests;
+			productName = CUtilTests;
+			productReference = 7D852B561DEC314A006E9EB3 /* CUtilTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DE156951C917A68002611D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CU;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Acttos.org;
+				TargetAttributes = {
+					7D852B4D1DEC314A006E9EB3 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = AXTCK4AA86;
+						ProvisioningStyle = Automatic;
+					};
+					7D852B551DEC314A006E9EB3 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = AXTCK4AA86;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7DE156981C917A68002611D2 /* Build configuration list for PBXProject "CUtil" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DE156941C917A68002611D2;
+			productRefGroup = 7DE1569E1C917A69002611D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D852B4D1DEC314A006E9EB3 /* CUtil */,
+				7D852B551DEC314A006E9EB3 /* CUtilTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D852B4C1DEC314A006E9EB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D852BAD1DEC3401006E9EB3 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D852B541DEC314A006E9EB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D852B491DEC314A006E9EB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D852BA71DEC3401006E9EB3 /* CUJSON.m in Sources */,
+				7D852BA31DEC3401006E9EB3 /* CUStorage.m in Sources */,
+				7D852B9A1DEC3401006E9EB3 /* CUCode.m in Sources */,
+				7D852B9C1DEC3401006E9EB3 /* CUColor.m in Sources */,
+				7D852BAA1DEC3401006E9EB3 /* CULabel.m in Sources */,
+				7D852BA51DEC3401006E9EB3 /* CUConfig.m in Sources */,
+				7D852B9E1DEC3401006E9EB3 /* CUDate.m in Sources */,
+				7D852BA11DEC3401006E9EB3 /* CUFile.m in Sources */,
+				7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D852B521DEC314A006E9EB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D852B5C1DEC314A006E9EB3 /* CUtilTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D852B591DEC314A006E9EB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D852B4D1DEC314A006E9EB3 /* CUtil */;
+			targetProxy = 7D852B581DEC314A006E9EB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7D852B5F1DEC314A006E9EB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = AXTCK4AA86;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CUtil/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.CUtil;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7D852B601DEC314A006E9EB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = AXTCK4AA86;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CUtil/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.CUtil;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7D852B611DEC314A006E9EB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = AXTCK4AA86;
+				INFOPLIST_FILE = CUtilTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.CUtilTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7D852B621DEC314A006E9EB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = AXTCK4AA86;
+				INFOPLIST_FILE = CUtilTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.CUtilTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7DE156A41C917A69002611D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "include/$(PROJECT_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7DE156A51C917A69002611D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "include/$(PROJECT_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D852B631DEC314A006E9EB3 /* Build configuration list for PBXNativeTarget "CUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D852B5F1DEC314A006E9EB3 /* Debug */,
+				7D852B601DEC314A006E9EB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7D852B641DEC314A006E9EB3 /* Build configuration list for PBXNativeTarget "CUtilTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D852B611DEC314A006E9EB3 /* Debug */,
+				7D852B621DEC314A006E9EB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7DE156981C917A68002611D2 /* Build configuration list for PBXProject "CUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DE156A41C917A69002611D2 /* Debug */,
+				7DE156A51C917A69002611D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DE156951C917A68002611D2 /* Project object */;
+}

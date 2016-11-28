@@ -1,20 +1,18 @@
 //
-//  CommonUtilities_Test.m
-//  CommonUtilities-Test
+//  CUtilTests.m
+//  CUtilTests
 //
-//  Created by Acttos on 25/11/2016.
+//  Created by Acttos on 28/11/2016.
 //  Copyright © 2016 Acttos.org. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-#import "CommonUtilities.h"
-
-@interface CommonUtilities_Test : XCTestCase
+@interface CUtilTests : XCTestCase
 
 @end
 
-@implementation CommonUtilities_Test
+@implementation CUtilTests
 
 - (void)setUp {
     [super setUp];
@@ -33,10 +31,10 @@
     Logger(@"%@",identifier);
     XCTAssertNotNil(identifier);
     
-//    [CUCode saveInKeychainWithIdentifier:identifier];
-//    NSString *loadedIdeitifier = [CUCode loadIdentifierFromKeychain];
+    //    [CUCode saveInKeychainWithIdentifier:identifier];
+    //    NSString *loadedIdeitifier = [CUCode loadIdentifierFromKeychain];
     
-//    XCTAssertEqual(identifier, loadedIdeitifier, @"YES, They are equal");
+    //    XCTAssertEqual(identifier, loadedIdeitifier, @"YES, They are equal");
 }
 
 - (void)testExample {
@@ -53,5 +51,4 @@
         // 需要测试性能的代码
     }];
 }
-
 @end

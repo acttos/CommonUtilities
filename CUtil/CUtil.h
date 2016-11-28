@@ -1,6 +1,6 @@
 //
-//  CommonUtilities.h
-//  CommonUtilities
+//  CUtil.h
+//  CUtil
 //
 //  Created by Acttos on 21/11/2016.
 //  Copyright © 2016 Actto. All rights reserved.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef _CommonUtilities_H_
-    #define _CommonUtilities_H_
+#ifndef _CUtil_H_
+    #define _CUtil_H_
 
     #import "CUCode.h"
     #import "CUColor.h"
