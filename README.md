@@ -30,7 +30,7 @@ pod 'CUtil', '~> 0.0.9'
 
 
 ```
-#import "CUtil.h"
+#import <CUtil/CUtil.h>
 ```
 
 
