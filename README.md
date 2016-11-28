@@ -20,7 +20,8 @@ pod 'CUtil'
 pod 'CUtil', '~> x.x.x'
 ```
 
-CUtil在CocoaPods中的版本请参见：[CocoaPods-CUtil](https://cocoapods.org/pods/CUtil)。
+CUtil在CocoaPods中的版本请参见：[CocoaPods-CUtil](https://cocoapods.org/pods/CUtil){:target="_blank"}。
+
 然后在需要使用到CUtil的地方添加引入Module：
 
 ```
@@ -422,7 +423,7 @@ CUtil在CocoaPods中的版本请参见：[CocoaPods-CUtil](https://cocoapods.org
 
 ## 开源协议
 
-[ [CUtil] ](https://github.com/majinshou/CommonUtilities) 基于 [ [The MIT License(MIT)] ](https://mit-license.org/) 协议开源。
+[ [CUtil] ](https://github.com/acttos/CommonUtilities){:target="_blank"} 基于 [ [The MIT License(MIT)] ](https://mit-license.org/) 协议开源。
 <br/>
 <br/>
 
