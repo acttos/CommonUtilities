@@ -1,12 +1,12 @@
 ## 介绍
 
-CommonUtilities是一个日常的、适用于iOS开发的、通用的、工具类的Framework，采用Objective-C编写。
+CUtil是一个日常的、适用于iOS开发的、通用的、工具类的Framework，采用Objective-C编写。
 所有代码来源并总结于平时，会不定期更新，欢迎[提出意见和建议](mailto:acttosma@gmail.com)。
 
 ## 使用方法
 
 #### 使用CocoaPods：
-CommonUtilities已经支持通过Cocoapods进行安装：
+CUtil已经支持通过Cocoapods进行安装：
 
 在工程的Podfile中添加：
 
@@ -19,18 +19,18 @@ pod 'CUtil'
 ```
 pod 'CUtil', '~> 0.0.9'
 ```
-然后在需要使用到CommonUtilities的地方添加引入Module：
+然后在需要使用到CUtil的地方添加引入Module：
 
 ```
 @import CUtil;
 ```
 
 #### 未使用CocoaPods:
-如果工程尚未支持CocoaPods，则需要将CommonUtilities下的所有文件拖拽到项目的frameworks下，并添加到Xcode的groups中。在需要使用CommonUtilities的文件中引入：
+如果工程尚未支持CocoaPods，则需要将CUtil下的所有文件拖拽到项目的frameworks下，并添加到Xcode的groups中。在需要使用CUtil的文件中引入：
 
 
 ```
-#import "CommonUtilities.h"
+#import "CUtil.h"
 ```
 
 
@@ -412,7 +412,7 @@ pod 'CUtil', '~> 0.0.9'
 
 ## 开源协议
 
-[ [CommonUtilities] ](https://github.com/majinshou/CommonUtilities) 基于 [ [The MIT License(MIT)] ](https://mit-license.org/) 协议开源。
+[ [CUtil] ](https://github.com/majinshou/CommonUtilities) 基于 [ [The MIT License(MIT)] ](https://mit-license.org/) 协议开源。
 <br/>
 <br/>
 
