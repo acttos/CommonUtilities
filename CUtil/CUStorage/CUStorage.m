@@ -12,6 +12,7 @@
 @implementation CUStorage
 
 + (void)storeInKeychainWithKey:(NSString *)key data:(id)data {
+#ifndef TARGET_IPHONE_SIMULATOR
     //Get search dictionary
     NSMutableDictionary *keychainQuery = [self getKeychainWithKey:key];
     //Delete old item before add new item
@@ -20,18 +21,27 @@
     [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:data] forKey:(__bridge id)kSecValueData];
     //Add item to keychain with the search dictionary
     SecItemAdd((__bridge CFDictionaryRef)keychainQuery, NULL);
+#else
+    Logger(@"Methods associated with Keychain only work on real devices.");
+#endif
 }
 
 + (NSMutableDictionary *)getKeychainWithKey:(NSString *)key {
+#ifndef TARGET_IPHONE_SIMULATOR
     return [NSMutableDictionary dictionaryWithObjectsAndKeys:
             (__bridge id)kSecClassGenericPassword,(__bridge id)kSecClass,
             key, (__bridge id)kSecAttrService,
             key, (__bridge id)kSecAttrAccount,
             (__bridge id)kSecAttrAccessibleAfterFirstUnlock,(__bridge id)kSecAttrAccessible,
             nil];
+#else
+    Logger(@"Methods associated with Keychain only work on real devices.");
+    return nil;
+#endif
 }
 
 + (id)loadFromKeychainWithKey:(NSString *)key {
+#ifndef TARGET_IPHONE_SIMULATOR
     id ret = nil;
     NSMutableDictionary *keychainQuery = [self getKeychainWithKey:key];
     
@@ -53,6 +63,10 @@
     }
     
     return ret;
+#else
+    Logger(@"Methods associated with Keychain only work on real devices.");
+    return nil;
+#endif
 }
 
 
