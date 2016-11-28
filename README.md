@@ -17,8 +17,10 @@ pod 'CUtil'
 或者指定版本号，不指定版本号会默认安装最新版本
 
 ```
-pod 'CUtil', '~> 0.0.9'
+pod 'CUtil', '~> x.x.x'
 ```
+
+CUtil在CocoaPods中的版本请参见：[CocoaPods-CUtil](https://cocoapods.org/pods/CUtil)。
 然后在需要使用到CUtil的地方添加引入Module：
 
 ```
