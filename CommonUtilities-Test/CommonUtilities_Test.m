@@ -30,8 +30,13 @@
 
 - (void)testCUCode {
     NSString *identifier = [CUCode uniqueIdentifier];
-    
+    Logger(@"%@",identifier);
     XCTAssertNotNil(identifier);
+    
+//    [CUCode saveInKeychainWithIdentifier:identifier];
+//    NSString *loadedIdeitifier = [CUCode loadIdentifierFromKeychain];
+    
+//    XCTAssertEqual(identifier, loadedIdeitifier, @"YES, They are equal");
 }
 
 - (void)testExample {

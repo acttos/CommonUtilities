@@ -41,7 +41,7 @@
     NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
     [dateFormater setDateFormat:format];
     
-    return [dateFormater stringFromDate:[NSDate date]];
+    return [dateFormater stringFromDate:date];
 }
 
 @end
