@@ -544,6 +544,7 @@
 				7D852B601DEC314A006E9EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D852B641DEC314A006E9EB3 /* Build configuration list for PBXNativeTarget "CUtilTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +553,7 @@
 				7D852B621DEC314A006E9EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DE156981C917A68002611D2 /* Build configuration list for PBXProject "CUtil" */ = {
 			isa = XCConfigurationList;

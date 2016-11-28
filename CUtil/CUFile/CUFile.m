@@ -29,10 +29,14 @@
         return;
     }
     
-    NSURL *url = [NSURL URLWithString:path];
-    NSURL *parentPath = [url URLByDeletingPathExtension];
+    Logger(@"path:%@", path);
     
-    if (![[NSFileManager defaultManager] fileExistsAtPath:parentPath.path isDirectory:nil]) {
+    NSURL *url = [NSURL URLWithString:path];
+    NSURL *parentPath = [url URLByDeletingLastPathComponent];
+    
+    Logger(@"parentPath:%@", parentPath.path);
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:parentPath.path]) {
         if ([[NSFileManager defaultManager] createDirectoryAtPath:parentPath.path withIntermediateDirectories:YES attributes:nil error:nil]) {
             [data writeToFile:path atomically:YES];
         } else {
