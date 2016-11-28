@@ -5,6 +5,7 @@ CommonUtilities是一个日常的、适用于iOS开发的、通用的、工具�
 
 ## 使用方法
 
+#### 使用CocoaPods：
 CommonUtilities已经支持通过Cocoapods进行安装：
 
 在工程的Podfile中添加：
@@ -24,7 +25,9 @@ pod 'CUtil', '~> 0.0.9'
 @import CUtil;
 ```
 
-如果工程并未支持Pod，可以手动引用头文件：
+#### 未使用CocoaPods:
+如果工程尚未支持CocoaPods，则需要将CommonUtilities下的所有文件拖拽到项目的frameworks下，并添加到Xcode的groups中。在需要使用CommonUtilities的文件中引入：
+
 
 ```
 #import "CommonUtilities.h"
@@ -39,7 +42,7 @@ pod 'CUtil', '~> 0.0.9'
 
 ```
 /**
- *  将自定义service的数据写入系统Keychain中，避免用户卸载软件后，data发生变化，用于IMEI或者UserId
+ *  将自定义data的数据写入系统Keychain中，data的值不随app的卸载、重装而发生变化，常用于存储固定的UserId。
  *
  *  @param key  用来存储数据的Key
  *  @param data 需要存储的数据
@@ -48,7 +51,7 @@ pod 'CUtil', '~> 0.0.9'
 + (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
 
 /**
- *  根据service名称获取写入系统Keychain的数据
+ *  根据key名称获取写入系统Keychain的数据
  *
  *  @param key 获取数据对应的Key
  *
