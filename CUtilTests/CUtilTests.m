@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "CUtil.h"
+
 @interface CUtilTests : XCTestCase
 
 @end
