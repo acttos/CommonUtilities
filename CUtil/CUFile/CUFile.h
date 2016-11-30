@@ -21,7 +21,7 @@
  在指定的path目录存储data数据
 
  @param data 要存储的数据
- @param path 存储数据的具体路径
+ @param path 存储数据的具体路径，注意这个路径是包含文件名的路径，不是存放文件的目录
  */
 + (void)saveFile:(NSData *)data atPath:(NSString *)path;
 
