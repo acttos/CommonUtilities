@@ -18,6 +18,31 @@
     return error ? nil : documentsDirectory;
 }
 
++ (BOOL)createDirectoryAtPath:(NSString *)path {
+    if (path == nil || [path isEqualToString:@""]) {
+        Logger(@"The param 'path' can NOT be nil or empty.");
+        return NO;
+    }
+    
+    Logger(@"path:%@", path);
+    
+    BOOL isDirectory = YES;
+    
+    NSError *error;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDirectory]) {
+        Logger(@"Directory exists at: %@", path);
+        return YES;
+    }
+    
+    if ([[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error]) {
+        Logger(@"Directory created at:%@", path);
+        return YES;
+    }
+    
+    return NO;
+}
+
 + (void)saveFile:(NSData *)data atPath:(NSString *)path {
     if (data == nil) {
         Logger(@"The param 'data' to be saved can NOT be nil");
@@ -44,6 +69,38 @@
         }
     } else {
         [data writeToFile:path atomically:YES];
+    }
+}
+
++ (void)saveFile:(NSData *)data atPath:(NSString *)path withName:(NSString *)fileName {
+    if (data == nil) {
+        Logger(@"The param 'data' to be saved can NOT be nil");
+        return;
+    }
+    
+    if (path == nil || [path isEqualToString:@""]) {
+        Logger(@"The param 'path' can NOT be nil or empty.");
+        return;
+    }
+    
+    NSString *parentPath = path;
+    NSString *absolutePath = path;
+    
+    if (fileName == nil || [fileName isEqualToString:@""]) {
+        Logger(@"The param 'fileName' is nil or empty, we use the param 'path' be part of the file name.");
+        parentPath = [[[NSURL URLWithString:path] URLByDeletingLastPathComponent] path];
+    } else {
+        absolutePath = [NSString stringWithFormat:@"%@/%@", path, fileName];
+    }
+    
+    BOOL directoryCreated = [CUFile createDirectoryAtPath:parentPath];
+    
+    if (directoryCreated) {
+        //创建成功
+        [CUFile saveFile:data atPath:absolutePath];
+    } else {
+        //创建失败
+        Logger(@"We can NOT create directory for this file.");
     }
 }
 
