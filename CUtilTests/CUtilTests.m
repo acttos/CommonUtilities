@@ -39,6 +39,53 @@
     //    XCTAssertEqual(identifier, loadedIdeitifier, @"YES, They are equal");
 }
 
+- (void)testCUColor {
+    UIColor *stringColor = [CUColor colorWithHexString:@"#00FF00"];
+    XCTAssertTrue(CGColorEqualToColor(stringColor.CGColor, [UIColor greenColor].CGColor));
+    
+    UIColor *stringColorWithAlpha = [CUColor colorWithHexString:@"#00FF00" alpha:1];
+    XCTAssertTrue(CGColorEqualToColor(stringColorWithAlpha.CGColor, [UIColor greenColor].CGColor));
+    
+    UIColor *hexColor = [CUColor colorWithHex:0x00FF00];
+    XCTAssertTrue(CGColorEqualToColor(hexColor.CGColor, [UIColor greenColor].CGColor));
+    
+    UIColor *hexColorWithAlpha = [CUColor colorWithHex:0x00FF00 alpha:1];
+    XCTAssertTrue(CGColorEqualToColor(hexColorWithAlpha.CGColor, [UIColor greenColor].CGColor));
+}
+
+- (void)testCUDate {
+    long long timestamp = [CUDate generateMillisecondTime];
+    XCTAssertEqual((long)[NSDate dateWithTimeIntervalSince1970:timestamp].timeIntervalSince1970 * 1000, (long)[CUDate generateDateWithMilliseconds:timestamp].timeIntervalSince1970 * 1000);
+    
+    NSDate *now = [NSDate date];
+    XCTAssertEqual([CUDate generateMillisecondTimeWithDate:now], (long long)([now timeIntervalSince1970] * 1000));
+    
+    NSString *nilDateString = [CUDate stringOfDate:now withFormat:nil];
+    XCTAssertTrue([nilDateString isEqualToString:[CUDate stringOfDate:now withFormat:@"yyyy-MM-dd HH:mm:ss"]]);
+}
+
+- (void)testCUFile {
+    NSString *docPath = [CUFile getDocumentsDirectory].path;
+    NSLog(@"%@", docPath);
+    XCTAssertTrue([docPath rangeOfString:@"data/Documents"].length == NSMakeRange(docPath.length - @"data/Documents".length, @"data/Documents".length).length);
+    XCTAssertTrue([docPath rangeOfString:@"data/Documents"].location == NSMakeRange(docPath.length - @"data/Documents".length, @"data/Documents".length).location);
+    
+    BOOL result = [CUFile createDirectoryAtPath:[NSString stringWithFormat:@"%@/majinshou/videos/", docPath]];
+    XCTAssertTrue(result);
+}
+
+- (void)testCUStorage {
+    
+}
+
+- (void)testCUConfig {
+    
+}
+
+- (void)testCUJSON {
+    
+}
+
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
