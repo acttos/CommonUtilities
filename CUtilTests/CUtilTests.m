@@ -72,6 +72,12 @@
     
     BOOL result = [CUFile createDirectoryAtPath:[NSString stringWithFormat:@"%@/majinshou/videos/", docPath]];
     XCTAssertTrue(result);
+    
+    result = [CUFile saveFile:[NSData dataWithBytes:[docPath UTF8String] length:docPath.length] atPath:[NSString stringWithFormat:@"%@/stringBytes.txts", docPath]];
+    XCTAssertTrue(result);
+    
+    result = [CUFile saveFile:[NSData dataWithBytes:[docPath UTF8String] length:docPath.length] atPath:docPath withName:@"anotherStringBytes.txtddd"];
+    XCTAssertTrue(result);
 }
 
 - (void)testCUStorage {

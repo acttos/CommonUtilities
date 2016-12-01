@@ -38,7 +38,7 @@
 + (BOOL)saveFile:(NSData *)data atPath:(NSString *)path;
 
 /**
- 在制定的path目录，按照fileName存储数据data。
+ 在指定的path目录，按照fileName存储数据data。
 
  @param data 要存储的数据
  @param path 存储数据的具体目录，此处问文件存储的具体目录
