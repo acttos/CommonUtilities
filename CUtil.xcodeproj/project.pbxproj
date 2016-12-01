@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D3D53651DF018DF00E2F346 /* CUtilUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D53641DF018DF00E2F346 /* CUtilUITests.m */; };
 		7D852B571DEC314A006E9EB3 /* CUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D852B4E1DEC314A006E9EB3 /* CUtil.framework */; };
 		7D852B5C1DEC314A006E9EB3 /* CUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */; };
 		7D852B991DEC3401006E9EB3 /* CUCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B7E1DEC3401006E9EB3 /* CUCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D3D53621DF018DF00E2F346 /* CUtilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUtilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3D53641DF018DF00E2F346 /* CUtilUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUtilUITests.m; sourceTree = "<group>"; };
+		7D3D53661DF018DF00E2F346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D852B4E1DEC314A006E9EB3 /* CUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D852B561DEC314A006E9EB3 /* CUtilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUtilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUtilTests.m; sourceTree = "<group>"; };
@@ -73,6 +77,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7D3D535F1DF018DF00E2F346 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D852B4A1DEC314A006E9EB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D3D53631DF018DF00E2F346 /* CUtilUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7D3D53641DF018DF00E2F346 /* CUtilUITests.m */,
+				7D3D53661DF018DF00E2F346 /* Info.plist */,
+			);
+			path = CUtilUITests;
+			sourceTree = "<group>";
+		};
 		7D852B5A1DEC314A006E9EB3 /* CUtilTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +209,7 @@
 			children = (
 				7D852B7C1DEC3401006E9EB3 /* CUtil */,
 				7D852B5A1DEC314A006E9EB3 /* CUtilTests */,
+				7D3D53631DF018DF00E2F346 /* CUtilUITests */,
 				7DE1569E1C917A69002611D2 /* Products */,
 				7DFC3F551DDF074800E90E28 /* Frameworks */,
 			);
@@ -199,6 +220,7 @@
 			children = (
 				7D852B4E1DEC314A006E9EB3 /* CUtil.framework */,
 				7D852B561DEC314A006E9EB3 /* CUtilTests.xctest */,
+				7D3D53621DF018DF00E2F346 /* CUtilUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,6 +258,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7D3D53611DF018DF00E2F346 /* CUtilUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D3D53671DF018DF00E2F346 /* Build configuration list for PBXNativeTarget "CUtilUITests" */;
+			buildPhases = (
+				7D3D535E1DF018DF00E2F346 /* Sources */,
+				7D3D535F1DF018DF00E2F346 /* Frameworks */,
+				7D3D53601DF018DF00E2F346 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CUtilUITests;
+			productName = CUtilUITests;
+			productReference = 7D3D53621DF018DF00E2F346 /* CUtilUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7D852B4D1DEC314A006E9EB3 /* CUtil */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D852B631DEC314A006E9EB3 /* Build configuration list for PBXNativeTarget "CUtil" */;
@@ -282,6 +321,11 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Acttos.org;
 				TargetAttributes = {
+					7D3D53611DF018DF00E2F346 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = AXTCK4AA86;
+						ProvisioningStyle = Automatic;
+					};
 					7D852B4D1DEC314A006E9EB3 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = AXTCK4AA86;
@@ -308,11 +352,19 @@
 			targets = (
 				7D852B4D1DEC314A006E9EB3 /* CUtil */,
 				7D852B551DEC314A006E9EB3 /* CUtilTests */,
+				7D3D53611DF018DF00E2F346 /* CUtilUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7D3D53601DF018DF00E2F346 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D852B4C1DEC314A006E9EB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,6 +383,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7D3D535E1DF018DF00E2F346 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D3D53651DF018DF00E2F346 /* CUtilUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D852B491DEC314A006E9EB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,6 +426,36 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		7D3D53681DF018DF00E2F346 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = AXTCK4AA86;
+				INFOPLIST_FILE = CUtilUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.CUtilUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7D3D53691DF018DF00E2F346 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = AXTCK4AA86;
+				INFOPLIST_FILE = CUtilUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.CUtilUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		7D852B5F1DEC314A006E9EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -381,7 +471,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CUtil/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.CUtil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,7 +497,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CUtil/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.CUtil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -537,6 +627,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7D3D53671DF018DF00E2F346 /* Build configuration list for PBXNativeTarget "CUtilUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D3D53681DF018DF00E2F346 /* Debug */,
+				7D3D53691DF018DF00E2F346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7D852B631DEC314A006E9EB3 /* Build configuration list for PBXNativeTarget "CUtil" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
