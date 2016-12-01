@@ -22,7 +22,7 @@
 }
 
 +(NSDate *)generateDateWithMilliseconds:(long long)milliseconds {
-    return [NSDate dateWithTimeIntervalSince1970:milliseconds / 1000];
+    return [NSDate dateWithTimeIntervalSince1970:milliseconds];
 }
 
 + (NSString *) stringOfDate:(NSDate *)date withFormat:(NSString *)format {
