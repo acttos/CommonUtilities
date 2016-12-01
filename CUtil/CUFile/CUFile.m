@@ -43,17 +43,23 @@
     return NO;
 }
 
-+ (void)saveFile:(NSData *)data atPath:(NSString *)path {
++ (BOOL)saveFile:(NSData *)data atPath:(NSString *)path {
     if (data == nil) {
         Logger(@"The param 'data' to be saved can NOT be nil");
-        return;
+        return NO;
     }
     
     if (path == nil || [path isEqualToString:@""]) {
         Logger(@"The param 'path' can NOT be nil or empty.");
-        return;
+        return NO;
     }
     
+    if ([path hasSuffix:@"/"]) {
+        Logger(@"The param 'path' can NOT end with '/'.");
+        return NO;
+    }
+    
+    BOOL result = NO;
     Logger(@"path:%@", path);
     
     NSURL *url = [NSURL URLWithString:path];
@@ -64,24 +70,40 @@
     if (![[NSFileManager defaultManager] fileExistsAtPath:parentPath.path]) {
         if ([[NSFileManager defaultManager] createDirectoryAtPath:parentPath.path withIntermediateDirectories:YES attributes:nil error:nil]) {
             [data writeToFile:path atomically:YES];
+            result = YES;
         } else {
             Logger(@"We can NOT write this data:%@ to the path:%@", data, path);
         }
     } else {
         [data writeToFile:path atomically:YES];
+        result = YES;
     }
+    
+    return result;
 }
 
-+ (void)saveFile:(NSData *)data atPath:(NSString *)path withName:(NSString *)fileName {
++ (BOOL)saveFile:(NSData *)data atPath:(NSString *)path withName:(NSString *)fileName {
     if (data == nil) {
         Logger(@"The param 'data' to be saved can NOT be nil");
-        return;
+        return NO;
     }
     
     if (path == nil || [path isEqualToString:@""]) {
         Logger(@"The param 'path' can NOT be nil or empty.");
-        return;
+        return NO;
     }
+    
+    if ([path hasSuffix:@"/"]) {
+        Logger(@"The param 'path' can NOT end with '/'.");
+        return NO;
+    }
+    
+    if ([fileName hasSuffix:@"/"]) {
+        Logger(@"The param 'fileName' can NOT end with '/'.");
+        return NO;
+    }
+    
+    BOOL result = NO;
     
     NSString *parentPath = path;
     NSString *absolutePath = path;
@@ -97,11 +119,13 @@
     
     if (directoryCreated) {
         //创建成功
-        [CUFile saveFile:data atPath:absolutePath];
+        result = [CUFile saveFile:data atPath:absolutePath];
     } else {
         //创建失败
         Logger(@"We can NOT create directory for this file.");
     }
+    
+    return result;
 }
 
 @end
