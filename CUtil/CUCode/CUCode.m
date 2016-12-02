@@ -111,7 +111,11 @@
         return nil;
     }
     
+    NSString *path = [url absoluteString];
+    url = [path hasPrefix:@"file://"] ? url : [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", path]];
+    
     NSData *data = [NSData dataWithContentsOfURL:url];
+    
     return [CUCode MD5CodeWithData:data];
 }
 
@@ -170,7 +174,11 @@
         return nil;
     }
     
+    NSString *path = [url absoluteString];
+    url = [path hasPrefix:@"file://"] ? url : [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", path]];
+    
     NSData *data = [NSData dataWithContentsOfURL:url];
+
     return [CUCode SHA1CodeWithData:data];
 }
 

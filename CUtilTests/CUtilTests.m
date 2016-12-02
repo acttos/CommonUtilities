@@ -30,13 +30,31 @@
 
 - (void)testCUCode {
     NSString *identifier = [CUCode uniqueIdentifier];
-    Logger(@"%@",identifier);
     XCTAssertNotNil(identifier);
     
-    //    [CUCode saveInKeychainWithIdentifier:identifier];
-    //    NSString *loadedIdeitifier = [CUCode loadIdentifierFromKeychain];
+//    [CUCode saveInKeychainWithIdentifier:identifier];
+//    XCTAssertTrue([identifier isEqualToString:[CUCode loadIdentifierFromKeychain]]);
     
-    //    XCTAssertEqual(identifier, loadedIdeitifier, @"YES, They are equal");
+    NSString *sourceString = @"HelloSourceStringWhichIsGoingToBeEncodedAsBASE64.";
+    XCTAssertTrue([@"abad2da070f76f70e3494bf0880d195a" isEqualToString:[CUCode MD5CodeWithString:sourceString]]);
+    XCTAssertTrue([@"b37faee2bce0691b66aceb391fa05644082e926e" isEqualToString:[CUCode SHA1CodeWithString:sourceString]]);
+    
+    NSString *encodedString = [CUCode BASE64EncodeWithString:sourceString];
+    XCTAssertTrue([@"SGVsbG9Tb3VyY2VTdHJpbmdXaGljaElzR29pbmdUb0JlRW5jb2RlZEFzQkFTRTY0Lg==" isEqualToString:encodedString]);
+    
+    NSString *decodedString = [CUCode BASE64DecodeWithString:encodedString];
+    XCTAssertTrue([decodedString isEqualToString:sourceString]);
+    
+    NSString *path = @"/Volumes/Data/Documents/GitHub_Code/personal/iOS/CUtilDev/CUtilDemo/images/cut.png";
+    NSURL *url = [NSURL URLWithString:path];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithData:data]]);
+    XCTAssertTrue([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithData:data]]);
+    XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithFileAtPath:path]]);
+    XCTAssertTrue([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithFileAtPath:path]]);
+    XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithFileAtURL:url]]);
+    XCTAssertTrue([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithFileAtURL:url]]);
+    
 }
 
 - (void)testCUColor {
