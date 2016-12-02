@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CUtil"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "CUtil is a common utilities collection. It is designed as a tool-box for iOS development."
   s.author       = { "acttos" => "majinshou@gmail.com" }
   s.social_media_url = "https://twitter.com/hulu0319"
