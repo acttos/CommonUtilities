@@ -95,7 +95,7 @@
     
     if ([path hasSuffix:@"/"]) {
         Logger(@"The param 'path' can NOT end with '/'.");
-        return NO;
+        path = [path substringToIndex:path.length - 1];
     }
     
     if ([fileName hasSuffix:@"/"]) {
