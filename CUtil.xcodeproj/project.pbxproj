@@ -634,6 +634,7 @@
 				7D3D53691DF018DF00E2F346 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D852B631DEC314A006E9EB3 /* Build configuration list for PBXNativeTarget "CUtil" */ = {
 			isa = XCConfigurationList;

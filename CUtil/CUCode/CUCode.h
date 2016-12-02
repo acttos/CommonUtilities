@@ -13,12 +13,13 @@
 @interface CUCode : NSObject
 
 /**
- 生成一个全球唯一的Id ^_-，可结合
+ 生成一个全球唯一的Id ^_-。<br/>
+ 可结合本类中其它方法将此Id持久化，并保持不变。<br/>
+ 适应需要唯一确定用户身份的场景。
 
  @return 全球唯一的编号
  */
 + (NSString *)uniqueIdentifier;
-
 
 /**
  采用Keychain来保存唯一ID,如果之前有保存过，则覆盖旧值
@@ -27,7 +28,6 @@
  @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (void)saveInKeychainWithIdentifier:(NSString *)identifier;
-
 
 /**
  从Keychain中加载保存的唯一ID

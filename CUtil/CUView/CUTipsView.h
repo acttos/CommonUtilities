@@ -13,7 +13,6 @@
 
 @interface CUTipsView : NSObject
 
-
 /**
  已全屏幕的方式展现出一个带有转动菊花的Waiting视图
  
