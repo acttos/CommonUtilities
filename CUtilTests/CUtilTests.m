@@ -80,16 +80,34 @@
     XCTAssertTrue(result);
 }
 
-- (void)testCUStorage {
-    
-}
-
 - (void)testCUConfig {
+    NSString *lang = [CUConfig getDeviceLanguage];
+    XCTAssertTrue([lang isEqualToString:@"en"]);
     
+    NSString *langCode = [CUConfig getDeviceLanguageCode];
+    XCTAssertTrue([langCode isEqualToString:@"en"]);
+    
+    NSString *countryCode = [CUConfig getDeviceCountryCode];
+    XCTAssertTrue([countryCode isEqualToString:@"US"]);
+    
+    NSString *i18N = [CUConfig getLocalStringIni18N];
+    XCTAssertTrue([i18N isEqualToString:@"en_US"]);
+    
+    XCTAssertTrue(![CUConfig isChineseLang]);
+    XCTAssertTrue(![CUConfig isArabicLang]);
+    XCTAssertTrue(![CUConfig isFrenchLang]);
 }
 
 - (void)testCUJSON {
+    NSArray *array = @[@"A", @"B", @"C", @"D", @"E"];
+    XCTAssertNotNil([CUJSON JSONStringFromArray:array]);
     
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:4];
+    [dic setValue:@"Value1" forKey:@"key1"];
+    [dic setValue:[NSNumber numberWithInt:2] forKey:@"key2"];
+    [dic setValue:array forKey:@"key3"];
+    [dic setValue:@"Value4" forKey:@"key4"];
+    XCTAssertNotNil([CUJSON JSONStringFromDictionary:dic]);
 }
 
 - (void)testExample {

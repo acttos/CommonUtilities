@@ -7,6 +7,7 @@
 //
 
 #import "CUJSON.h"
+#import "CUDefine.h"
 
 @implementation CUJSON
 
@@ -28,6 +29,8 @@
     } else {
         JSONString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }
+    
+    Logger(@"%@", JSONString);
     
     return JSONString;
 }
