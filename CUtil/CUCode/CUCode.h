@@ -72,7 +72,7 @@
 /**
  根据给定的path对应的文件进行MD5摘要
 
- @param path 文件的path
+ @param path 文件的path，需要直接写具体路径，如："/home/user/photo.png"
  @return 文件的MD5摘要
  */
 + (NSString *) MD5CodeWithFileAtPath:(NSString *) path;
@@ -80,7 +80,7 @@
 /**
  根据给定的url对应的文件进行MD5摘要
  
- @param url 文件的url
+ @param url 文件的url，url的构建需要符合文件头scheme，如："file:///home/user/photo.png"
  @return 文件的MD5摘要
  */
 + (NSString *) MD5CodeWithFileAtURL:(NSURL *) url;
@@ -104,7 +104,7 @@
 /**
  根据给定的path对应的文件进行SHA1摘要
  
- @param path 文件的path
+ @param path 文件的path，需要直接写具体路径，如："/home/user/photo.png"
  @return 文件的SHA1摘要
  */
 + (NSString *) SHA1CodeWithFileAtPath:(NSString *) path;
@@ -112,7 +112,7 @@
 /**
  根据给定的url对应的文件进行SHA1摘要
  
- @param url 文件的url
+ @param url 文件的url，url的构建需要符合文件头scheme，如："file:///home/user/photo.png"
  @return 文件的SHA1摘要
  */
 + (NSString *) SHA1CodeWithFileAtURL:(NSURL *) url;

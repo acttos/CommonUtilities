@@ -32,6 +32,7 @@
     NSString *identifier = [CUCode uniqueIdentifier];
     XCTAssertNotNil(identifier);
     
+//    Codes with Keychain can NOT be tested here because we can only test logic on simulators which is not supporting Keychain.
 //    [CUCode saveInKeychainWithIdentifier:identifier];
 //    XCTAssertTrue([identifier isEqualToString:[CUCode loadIdentifierFromKeychain]]);
     
@@ -50,6 +51,16 @@
     NSData *data = [NSData dataWithContentsOfFile:path];
     XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithData:data]]);
     XCTAssertTrue([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithData:data]]);
+    XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithFileAtPath:path]]);
+    XCTAssertTrue([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithFileAtPath:path]]);
+    XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithFileAtURL:url]]);
+    XCTAssertTrue([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithFileAtURL:url]]);
+    
+    path = @"file:///Volumes/Data/Documents/GitHub_Code/personal/iOS/CUtilDev/CUtilDemo/images/cut.png";
+    url = [NSURL URLWithString:path];
+    data = [NSData dataWithContentsOfFile:path];
+    XCTAssertFalse([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithData:data]]);
+    XCTAssertFalse([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithData:data]]);
     XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithFileAtPath:path]]);
     XCTAssertTrue([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithFileAtPath:path]]);
     XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithFileAtURL:url]]);

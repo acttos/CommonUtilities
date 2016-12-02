@@ -101,8 +101,16 @@
         return nil;
     }
     
+    path = [path hasPrefix:@"file://"] ? [path substringFromIndex:7] : path;
+    
     NSData *data = [NSData dataWithContentsOfFile:path];
-    return [CUCode MD5CodeWithData:data];
+    
+    if (data) {
+        return [CUCode MD5CodeWithData:data];
+    } else {
+        Logger(@"The file at path:%@ can NOT be found.", path);
+        return nil;
+    }
 }
 
 + (NSString *) MD5CodeWithFileAtURL:(NSURL *) url {
@@ -116,7 +124,12 @@
     
     NSData *data = [NSData dataWithContentsOfURL:url];
     
-    return [CUCode MD5CodeWithData:data];
+    if (data) {
+        return [CUCode MD5CodeWithData:data];
+    } else {
+        Logger(@"The file at url:%@ can NOT be found.", path);
+        return nil;
+    }
 }
 
 + (NSString *) SHA1CodeWithString:(NSString *)sourceString {
@@ -163,9 +176,16 @@
         return nil;
     }
     
+    path = [path hasPrefix:@"file://"] ? [path substringFromIndex:7] : path;
+    
     NSData *data = [NSData dataWithContentsOfFile:path];
-    return [CUCode SHA1CodeWithData:data];
-
+    
+    if (data) {
+        return [CUCode SHA1CodeWithData:data];
+    } else {
+        Logger(@"The file at path:%@ can NOT be found.", path);
+        return nil;
+    }
 }
 
 + (NSString *) SHA1CodeWithFileAtURL:(NSURL *) url {
@@ -178,8 +198,13 @@
     url = [path hasPrefix:@"file://"] ? url : [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", path]];
     
     NSData *data = [NSData dataWithContentsOfURL:url];
-
-    return [CUCode SHA1CodeWithData:data];
+    
+    if (data) {
+        return [CUCode SHA1CodeWithData:data];
+    } else {
+        Logger(@"The file at url:%@ can NOT be found.", path);
+        return nil;
+    }
 }
 
 @end
