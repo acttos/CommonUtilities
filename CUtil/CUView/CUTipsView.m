@@ -1,9 +1,10 @@
 //
 //  CUTipsView.m
-//  CommonUtilities
+//  CUtil
 //
 //  Created by Acttos on 23/11/2016.
-//  Copyright © 2016 Acttos.org. All rights reserved.
+//  Sources https://github.com/acttos/CommonUtilities
+//  Copyright © 2016 Acttos.org. All codes follow MIT License.
 //
 
 #import "CUTipsView.h"

@@ -1,9 +1,10 @@
 //
 //  CUFile.h
-//  CommonUtilities
+//  CUtil
 //
 //  Created by Acttos on 3/10/16.
-//  Copyright © 2016 Acttos.org. All rights reserved.
+//  Sources https://github.com/acttos/CommonUtilities
+//  Copyright © 2016 Acttos.org. All codes are under MIT License
 //
 
 #import <Foundation/Foundation.h>

@@ -3,7 +3,8 @@
 //  CUtil
 //
 //  Created by Acttos on 21/11/2016.
-//  Copyright © 2016 Actto. All rights reserved.
+//  Sources https://github.com/acttos/CommonUtilities
+//  Copyright © 2016 Acttos.org. All codes follow MIT License.
 //
 
 #import <Foundation/Foundation.h>

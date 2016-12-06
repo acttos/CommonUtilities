@@ -1,9 +1,10 @@
 //
 //  CUStorage.m
-//  CommonUtilities
+//  CUtil
 //
 //  Created by Acttos on 3/10/16.
-//  Copyright © 2016 Acttos.org. All rights reserved.
+//  Sources https://github.com/acttos/CommonUtilities
+//  Copyright © 2016 Acttos.org. All codes follow MIT License.
 //
 
 #import "CUStorage.h"

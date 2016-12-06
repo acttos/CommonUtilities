@@ -1,9 +1,10 @@
 //
 //  CUCode.m
-//  CommonUtilities
+//  CUtil
 //
 //  Created by Acttos on 24/11/2016.
-//  Copyright © 2016 Acttos.org. All rights reserved.
+//  Sources https://github.com/acttos/CommonUtilities
+//  Copyright © 2016 Acttos.org. All codes follow MIT License.
 //
 
 #import "CUCode.h"

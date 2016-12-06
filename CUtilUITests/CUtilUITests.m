@@ -3,7 +3,8 @@
 //  CUtilUITests
 //
 //  Created by Acttos on 1/12/2016.
-//  Copyright © 2016 Acttos.org. All rights reserved.
+//  Sources https://github.com/acttos/CommonUtilities
+//  Copyright © 2016 Acttos.org. All codes follow MIT License.
 //
 
 #import <XCTest/XCTest.h>
