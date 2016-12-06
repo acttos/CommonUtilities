@@ -20,7 +20,7 @@ pod 'CUtil'
 pod 'CUtil', '~> x.x.x'
 ```
 
-CUtil在CocoaPods中的版本请参见：[CUtil on CocoaPods.org](https://cocoapods.org/pods/CUtil){:target="_blank"}。
+CUtil在CocoaPods中的版本请参见：[[CUtil on CocoaPods.org]](https://cocoapods.org/pods/CUtil){:target="_blank"}。
 
 然后在需要使用到CUtil的地方添加引入Module：
 
