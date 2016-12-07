@@ -99,7 +99,7 @@
             [waitingViewContainerView addSubview:messageLabel];
         }
         
-        [currentWindow addSubview:waitingViewContainerView];
+        [view addSubview:waitingViewContainerView];
     } else {
         [waitingViewContainerView removeFromSuperview];
         [CUTipsView showWaitingViewInView:view withTag:tag frame:_frame message:_message];
