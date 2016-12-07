@@ -145,4 +145,11 @@
     }
 }
 
++(CGRect)centeredFrameWithWidth:(float)width height:(float)_height {
+    CGRect screen = [UIScreen mainScreen].bounds;
+    CGRect result = CGRectMake((screen.size.width - width) / 2, (screen.size.height - _height) / 2, width, _height);
+    
+    return result;
+}
+
 @end

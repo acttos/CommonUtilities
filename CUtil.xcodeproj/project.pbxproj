@@ -31,6 +31,7 @@
 		7D852BAB1DEC3401006E9EB3 /* CUTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B961DEC3401006E9EB3 /* CUTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B971DEC3401006E9EB3 /* CUTipsView.m */; };
 		7D852BAD1DEC3401006E9EB3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D852B981DEC3401006E9EB3 /* Info.plist */; };
+		7DDE1D481DF6865B009C012D /* CUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDE1D471DF6865B009C012D /* CUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		7D852B961DEC3401006E9EB3 /* CUTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUTipsView.h; sourceTree = "<group>"; };
 		7D852B971DEC3401006E9EB3 /* CUTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUTipsView.m; sourceTree = "<group>"; };
 		7D852B981DEC3401006E9EB3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DDE1D471DF6865B009C012D /* CUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CUtil.swift; sourceTree = "<group>"; };
 		7DFC3F561DDF074800E90E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7DFC3F581DDF074E00E90E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 				7D852B921DEC3401006E9EB3 /* CUtil.h */,
 				7D852B861DEC3401006E9EB3 /* CUDefine.h */,
 				7D852B981DEC3401006E9EB3 /* Info.plist */,
+				7DDE1D471DF6865B009C012D /* CUtil.swift */,
 			);
 			path = CUtil;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 					7D852B4D1DEC314A006E9EB3 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = AXTCK4AA86;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					7D852B551DEC314A006E9EB3 = {
@@ -404,6 +408,7 @@
 				7D852B9E1DEC3401006E9EB3 /* CUDate.m in Sources */,
 				7D852BA11DEC3401006E9EB3 /* CUFile.m in Sources */,
 				7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */,
+				7DDE1D481DF6865B009C012D /* CUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -476,6 +482,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.cutil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -486,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -502,6 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.cutil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -511,6 +521,7 @@
 		7D852B611DEC314A006E9EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -526,6 +537,7 @@
 		7D852B621DEC314A006E9EB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
