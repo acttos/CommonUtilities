@@ -303,6 +303,7 @@ CUtil在CocoaPods中的版本请参见：[[CUtil on CocoaPods.org]](https://coco
 
  @param tag 视图对应的tag，方便隐藏时使用
  @param _message Waiting视图中显示的文字消息
+ @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
  */
 +(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message;
 
@@ -312,6 +313,7 @@ CUtil在CocoaPods中的版本请参见：[[CUtil on CocoaPods.org]](https://coco
  @param tag 视图对应的tag，方便隐藏时使用
  @param _frame 视图整体的大小和位置参数
  @param _message Waiting视图中显示的文字消息
+ @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
  */
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
 
@@ -331,6 +333,16 @@ CUtil在CocoaPods中的版本请参见：[[CUtil on CocoaPods.org]](https://coco
  @param tag 视图对应的tag
  */
 +(void)hideViewInWindowWithTag:(NSUInteger)tag;
+
+/**
+ 根据宽和高生成一个在屏幕（Screen）上下左右居中的CGRect结构体
+
+ @param width 宽数值
+ @param _height 高数值
+ @return 全居中的frame数值
+ */
++(CGRect)centeredFrameWithWidth:(float)width height:(float)_height;
+
 ```
 
 ### 编解码相关

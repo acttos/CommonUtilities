@@ -19,7 +19,7 @@
  
  @param tag 视图对应的tag，方便隐藏时使用
  @param _message Waiting视图中显示的文字消息
- @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindo.
+ @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
  */
 +(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message;
 
@@ -29,7 +29,7 @@
  @param tag 视图对应的tag，方便隐藏时使用
  @param _frame 视图整体的大小和位置参数
  @param _message Waiting视图中显示的文字消息
- @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindo.
+ @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
  */
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
 
