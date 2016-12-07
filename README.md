@@ -318,6 +318,16 @@ CUtil在CocoaPods中的版本请参见：[[CUtil on CocoaPods.org]](https://coco
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
 
 /**
+ 在指定的view中显示一个根据frame生成的带有转动菊花的Waiting视图
+ 
+ @param view waiting视图的父视图
+ @param tag 视图对应的tag，方便隐藏时使用
+ @param _frame 视图整体的大小和位置参数
+ @param _message Waiting视图中显示的文字消息
+ */
++(void)showWaitingViewInView:(UIView *)view withTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
+
+/**
  在视图顶部显示的一个Tips视图，可包含文字和图片，该Tips视图会自动以向上滑出的方式消失
 
  @param _yOffset Tips视图距离屏幕顶部的偏移量，一般为0.0f

@@ -74,6 +74,38 @@
     }
 }
 
++(void)showWaitingViewInView:(UIView *)view withTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message {
+    UIView *waitingViewContainerView = [view viewWithTag:tag];
+    if (waitingViewContainerView == nil) {
+        waitingViewContainerView = [[UIView alloc] initWithFrame:_frame];
+        waitingViewContainerView.tag = tag;
+        waitingViewContainerView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
+        waitingViewContainerView.layer.cornerRadius = 10;
+        waitingViewContainerView.layer.masksToBounds = YES;
+        
+        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [indicatorView startAnimating];
+        indicatorView.center = CGPointMake(waitingViewContainerView.bounds.size.width / 2, waitingViewContainerView.bounds.size.height / 2 - 30);
+        [waitingViewContainerView addSubview:indicatorView];
+        
+        if (_message) {
+            UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 15, waitingViewContainerView.bounds.size.width, 60)];
+            messageLabel.font = [UIFont systemFontOfSize:20.0f];
+            messageLabel.textAlignment = NSTextAlignmentCenter;
+            messageLabel.textColor = [UIColor whiteColor];
+            messageLabel.text = _message;
+            messageLabel.numberOfLines = 0;
+            
+            [waitingViewContainerView addSubview:messageLabel];
+        }
+        
+        [currentWindow addSubview:waitingViewContainerView];
+    } else {
+        [waitingViewContainerView removeFromSuperview];
+        [CUTipsView showWaitingViewInView:view withTag:tag frame:_frame message:_message];
+    }
+}
+
 +(void)showPopDownTipsViewWithImage:(UIImage *)aImage message:(NSString *)aMessage yOffset:(CGFloat)_yOffset inView:(UIView *)view {
     if (!aMessage) {
         return;
