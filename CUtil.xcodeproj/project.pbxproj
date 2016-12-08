@@ -31,6 +31,8 @@
 		7D852BAB1DEC3401006E9EB3 /* CUTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B961DEC3401006E9EB3 /* CUTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B971DEC3401006E9EB3 /* CUTipsView.m */; };
 		7D852BAD1DEC3401006E9EB3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D852B981DEC3401006E9EB3 /* Info.plist */; };
+		7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBA9B991DF9004400F06AF7 /* CUToastView.h */; };
+		7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */; };
 		7DDE1D481DF6865B009C012D /* CUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDE1D471DF6865B009C012D /* CUtil.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		7D852B961DEC3401006E9EB3 /* CUTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUTipsView.h; sourceTree = "<group>"; };
 		7D852B971DEC3401006E9EB3 /* CUTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUTipsView.m; sourceTree = "<group>"; };
 		7D852B981DEC3401006E9EB3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DBA9B991DF9004400F06AF7 /* CUToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUToastView.h; sourceTree = "<group>"; };
+		7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUToastView.m; sourceTree = "<group>"; };
 		7DDE1D471DF6865B009C012D /* CUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CUtil.swift; sourceTree = "<group>"; };
 		7DFC3F561DDF074800E90E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7DFC3F581DDF074E00E90E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -203,6 +207,8 @@
 				7D852B951DEC3401006E9EB3 /* CULabel.m */,
 				7D852B961DEC3401006E9EB3 /* CUTipsView.h */,
 				7D852B971DEC3401006E9EB3 /* CUTipsView.m */,
+				7DBA9B991DF9004400F06AF7 /* CUToastView.h */,
+				7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */,
 			);
 			path = CUView;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				7D852BA41DEC3401006E9EB3 /* CUConfig.h in Headers */,
 				7D852B9D1DEC3401006E9EB3 /* CUDate.h in Headers */,
 				7D852BA01DEC3401006E9EB3 /* CUFile.h in Headers */,
+				7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */,
 				7D852B991DEC3401006E9EB3 /* CUCode.h in Headers */,
 				7D852B9F1DEC3401006E9EB3 /* CUDefine.h in Headers */,
 			);
@@ -403,6 +410,7 @@
 				7D852BA31DEC3401006E9EB3 /* CUStorage.m in Sources */,
 				7D852B9A1DEC3401006E9EB3 /* CUCode.m in Sources */,
 				7D852B9C1DEC3401006E9EB3 /* CUColor.m in Sources */,
+				7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */,
 				7D852BAA1DEC3401006E9EB3 /* CULabel.m in Sources */,
 				7D852BA51DEC3401006E9EB3 /* CUConfig.m in Sources */,
 				7D852B9E1DEC3401006E9EB3 /* CUDate.m in Sources */,

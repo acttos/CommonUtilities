@@ -8,9 +8,67 @@
 //
 
 #import "CUTipsView.h"
+
 #import "CULabel.h"
+#import "CUToastView.h"
+
+#define kToastViewDefaultTag 89333843
 
 @implementation CUTipsView
+
++ (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay {
+    UIView *toastContainerView = [view viewWithTag:kToastViewDefaultTag];
+    if (toastContainerView == nil) {
+        toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
+        toastContainerView.tag = kToastViewDefaultTag;
+        [view addSubview:toastContainerView];
+    }
+    
+    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToastViewDefaultTag + 100];
+    if (toastView == nil) {
+        toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
+        toastView.tag = kToastViewDefaultTag + 100;
+        toastView.messageLabel.text = message;
+        
+        [toastContainerView addSubview:toastView];
+    } else {
+        toastView.messageLabel.text = message;
+    }
+    
+    [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
+        toastView.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [toastView removeFromSuperview];
+        [toastContainerView removeFromSuperview];
+    }];
+}
+
++ (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay {
+    UIView *toastContainerView = [view viewWithTag:kToastViewDefaultTag];
+    if (toastContainerView == nil) {
+        toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
+        toastContainerView.tag = kToastViewDefaultTag;
+        [view addSubview:toastContainerView];
+    }
+    
+    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToastViewDefaultTag + 100];
+    if (toastView == nil) {
+        toastView = [[CUToastView alloc] initWithFrame:frame];
+        toastView.tag = kToastViewDefaultTag + 100;
+        toastView.messageLabel.text = _message;
+        
+        [toastContainerView addSubview:toastView];
+    } else {
+        toastView.messageLabel.text = _message;
+    }
+    
+    [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
+        toastView.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [toastView removeFromSuperview];
+        [toastContainerView removeFromSuperview];
+    }];
+}
 
 +(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message {
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
