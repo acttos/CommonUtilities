@@ -1,10 +1,3 @@
----
-layout: post
-title:  "CUtil: A Common Utilities for iOS"
-date:   2016-12-05 18:14:23 +0800
-categories: iOS
----
-
 ## 介绍
 
 CUtil是一个日常的、适用于iOS开发的、通用的、工具类的Framework，采用Objective-C编写。
