@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define kPop_Down_Tips_View_Default_Tag 90158396
+#import "CUDefine.h"
 
 @interface CUTipsView : NSObject
 

@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define kDefault_Unique_Identifier_Key_In_Keychain @"kDefault_Unique_Identifier_Key_In_Keychain"
+#import "CUDefine.h"
 
 @interface CUCode : NSObject
 

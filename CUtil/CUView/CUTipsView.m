@@ -10,24 +10,23 @@
 #import "CUTipsView.h"
 
 #import "CULabel.h"
+#import "CUDefine.h"
 #import "CUToastView.h"
-
-#define kToastViewDefaultTag 89333843
 
 @implementation CUTipsView
 
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay {
-    UIView *toastContainerView = [view viewWithTag:kToastViewDefaultTag];
+    UIView *toastContainerView = [view viewWithTag:kToast_View_Default_Tag];
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
-        toastContainerView.tag = kToastViewDefaultTag;
+        toastContainerView.tag = kToast_View_Default_Tag;
         [view addSubview:toastContainerView];
     }
     
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToastViewDefaultTag + 100];
+    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToast_View_Default_Tag + 100];
     if (toastView == nil) {
         toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
-        toastView.tag = kToastViewDefaultTag + 100;
+        toastView.tag = kToast_View_Default_Tag + 100;
         toastView.messageLabel.text = message;
         
         [toastContainerView addSubview:toastView];
@@ -44,17 +43,17 @@
 }
 
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay {
-    UIView *toastContainerView = [view viewWithTag:kToastViewDefaultTag];
+    UIView *toastContainerView = [view viewWithTag:kToast_View_Default_Tag];
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
-        toastContainerView.tag = kToastViewDefaultTag;
+        toastContainerView.tag = kToast_View_Default_Tag;
         [view addSubview:toastContainerView];
     }
     
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToastViewDefaultTag + 100];
+    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToast_View_Default_Tag + 100];
     if (toastView == nil) {
         toastView = [[CUToastView alloc] initWithFrame:frame];
-        toastView.tag = kToastViewDefaultTag + 100;
+        toastView.tag = kToast_View_Default_Tag + 100;
         toastView.messageLabel.text = _message;
         
         [toastContainerView addSubview:toastView];

@@ -13,3 +13,11 @@
 #else
 #define Logger(format, ...)
 #endif
+
+#define kScreen_Width    [[UIScreen mainScreen] bounds].size.width
+#define kScreen_Height   [[UIScreen mainScreen] bounds].size.height
+
+#define kDefault_Unique_Identifier_Key_In_Keychain @"kDefault_Unique_Identifier_Key_In_Keychain"
+
+#define kPop_Down_Tips_View_Default_Tag 2016120801
+#define kToast_View_Default_Tag 2016120802
