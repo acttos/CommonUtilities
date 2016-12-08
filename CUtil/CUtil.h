@@ -21,6 +21,7 @@
     #import "CUConfig.h"
     #import "CULabel.h"
     #import "CUTipsView.h"
+    #import "CUToastView.h"
 
     #import "CUDefine.h"
 #endif
