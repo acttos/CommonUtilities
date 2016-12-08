@@ -16,17 +16,17 @@
 @implementation CUTipsView
 
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay {
-    UIView *toastContainerView = [view viewWithTag:kToast_View_Default_Tag];
+    UIView *toastContainerView = [view viewWithTag:kDefault_Tag_4_Toast_View];
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
-        toastContainerView.tag = kToast_View_Default_Tag;
+        toastContainerView.tag = kDefault_Tag_4_Toast_View;
         [view addSubview:toastContainerView];
     }
     
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToast_View_Default_Tag + 100];
+    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kDefault_Tag_4_Toast_View + 100];
     if (toastView == nil) {
         toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
-        toastView.tag = kToast_View_Default_Tag + 100;
+        toastView.tag = kDefault_Tag_4_Toast_View + 100;
         toastView.messageLabel.text = message;
         
         [toastContainerView addSubview:toastView];
@@ -43,17 +43,17 @@
 }
 
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay {
-    UIView *toastContainerView = [view viewWithTag:kToast_View_Default_Tag];
+    UIView *toastContainerView = [view viewWithTag:kDefault_Tag_4_Toast_View];
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
-        toastContainerView.tag = kToast_View_Default_Tag;
+        toastContainerView.tag = kDefault_Tag_4_Toast_View;
         [view addSubview:toastContainerView];
     }
     
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToast_View_Default_Tag + 100];
+    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kDefault_Tag_4_Toast_View + 100];
     if (toastView == nil) {
         toastView = [[CUToastView alloc] initWithFrame:frame];
-        toastView.tag = kToast_View_Default_Tag + 100;
+        toastView.tag = kDefault_Tag_4_Toast_View + 100;
         toastView.messageLabel.text = _message;
         
         [toastContainerView addSubview:toastView];
@@ -98,6 +98,34 @@
     }
 }
 
++(void)showFullScreenWaitingViewInView:(UIView *)view message:(NSString *)_message {
+    UIView *waitingViewContainerView = [view viewWithTag:kDefault_Tag_4_Waiting_View];
+    if (waitingViewContainerView == nil) {
+        waitingViewContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
+        waitingViewContainerView.tag = kDefault_Tag_4_Waiting_View;
+        waitingViewContainerView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
+        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [indicatorView startAnimating];
+        indicatorView.center = CGPointMake(view.center.x, view.center.y - 40);
+        [waitingViewContainerView addSubview:indicatorView];
+        
+        if (_message) {
+            UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 20, view.bounds.size.width, 60)];
+            messageLabel.font = [UIFont systemFontOfSize:20.0f];
+            messageLabel.textAlignment = NSTextAlignmentCenter;
+            messageLabel.textColor = [UIColor whiteColor];
+            messageLabel.text = _message;
+            messageLabel.numberOfLines = 0;
+            [waitingViewContainerView addSubview:messageLabel];
+        }
+        
+        [view addSubview:waitingViewContainerView];
+    } else {
+        [waitingViewContainerView removeFromSuperview];
+        [CUTipsView showFullScreenWaitingViewWithTag:kDefault_Tag_4_Waiting_View message:_message];
+    }
+}
+
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message {
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
     UIView *waitingViewContainerView = [currentWindow viewWithTag:tag];
@@ -131,11 +159,11 @@
     }
 }
 
-+(void)showWaitingViewInView:(UIView *)view withTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message {
-    UIView *waitingViewContainerView = [view viewWithTag:tag];
++(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message {
+    UIView *waitingViewContainerView = [view viewWithTag:kDefault_Tag_4_Waiting_View];
     if (waitingViewContainerView == nil) {
         waitingViewContainerView = [[UIView alloc] initWithFrame:_frame];
-        waitingViewContainerView.tag = tag;
+        waitingViewContainerView.tag = kDefault_Tag_4_Waiting_View;
         waitingViewContainerView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
         waitingViewContainerView.layer.cornerRadius = 10;
         waitingViewContainerView.layer.masksToBounds = YES;
@@ -159,7 +187,7 @@
         [view addSubview:waitingViewContainerView];
     } else {
         [waitingViewContainerView removeFromSuperview];
-        [CUTipsView showWaitingViewInView:view withTag:tag frame:_frame message:_message];
+        [CUTipsView showWaitingViewInView:view frame:_frame message:_message];
     }
 }
 
@@ -173,10 +201,10 @@
         containerView = [UIApplication sharedApplication].keyWindow;
     }
     
-    UIView *popDownTipsView = [containerView viewWithTag:kPop_Down_Tips_View_Default_Tag];
+    UIView *popDownTipsView = [containerView viewWithTag:kDefault_Tag_4_Pop_Down_Tips_View];
     if (popDownTipsView == nil) {
         popDownTipsView = [[UIView alloc] initWithFrame:CGRectMake(0, _yOffset, CGRectGetWidth(containerView.frame), 64)];
-        popDownTipsView.tag = kPop_Down_Tips_View_Default_Tag;
+        popDownTipsView.tag = kDefault_Tag_4_Pop_Down_Tips_View;
         popDownTipsView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.8];//黑色，80%透明度
         
         UILabel *messageLabel = nil;
@@ -231,6 +259,13 @@
     UIView *waitingViewContainerView = [currentWindow viewWithTag:tag];
     if (waitingViewContainerView) {
         [waitingViewContainerView removeFromSuperview];
+    }
+}
+
++(void)hideWaitingViewInView:(UIView *)view {
+    UIView *waitingView = [view viewWithTag:kDefault_Tag_4_Waiting_View];
+    if (waitingView) {
+        [waitingView removeFromSuperview];
     }
 }
 

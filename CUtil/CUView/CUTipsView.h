@@ -45,6 +45,14 @@
 +(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message;
 
 /**
+ 在给定的view上展示一个全屏的waiting视图，采用默认tag运算，隐藏时调用[CUTipsView hideWaitingViewInView:]。
+
+ @param view Waiting视图覆盖的低层视图
+ @param _message 需要在Waiting视图中显示的消息
+ */
++(void)showFullScreenWaitingViewInView:(UIView *)view message:(NSString *)_message;
+
+/**
  显示一个根据给定frame生成的带有转动菊花的Waiting视图
  
  @param tag 视图对应的tag，方便隐藏时使用
@@ -58,11 +66,10 @@
  在指定的view中显示一个根据frame生成的带有转动菊花的Waiting视图
  
  @param view waiting视图的父视图
- @param tag 视图对应的tag，方便隐藏时使用
  @param _frame 视图整体的大小和位置参数
  @param _message Waiting视图中显示的文字消息
  */
-+(void)showWaitingViewInView:(UIView *)view withTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
++(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message;
 
 /**
  在视图顶部显示的一个Tips视图，可包含文字和图片，该Tips视图会自动以向上滑出的方式消失
@@ -81,6 +88,12 @@
  */
 +(void)hideViewInWindowWithTag:(NSUInteger)tag;
 
+/**
+ 隐藏waiting视图，采用默认tag运算
+
+ @param view waiting视图覆盖的视图
+ */
++(void)hideWaitingViewInView:(UIView *)view;
 
 /**
  根据宽和高生成一个在屏幕（Screen）上下左右居中的CGRect结构体

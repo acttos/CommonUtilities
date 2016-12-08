@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 #ifndef _CUtil_H_
-    #define _CUtil_H_
+#define _CUtil_H_
 
     #import "CUCode.h"
     #import "CUColor.h"

@@ -3,7 +3,9 @@
 //  CUtil
 //
 //  Created by Acttos on 8/12/2016.
-//  Copyright © 2016 Acttos.org. All rights reserved.
+//  Sources https://github.com/acttos/CommonUtilities
+//  Copyright © 2016 Acttos.org. All codes follow MIT License.
+
 //
 
 #import "CUToastView.h"
@@ -28,17 +30,17 @@
 }
 
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay {
-    UIView *toastContainerView = [view viewWithTag:kToast_View_Default_Tag];
+    UIView *toastContainerView = [view viewWithTag:kDefault_Tag_4_Toast_View];
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
-        toastContainerView.tag = kToast_View_Default_Tag;
+        toastContainerView.tag = kDefault_Tag_4_Toast_View;
         [view addSubview:toastContainerView];
     }
     
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToast_View_Default_Tag + 100];
+    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kDefault_Tag_4_Toast_View + 100];
     if (toastView == nil) {
         toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
-        toastView.tag = kToast_View_Default_Tag + 100;
+        toastView.tag = kDefault_Tag_4_Toast_View + 100;
         toastView.messageLabel.text = message;
         
         [toastContainerView addSubview:toastView];
@@ -55,17 +57,17 @@
 }
 
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay {
-    UIView *toastContainerView = [view viewWithTag:kToast_View_Default_Tag];
+    UIView *toastContainerView = [view viewWithTag:kDefault_Tag_4_Toast_View];
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
-        toastContainerView.tag = kToast_View_Default_Tag;
+        toastContainerView.tag = kDefault_Tag_4_Toast_View;
         [view addSubview:toastContainerView];
     }
     
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kToast_View_Default_Tag + 100];
+    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kDefault_Tag_4_Toast_View + 100];
     if (toastView == nil) {
         toastView = [[CUToastView alloc] initWithFrame:frame];
-        toastView.tag = kToast_View_Default_Tag + 100;
+        toastView.tag = kDefault_Tag_4_Toast_View + 100;
         toastView.messageLabel.text = _message;
         
         [toastContainerView addSubview:toastView];
