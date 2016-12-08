@@ -20,9 +20,24 @@ pod 'CUtil'
 pod 'CUtil', '~> x.x.x'
 ```
 
-CUtil在CocoaPods中的版本请参见：[[CUtil on CocoaPods.org]](https://cocoapods.org/pods/CUtil){:target="_blank"}。
+CUtil在CocoaPods中的版本请参见：*[[CUtil on CocoaPods.org]](https://cocoapods.org/pods/CUtil){:target="_blank"}*。
 
-然后在需要使用到CUtil的地方添加引入Module：
+**需要注意的是，当你需要更新本地已有的CUtil库时，还是需要指定你要升级到的版本的。**
+比如，我要将本地的`CUtil ~> 0.0.10` 升级到 `CUtil ~> 0.1.6`就需要修改Podfile中的版本号为0.1.6，并执行`pod install`:
+
+```
+[majinshou@acttos.org:~/CUtilPod]$pod install
+Analyzing dependencies
+Downloading dependencies
+Installing CUtil 0.1.6 (was 0.0.10)
+Generating Pods project
+Integrating client project
+Sending stats
+Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.
+
+```
+
+使用CUtil时，只需要在使用到CUtil的地方添加引入Module：
 
 ```
 @import CUtil;
