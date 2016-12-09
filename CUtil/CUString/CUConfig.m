@@ -15,11 +15,11 @@
 + (NSString*)getDeviceLanguage{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSArray * allLanguages = [defaults objectForKey:@"AppleLanguages"];
-    NSString * preferredLang = [allLanguages objectAtIndex:0];
+    NSString * prefferedLang = [allLanguages objectAtIndex:0];
     
-    Logger(@"Prefered Lang:%@",preferredLang);
+    Logger(@"Preffered Lang:%@",prefferedLang);
     
-    return preferredLang;
+    return prefferedLang;
 }
 
 + (NSString *)getDeviceLanguageCode {
