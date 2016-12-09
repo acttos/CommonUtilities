@@ -6,6 +6,7 @@ CUtil是一个日常的、适用于iOS开发的、通用的、工具类的Framew
 ## 使用方法
 
 ### 1、使用CocoaPods集成：
+
 CUtil已经支持通过Cocoapods进行安装：
 
 在工程的Podfile中添加：
@@ -44,6 +45,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 ```
 
 ### 2、未使用CocoaPods，手动集成:
+
 如果工程尚未支持CocoaPods，则需要将CUtil下的所有文件拷贝到项目的frameworks下，并添加到Xcode的groups中。然后在需要使用CUtil的文件中引入：
 
 
