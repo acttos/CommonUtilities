@@ -61,24 +61,22 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- *  将自定义data的数据写入系统Keychain中，data的值不随app的卸载、重装而发生变化，常用于存储固定的UserId。
- *
- *  @param key  用来存储数据的Key
- *  @param data 需要存储的数据
- *  @warning 跟Keychain相关的读写操作，仅在真机上验证通过
+ 将自定义data的数据写入系统Keychain中，data的值不随app的卸载、重装而发生变化，常用于存储固定的UserId。
+ 
+ @param key  用来存储数据的Key
+ @param data 需要存储的数据
+ @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
 
 /**
- *  根据key名称获取写入系统Keychain的数据
- *
- *  @param key 获取数据对应的Key
- *
- *  @return 存储在keychain中的数据
- *  @warning 跟Keychain相关的读写操作，仅在真机上验证通过
+ 根据key名称获取写入系统Keychain的数据
+ 
+ @param key 获取数据对应的Key
+ @warning 跟Keychain相关的读写操作，仅在真机上验证通过
+ @return 存储在keychain中的数据
  */
 + (id)loadFromKeychainWithKey:(NSString *)key;
-
 ```
 
 ## 颜色设置相关
@@ -86,43 +84,38 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- *  根据传递的16进制数据生成UIColor实例
- *
- *  @param hexValue 16进制的颜色表示方式。如：0xFF00FF
- *
- *  @return 对应色值的UIColor实例
+ 根据传递的16进制数据生成UIColor实例
+ 
+ @param hexValue 16进制的颜色表示方式。如：0xFF00FF
+ @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue;
 
 /**
- *  根据传递的16进制数据生成UIColor实例，该UIColor包含指定的透明度
- *
- *  @param hexValue 16进制的颜色表示方式。如：0xFF00FF
- *  @param alpha    颜色的透明度
- *
- *  @return 对应色值的UIColor实例
+ 根据传递的16进制数据生成UIColor实例，该UIColor包含指定的透明度
+ 
+ @param hexValue 16进制的颜色表示方式。如：0xFF00FF
+ @param alpha    颜色的透明度
+ @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue alpha:(CGFloat)alpha;
 
 /**
- *  根据传递的色值字符串生成UIColor实例
- *
- *  @param hexString 以##开头的16进制色值字符串。如：##FF00FF
- *
- *  @return 对应色值的UIColor实例
+ 根据传递的色值字符串生成UIColor实例
+ 
+ @param hexString 以#开头的16进制色值字符串。如：#FF00FF
+ @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 
 /**
- *  根据传递的色值字符串生成UIColor实例，该UIColor包含指定的透明度
- *
- *  @param hexString 以##开头的16进制色值字符串。如：##FF00FF
- *  @param alpha     颜色的透明度
- *
- *  @return 对应色值的UIColor实例
+ 根据传递的色值字符串生成UIColor实例，该UIColor包含指定的透明度
+ 
+ @param hexString 以#开头的16进制色值字符串。如：#FF00FF
+ @param alpha     颜色的透明度
+ @return 对应色值的UIColor实例
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
-
 ```
 
 ## 文件目录相关
@@ -130,9 +123,9 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- *  返回当前App的Documents路径
- *
- *  @return Documents的URL
+ 返回当前App的Documents路径
+
+ @return Documents的URL
  */
 + (NSURL *)getDocumentsDirectory;
 
@@ -140,9 +133,8 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  在指定路径创建目录，创建的目录包括父目录。
 
  @param path 给定的创建目录，需要直接写具体路径，如："/videos/2016/12/"
- 
- @return 目录存在或创建成功：YES，否则：NO
  @warning 该方法的根目录为当前应用的data目录，所有目录的建立，均在此data目录下。PS：data目录可理解为沙河中可访问的顶层目录。
+ @return 目录存在或创建成功：YES，否则：NO
  */
 + (BOOL)createDirectoryAtPath:(NSString *)path;
 
@@ -151,7 +143,6 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
  @param data 要存储的数据
  @param path 存储数据的具体路径，注意这个路径是"包含文件名的"路径，不是存放文件的目录，不能以"/"结尾
- 
  @return 保存成功：YES，否则：NO
  */
 + (BOOL)saveFile:(NSData *)data atPath:(NSString *)path;
@@ -162,7 +153,6 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  @param data 要存储的数据
  @param path 存储数据的具体目录，此处为文件存储的具体目录，不能以"/"结尾
  @param fileName 要存放的data的文件名称
- 
  @return 保存成功：YES，否则：NO
  */
 + (BOOL)saveFile:(NSData *)data atPath:(NSString *)path withName:(NSString *)fileName;
@@ -173,32 +163,28 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- *  根据给定的NSArray实例生成JSON字符串
- *
- *  @param array NSArray实例
- *
- *  @return NSArray对应的JSON字符串
+ 根据给定的NSArray实例生成JSON字符串
+ 
+ @param array NSArray实例
+ @return NSArray对应的JSON字符串
  */
 +(NSString *)JSONStringFromArray:(NSArray *)array;
 
 /**
- *  根据给定的NSDictionary实例生成JSON字符串
- *
- *  @param dictionary NSDictionary实例
- *
- *  @return NSDictionary对应的JSON字符串
+ 根据给定的NSDictionary实例生成JSON字符串
+ 
+ @param dictionary NSDictionary实例
+ @return NSDictionary对应的JSON字符串
  */
 +(NSString *)JSONStringFromDictionary:(NSDictionary *)dictionary;
 
 /**
- *  将任意对象转换成JSON字符串，当给定object为nil或者不可解析为JSON时，返回错误
- *
- *  @param object 任意NSObject对象
- *
- *  @return 解析的JSON或错误内容
+ 将任意对象转换成JSON字符串，当给定object为nil或者不可解析为JSON时，返回错误
+ 
+ @param object 任意NSObject对象
+ @return 解析的JSON或错误内容
  */
 +(NSString *)parseJSONStringFromObject:(NSObject *)object;
-
 ```
 
 ## 日期操作相关
@@ -206,37 +192,34 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- *  根据当前时间创建时间戳
- *
- *  @return 当前时间的时间戳，精确到毫秒
+ 根据当前时间创建时间戳
+ 
+ @return 当前时间的时间戳，精确到毫秒
  */
 +(long long)generateMillisecondTime;
 
 /**
- *  根据给定日期创建时间戳
- *
- *  @param date 需要转换为时间戳的NSDate对象
- *
- *  @return 转换后的时间戳，精确到毫秒
+ 根据给定日期创建时间戳
+ 
+ @param date 需要转换为时间戳的NSDate对象,date为nil时，取当前时刻
+ @return 转换后的时间戳，精确到毫秒
  */
 +(long long)generateMillisecondTimeWithDate:(NSDate *)date;
 
 /**
- *  将毫秒的时间转化为NSDate实例
- *
- *  @param milliseconds 某个时间对应的毫秒值
- *
- *  @return 给定时间戳对应的NSDate对象
+ 将毫秒的时间转化为NSDate实例
+ 
+ @param milliseconds 某个时间对应的毫秒值
+ @return 给定时间戳对应的NSDate对象
  */
 +(NSDate *)generateDateWithMilliseconds:(long long)milliseconds;
 
 /**
- *  将NSDate对象进行格式化，采用当前时区
- *
- *  @param date   NSDate对象
- *  @param format 格式化字符串，如果为空或者nil，采用“yyyy-MM-dd HH:mm:ss”
- *
- *  @return 格式化后的字符串
+ 将NSDate对象进行格式化，采用当前时区
+ 
+ @param date   NSDate对象
+ @param format 格式化字符串，如果为空或者nil，采用“yyyy-MM-dd HH:mm:ss”
+ @return 格式化后的字符串
  */
 +(NSString *)stringOfDate:(NSDate *)date withFormat:(NSString *)format;
 ```
@@ -247,14 +230,12 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 ```
 /**
  获取当前系统首选的语言标识
-
  @return 当前系统首选的语言，采用系统给出的值
  */
 + (NSString *)getDeviceLanguage;
 
 /**
  获取当前系统的语言编码
-
  @return 语言编码，如：en,zh,ar,fr等
  */
 + (NSString *)getDeviceLanguageCode;
@@ -268,7 +249,6 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 /**
  以i18N的格式输出当前系统的语言和地域，如"en_US,zh_CN,zh_TW,en_FR"
-
  @return 将国家码和语言码组合后返回，是目前网络协议中常见的格式。
  */
 + (NSString *)getLocalStringIni18N;
@@ -293,7 +273,6 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  @return 法语：YES，否则：NO
  */
 + (BOOL)isFrenchLang;
-
 ```
 
 ## 视图相关
@@ -315,12 +294,12 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- *  在给定的view中显示一个类似于Android Toast效果的弹框。
- *
- *  @param view     弹框的父视图容器View
- *  @param message  弹框需要显示的文字内容
- *  @param _duration Toast消失过程持续的时间，单位：秒
- *  @param _delay    Toast持续显示的时间，单位：秒
+ 在给定的view中显示一个类似于Android Toast效果的弹框。
+ 
+ @param view     弹框的父视图容器View
+ @param message  弹框需要显示的文字内容
+ @param _duration Toast消失过程持续的时间，单位：秒
+ @param _delay    Toast持续显示的时间，单位：秒
  */
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay;
 
@@ -403,25 +382,24 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  @return 全居中的frame数值
  */
 +(CGRect)centeredFrameWithWidth:(float)width height:(float)_height;
-
 ```
 
 > CUToastView.h (Duplicated from CUTipsView.h)
  
 ```
 /**
- *  在给定的view中显示一个类似于Android Toast效果的弹框。
- *
- *  @param view     弹框的父视图容器View
- *  @param message  弹框需要显示的文字内容
- *  @param _duration Toast消失过程持续的时间，单位：秒
- *  @param _delay    Toast持续显示的时间，单位：秒
+ 在给定的view中显示一个类似于Android Toast效果的弹框。
+
+ @param view     弹框的父视图容器View
+ @param message  弹框需要显示的文字内容
+ @param _duration Toast消失过程持续的时间，单位：秒
+ @param _delay    Toast持续显示的时间，单位：秒
  */
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay;
 
 /**
  在给定的view中显示一个类似于Android Toast效果的弹框。该弹框支持自定义frame
-
+ 
  @param view 弹框的父视图容器view
  @param frame 弹框的frame
  @param _message 弹框要显示的消息
@@ -436,12 +414,13 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- 生成一个全球唯一的Id ^_-，可结合
+ 生成一个全球唯一的Id ^_-。<br/>
+ 可结合本类中其它方法将此Id持久化，并保持不变。<br/>
+ 适应需要唯一确定用户身份的场景。
 
  @return 全球唯一的编号
  */
 + (NSString *)uniqueIdentifier;
-
 
 /**
  采用Keychain来保存唯一ID,如果之前有保存过，则覆盖旧值
@@ -450,7 +429,6 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  @warning 跟Keychain相关的读写操作，仅在真机上验证通过
  */
 + (void)saveInKeychainWithIdentifier:(NSString *)identifier;
-
 
 /**
  从Keychain中加载保存的唯一ID
@@ -539,7 +517,35 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  @return 文件的SHA1摘要
  */
 + (NSString *) SHA1CodeWithFileAtURL:(NSURL *) url;
+```
 
+## 系统宏定义
+> CUDefine.h
+
+```
+/**
+ Constant Key-Values
+ */
+#define kScreen_Width    [[UIScreen mainScreen] bounds].size.width
+#define kScreen_Height   [[UIScreen mainScreen] bounds].size.height
+
+/* Sting Values */
+#define kDefault_Unique_Identifier_Key_In_Keychain          @"kDefault_Unique_Identifier_Key_In_Keychain"
+/* Number Values */
+#define kDefault_Tag_4_Pop_Down_Tips_View                   2016120801
+#define kDefault_Tag_4_Toast_View                           2016120802
+#define kDefault_Tag_4_Waiting_View                         2016120803
+
+
+/**
+ Define Logger
+ */
+#ifdef DEBUG
+//#define Logger(format, ...) NSLog(format, ## __VA_ARGS__)
+#define Logger(...) NSLog(@"%s:%d %@", __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
+#else
+#define Logger(format, ...)
+#endif
 ```
 
 # 开源协议

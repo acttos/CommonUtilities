@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CUColor : NSObject
+
 /**
  根据传递的16进制数据生成UIColor实例
  
