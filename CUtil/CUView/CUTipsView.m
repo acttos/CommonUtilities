@@ -20,26 +20,23 @@
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
         toastContainerView.tag = kDefault_Tag_4_Toast_View;
-        [view addSubview:toastContainerView];
-    }
-    
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kDefault_Tag_4_Toast_View + 100];
-    if (toastView == nil) {
-        toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
-        toastView.tag = kDefault_Tag_4_Toast_View + 100;
+        
+        CUToastView *toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
         toastView.messageLabel.text = message;
         
         [toastContainerView addSubview:toastView];
+        [view addSubview:toastContainerView];
+        
+        [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
+            toastView.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [toastView removeFromSuperview];
+            [toastContainerView removeFromSuperview];
+        }];
     } else {
-        toastView.messageLabel.text = message;
-    }
-    
-    [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
-        toastView.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        [toastView removeFromSuperview];
         [toastContainerView removeFromSuperview];
-    }];
+        [CUTipsView showToastInView:view withMessage:message duration:_duration delay:_delay];
+    }
 }
 
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay {
@@ -47,26 +44,23 @@
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
         toastContainerView.tag = kDefault_Tag_4_Toast_View;
-        [view addSubview:toastContainerView];
-    }
-    
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kDefault_Tag_4_Toast_View + 100];
-    if (toastView == nil) {
-        toastView = [[CUToastView alloc] initWithFrame:frame];
-        toastView.tag = kDefault_Tag_4_Toast_View + 100;
+        
+        CUToastView *toastView = [[CUToastView alloc] initWithFrame:frame];
         toastView.messageLabel.text = _message;
         
         [toastContainerView addSubview:toastView];
+        [view addSubview:toastContainerView];
+        
+        [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
+            toastView.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [toastView removeFromSuperview];
+            [toastContainerView removeFromSuperview];
+        }];
     } else {
-        toastView.messageLabel.text = _message;
-    }
-    
-    [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
-        toastView.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        [toastView removeFromSuperview];
         [toastContainerView removeFromSuperview];
-    }];
+        [CUTipsView showToastInView:view withFrame:frame message:_message duration:_duration delay:_delay];
+    }
 }
 
 +(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message {
@@ -197,38 +191,36 @@
     }
 }
 
-+(void)showPopDownTipsViewWithImage:(UIImage *)aImage message:(NSString *)aMessage yOffset:(CGFloat)_yOffset inView:(UIView *)view {
-    if (!aMessage) {
++(void)showPopDownTipsViewInView:(UIView *)view withImage:(UIImage *)aImage message:(NSString *)aMessage yOffset:(CGFloat)_yOffset {
+    if (!view) {
+        Logger(@"The param 'view' is as the container of this PopDownTipsView, it can NOT be nil.");
         return;
     }
     
-    UIView *containerView = view;
-    if (!containerView) {
-        containerView = [UIApplication sharedApplication].keyWindow;
+    if (!aMessage || [aMessage isEqualToString:@""]) {
+        Logger(@"The message should be in the PopDownTipsView, it can NOT be nil or empty.");
+        return;
     }
     
-    UIView *popDownTipsView = [containerView viewWithTag:kDefault_Tag_4_Pop_Down_Tips_View];
+    UIView *popDownTipsView = [view viewWithTag:kDefault_Tag_4_Pop_Down_Tips_View];
     if (popDownTipsView == nil) {
-        popDownTipsView = [[UIView alloc] initWithFrame:CGRectMake(0, _yOffset, CGRectGetWidth(containerView.frame), 64)];
+        popDownTipsView = [[UIView alloc] initWithFrame:CGRectMake(0, _yOffset, CGRectGetWidth(view.frame), 64)];
         popDownTipsView.tag = kDefault_Tag_4_Pop_Down_Tips_View;
         popDownTipsView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.8];//黑色，80%透明度
         
-        UILabel *messageLabel = nil;
-        if (aMessage) {
-            //添加消息Label
-            messageLabel = [[UILabel alloc] init];
-            messageLabel.font = [UIFont systemFontOfSize:17.0f];
-            messageLabel.textAlignment = NSTextAlignmentLeft;
-            messageLabel.textColor = [UIColor whiteColor];
-            messageLabel.text = aMessage;
-            //计算Label的CGSize
-            CGSize retSize = [CULabel sizeOfLabel:messageLabel inView:popDownTipsView];
-            
-            messageLabel.frame = CGRectMake((CGRectGetWidth(popDownTipsView.frame) - retSize.width) / 2, (CGRectGetHeight(popDownTipsView.frame) - retSize.height) / 2, retSize.width, retSize.height);
-            [popDownTipsView addSubview:messageLabel];
-        }
+        //添加消息Label
+        UILabel *messageLabel = [[UILabel alloc] init];
+        messageLabel.font = [UIFont systemFontOfSize:17.0f];
+        messageLabel.textAlignment = NSTextAlignmentLeft;
+        messageLabel.textColor = [UIColor whiteColor];
+        messageLabel.text = aMessage;
+        //计算Label的CGSize
+        CGSize retSize = [CULabel sizeOfLabel:messageLabel inView:popDownTipsView];
         
-        if (messageLabel && aImage) {
+        messageLabel.frame = CGRectMake((CGRectGetWidth(popDownTipsView.frame) - retSize.width) / 2, (CGRectGetHeight(popDownTipsView.frame) - retSize.height) / 2, retSize.width, retSize.height);
+        [popDownTipsView addSubview:messageLabel];
+        
+        if (aImage) {
             //添加图标
             messageLabel.frame = CGRectMake(messageLabel.frame.origin.x + (5 + 22) / 2, messageLabel.frame.origin.y, messageLabel.frame.size.width, messageLabel.frame.size.height);
             UIImageView *iconImageView = [[UIImageView alloc] initWithImage:aImage];
@@ -237,7 +229,7 @@
             [popDownTipsView addSubview:iconImageView];
         }
         
-        [containerView addSubview:popDownTipsView];
+        [view addSubview:popDownTipsView];
         /** 向下弹出动画 */
         CGPoint orignalCenter = CGPointMake(popDownTipsView.center.x, -32);
         [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
@@ -256,7 +248,7 @@
         }];
     } else {
         [popDownTipsView removeFromSuperview];
-        [CUTipsView showPopDownTipsViewWithImage:aImage message:aMessage yOffset:_yOffset inView:view];
+        [CUTipsView showPopDownTipsViewInView:view withImage:aImage message:aMessage yOffset:_yOffset];
     }
 }
 
