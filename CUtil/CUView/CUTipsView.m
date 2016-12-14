@@ -130,28 +130,31 @@
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
     UIView *waitingViewContainerView = [currentWindow viewWithTag:tag];
     if (waitingViewContainerView == nil) {
-        waitingViewContainerView = [[UIView alloc] initWithFrame:_frame];
+        waitingViewContainerView = [[UIView alloc] initWithFrame:currentWindow.bounds];
+        waitingViewContainerView.userInteractionEnabled = YES;
         waitingViewContainerView.tag = tag;
-        waitingViewContainerView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
-        waitingViewContainerView.layer.cornerRadius = 10;
-        waitingViewContainerView.layer.masksToBounds = YES;
+        
+        UIView *waitingView = [[UIView alloc] initWithFrame:_frame];
+        waitingView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
+        waitingView.layer.cornerRadius = 10;
+        waitingView.layer.masksToBounds = YES;
         
         UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [indicatorView startAnimating];
-        indicatorView.center = CGPointMake(waitingViewContainerView.bounds.size.width / 2, waitingViewContainerView.bounds.size.height / 2 - 30);
-        [waitingViewContainerView addSubview:indicatorView];
+        indicatorView.center = CGPointMake(waitingView.bounds.size.width / 2, waitingView.bounds.size.height / 2 - 30);
+        [waitingView addSubview:indicatorView];
         
         if (_message) {
-            UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 15, waitingViewContainerView.bounds.size.width, 60)];
+            UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 15, waitingView.bounds.size.width, 60)];
             messageLabel.font = [UIFont systemFontOfSize:20.0f];
             messageLabel.textAlignment = NSTextAlignmentCenter;
             messageLabel.textColor = [UIColor whiteColor];
             messageLabel.text = _message;
             messageLabel.numberOfLines = 0;
             
-            [waitingViewContainerView addSubview:messageLabel];
+            [waitingView addSubview:messageLabel];
         }
-        
+        [waitingViewContainerView addSubview:waitingView];
         [currentWindow addSubview:waitingViewContainerView];
     } else {
         [waitingViewContainerView removeFromSuperview];
@@ -162,28 +165,31 @@
 +(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message {
     UIView *waitingViewContainerView = [view viewWithTag:kDefault_Tag_4_Waiting_View];
     if (waitingViewContainerView == nil) {
-        waitingViewContainerView = [[UIView alloc] initWithFrame:_frame];
+        waitingViewContainerView = [[UIView alloc] initWithFrame:view.bounds];
+        waitingViewContainerView.userInteractionEnabled = YES;
         waitingViewContainerView.tag = kDefault_Tag_4_Waiting_View;
-        waitingViewContainerView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
-        waitingViewContainerView.layer.cornerRadius = 10;
-        waitingViewContainerView.layer.masksToBounds = YES;
+        
+        UIView *waitingView = [[UIView alloc] initWithFrame:_frame];
+        waitingView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
+        waitingView.layer.cornerRadius = 10;
+        waitingView.layer.masksToBounds = YES;
         
         UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [indicatorView startAnimating];
-        indicatorView.center = CGPointMake(waitingViewContainerView.bounds.size.width / 2, waitingViewContainerView.bounds.size.height / 2 - 30);
-        [waitingViewContainerView addSubview:indicatorView];
+        indicatorView.center = CGPointMake(waitingView.bounds.size.width / 2, waitingView.bounds.size.height / 2 - 30);
+        [waitingView addSubview:indicatorView];
         
         if (_message) {
-            UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 15, waitingViewContainerView.bounds.size.width, 60)];
+            UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 15, waitingView.bounds.size.width, 60)];
             messageLabel.font = [UIFont systemFontOfSize:20.0f];
             messageLabel.textAlignment = NSTextAlignmentCenter;
             messageLabel.textColor = [UIColor whiteColor];
             messageLabel.text = _message;
             messageLabel.numberOfLines = 0;
             
-            [waitingViewContainerView addSubview:messageLabel];
+            [waitingView addSubview:messageLabel];
         }
-        
+        [waitingViewContainerView addSubview:waitingView];
         [view addSubview:waitingViewContainerView];
     } else {
         [waitingViewContainerView removeFromSuperview];
