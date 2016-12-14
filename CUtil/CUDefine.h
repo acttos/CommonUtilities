@@ -9,7 +9,7 @@
 
 
 /**
- * Constant Key-Values
+ Constant Key-Values
  */
 #define kScreen_Width    [[UIScreen mainScreen] bounds].size.width
 #define kScreen_Height   [[UIScreen mainScreen] bounds].size.height
@@ -23,7 +23,7 @@
 
 
 /**
- * Define Logger
+ Define Logger
  */
 #ifdef DEBUG
 //#define Logger(format, ...) NSLog(format, ## __VA_ARGS__)

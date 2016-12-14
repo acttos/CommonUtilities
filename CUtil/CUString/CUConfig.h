@@ -13,14 +13,12 @@
 
 /**
  获取当前系统首选的语言标识
-
  @return 当前系统首选的语言，采用系统给出的值
  */
 + (NSString *)getDeviceLanguage;
 
 /**
  获取当前系统的语言编码
-
  @return 语言编码，如：en,zh,ar,fr等
  */
 + (NSString *)getDeviceLanguageCode;
@@ -34,7 +32,6 @@
 
 /**
  以i18N的格式输出当前系统的语言和地域，如"en_US,zh_CN,zh_TW,en_FR"
-
  @return 将国家码和语言码组合后返回，是目前网络协议中常见的格式。
  */
 + (NSString *)getLocalStringIni18N;

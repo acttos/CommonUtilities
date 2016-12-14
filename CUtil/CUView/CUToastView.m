@@ -9,7 +9,7 @@
 //
 
 #import "CUToastView.h"
-#import "CUDefine.h"
+#import "CUTipsView.h"
 
 @implementation CUToastView
 
@@ -34,26 +34,23 @@
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
         toastContainerView.tag = kDefault_Tag_4_Toast_View;
-        [view addSubview:toastContainerView];
-    }
-    
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kDefault_Tag_4_Toast_View + 100];
-    if (toastView == nil) {
-        toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
-        toastView.tag = kDefault_Tag_4_Toast_View + 100;
+        
+        CUToastView *toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
         toastView.messageLabel.text = message;
         
         [toastContainerView addSubview:toastView];
+        [view addSubview:toastContainerView];
+        
+        [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
+            toastView.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [toastView removeFromSuperview];
+            [toastContainerView removeFromSuperview];
+        }];
     } else {
-        toastView.messageLabel.text = message;
-    }
-    
-    [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
-        toastView.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        [toastView removeFromSuperview];
         [toastContainerView removeFromSuperview];
-    }];
+        [CUToastView showToastInView:view withMessage:message duration:_duration delay:_delay];
+    }
 }
 
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay {
@@ -61,26 +58,23 @@
     if (toastContainerView == nil) {
         toastContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))];
         toastContainerView.tag = kDefault_Tag_4_Toast_View;
-        [view addSubview:toastContainerView];
-    }
-    
-    CUToastView *toastView = (CUToastView *)[toastContainerView viewWithTag:kDefault_Tag_4_Toast_View + 100];
-    if (toastView == nil) {
-        toastView = [[CUToastView alloc] initWithFrame:frame];
-        toastView.tag = kDefault_Tag_4_Toast_View + 100;
+        
+        CUToastView *toastView = [[CUToastView alloc] initWithFrame:frame];
         toastView.messageLabel.text = _message;
         
         [toastContainerView addSubview:toastView];
+        [view addSubview:toastContainerView];
+        
+        [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
+            toastView.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [toastView removeFromSuperview];
+            [toastContainerView removeFromSuperview];
+        }];
     } else {
-        toastView.messageLabel.text = _message;
-    }
-    
-    [UIView animateWithDuration:_duration delay:_delay options:UIViewAnimationOptionCurveEaseOut animations:^{
-        toastView.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        [toastView removeFromSuperview];
         [toastContainerView removeFromSuperview];
-    }];
+        [CUToastView showToastInView:view withFrame:frame message:_message duration:_duration delay:_delay];
+    }
 }
 
 @end

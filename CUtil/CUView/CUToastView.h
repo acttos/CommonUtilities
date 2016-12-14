@@ -15,12 +15,12 @@
 @property (nonatomic, readonly) UILabel* messageLabel;
 
 /**
- *  在给定的view中显示一个类似于Android Toast效果的弹框。
- *
- *  @param view     弹框的父视图容器View
- *  @param message  弹框需要显示的文字内容
- *  @param _duration Toast消失过程持续的时间，单位：秒
- *  @param _delay    Toast持续显示的时间，单位：秒
+ 在给定的view中显示一个类似于Android Toast效果的弹框。
+
+ @param view     弹框的父视图容器View
+ @param message  弹框需要显示的文字内容
+ @param _duration Toast消失过程持续的时间，单位：秒
+ @param _delay    Toast持续显示的时间，单位：秒
  */
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay;
 
