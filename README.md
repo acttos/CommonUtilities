@@ -1,11 +1,11 @@
-## 介绍
+# 介绍
 
 CUtil是一个日常的、适用于iOS开发的、通用的、工具类的Framework，采用Objective-C编写。
 所有代码来源并总结于平时，会不定期更新，欢迎[提出意见和建议](mailto:acttosma@gmail.com)。
 
-## 使用方法
+# 使用方法
 
-### 1、使用CocoaPods集成：
+## 1、使用CocoaPods集成：
 
 CUtil已经支持通过Cocoapods进行安装：
 
@@ -35,7 +35,6 @@ Generating Pods project
 Integrating client project
 Sending stats
 Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.
-
 ```
 
 使用CUtil时，只需要在使用到CUtil的地方引入Module：
@@ -44,7 +43,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 @import CUtil;
 ```
 
-### 2、未使用CocoaPods，手动集成:
+## 2、未使用CocoaPods，手动集成:
 
 如果工程尚未支持CocoaPods，则需要将CUtil下的所有文件拷贝到项目的frameworks下，并添加到Xcode的groups中。然后在需要使用CUtil的文件中引入：
 
@@ -54,9 +53,9 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 ```
 
 
-## 功能介绍
+# 功能介绍
 
-### 存储功能相关
+## 存储功能相关
 
 > CUStorage.h
 
@@ -82,7 +81,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 
-### 颜色设置相关
+## 颜色设置相关
 > CUColor.h
 
 ```
@@ -126,7 +125,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 
-### 文件目录相关
+## 文件目录相关
 > CUFile.h
 
 ```
@@ -169,7 +168,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 + (BOOL)saveFile:(NSData *)data atPath:(NSString *)path withName:(NSString *)fileName;
 ```
 
-### JSON解析相关
+## JSON解析相关
 > CUJSON.h
 
 ```
@@ -202,7 +201,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 
-### 日期操作相关
+## 日期操作相关
 > CUDate.h
 
 ```
@@ -242,7 +241,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 +(NSString *)stringOfDate:(NSDate *)date withFormat:(NSString *)format;
 ```
 
-### 系统配置操作相关
+## 系统配置操作相关
 > CUConfig.h
 
 ```
@@ -297,7 +296,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 
-### 视图相关
+## 视图相关
 > CULabel.h
 
 ```
@@ -432,7 +431,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay;
 ```
 
-### 编解码相关
+## 编解码相关
 > CUCode.h
 
 ```
@@ -543,7 +542,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 
-## 开源协议
+# 开源协议
 
 [ [CUtil] ](https://github.com/acttos/CommonUtilities){:target="_blank"} 基于 [ [The MIT License(MIT)] ](https://mit-license.org/) 协议开源。
 <br/>
