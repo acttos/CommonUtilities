@@ -24,6 +24,8 @@
         [self addSubview:_messageLabel];
         
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8f];
+        self.layer.borderWidth = 1.0f;
+        self.layer.borderColor = [[[UIColor grayColor] colorWithAlphaComponent:0.5f] CGColor];
         self.layer.cornerRadius = 6.0f;
     }
     return self;

@@ -12,6 +12,11 @@
 
 #import "CUDefine.h"
 
+typedef enum {
+    CUTipsViewThemeDark,
+    CUTipsViewThemeLight
+} CUTipsViewTheme;
+
 @interface CUTipsView : NSObject
 
 /**
@@ -63,6 +68,17 @@
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
 
 /**
+ 显示一个根据给定frame生成的带有转动菊花的Waiting视图
+ 
+ @param tag 视图对应的tag，方便隐藏时使用
+ @param _frame 视图整体的大小和位置参数
+ @param _message Waiting视图中显示的文字消息
+ @param _theme  Waiting视图的样式
+ @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
+ */
++(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
+
+/**
  在指定的view中显示一个根据frame生成的带有转动菊花的Waiting视图
  
  @param view waiting视图的父视图
@@ -70,6 +86,16 @@
  @param _message Waiting视图中显示的文字消息
  */
 +(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message;
+
+/**
+ 在指定的view中显示一个根据frame生成的带有转动菊花的Waiting视图
+ 
+ @param view waiting视图的父视图
+ @param _frame 视图整体的大小和位置参数
+ @param _message Waiting视图中显示的文字消息
+ @param _theme  Waiting视图的样式
+ */
++(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
 
 /**
  在视图顶部显示的一个Tips视图，可包含文字和图片，该Tips视图会自动以向上滑出的方式消失

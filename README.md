@@ -529,8 +529,10 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 #define kScreen_Width    [[UIScreen mainScreen] bounds].size.width
 #define kScreen_Height   [[UIScreen mainScreen] bounds].size.height
 
+
 /* Sting Values */
 #define kDefault_Unique_Identifier_Key_In_Keychain          @"kDefault_Unique_Identifier_Key_In_Keychain"
+
 /* Number Values */
 #define kDefault_Tag_4_Pop_Down_Tips_View                   2016120801
 #define kDefault_Tag_4_Toast_View                           2016120802
@@ -541,7 +543,6 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  Define Logger
  */
 #ifdef DEBUG
-//#define Logger(format, ...) NSLog(format, ## __VA_ARGS__)
 #define Logger(...) NSLog(@"%s:%d %@", __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
 #else
 #define Logger(format, ...)

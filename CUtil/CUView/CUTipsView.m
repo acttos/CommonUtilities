@@ -81,6 +81,10 @@
 }
 
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message {
+    [CUTipsView showWaitingViewWithTag:tag frame:_frame message:_message theme:CUTipsViewThemeDark];
+}
+
++(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme {
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
     UIView *waitingViewContainerView = [currentWindow viewWithTag:tag];
     if (waitingViewContainerView == nil) {
@@ -89,34 +93,44 @@
         waitingViewContainerView.tag = tag;
         
         UIView *waitingView = [[UIView alloc] initWithFrame:_frame];
-        waitingView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
+        CGFloat whiteColorFloatValue = _theme == CUTipsViewThemeDark ? 0.0f : 1.0f;
+        waitingView.backgroundColor = [UIColor colorWithWhite:whiteColorFloatValue alpha:0.7];
+        waitingView.layer.borderWidth = 1.0f;
+        waitingView.layer.borderColor = [[[UIColor grayColor] colorWithAlphaComponent:0.5f] CGColor];
         waitingView.layer.cornerRadius = 10;
         waitingView.layer.masksToBounds = YES;
         
-        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleWhite : UIActivityIndicatorViewStyleGray];
         [indicatorView startAnimating];
-        indicatorView.center = CGPointMake(waitingView.bounds.size.width / 2, waitingView.bounds.size.height / 2 - 30);
+        indicatorView.center = CGPointMake(waitingView.bounds.size.width / 2, 32);
         [waitingView addSubview:indicatorView];
         
         if (_message) {
-            UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 15, waitingView.bounds.size.width, 60)];
-            messageLabel.font = [UIFont systemFontOfSize:20.0f];
+            UILabel *messageLabel = [[UILabel alloc] init];
+            messageLabel.font = [UIFont systemFontOfSize:18.0f];
             messageLabel.textAlignment = NSTextAlignmentCenter;
-            messageLabel.textColor = [UIColor whiteColor];
+            messageLabel.textColor = _theme == CUTipsViewThemeDark ? [UIColor whiteColor] : [UIColor blackColor];
             messageLabel.text = _message;
             messageLabel.numberOfLines = 0;
             
             [waitingView addSubview:messageLabel];
+            
+            CGSize size = [CULabel sizeOfLabel:messageLabel inView:waitingView];
+            messageLabel.frame = CGRectMake(10, CGRectGetMaxY(indicatorView.frame) + 10, waitingView.frame.size.width - 20, size.height);
         }
         [waitingViewContainerView addSubview:waitingView];
         [currentWindow addSubview:waitingViewContainerView];
     } else {
         [waitingViewContainerView removeFromSuperview];
-        [CUTipsView showWaitingViewWithTag:tag frame:_frame message:_message];
+        [CUTipsView showWaitingViewWithTag:tag frame:_frame message:_message theme:_theme];
     }
 }
 
 +(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message {
+    [CUTipsView showWaitingViewInView:view frame:_frame message:_message theme:CUTipsViewThemeDark];
+}
+
++(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme {
     UIView *waitingViewContainerView = [view viewWithTag:kDefault_Tag_4_Waiting_View];
     if (waitingViewContainerView == nil) {
         waitingViewContainerView = [[UIView alloc] initWithFrame:view.bounds];
@@ -124,30 +138,36 @@
         waitingViewContainerView.tag = kDefault_Tag_4_Waiting_View;
         
         UIView *waitingView = [[UIView alloc] initWithFrame:_frame];
-        waitingView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7];//黑色，70%透明度
+        CGFloat whiteColorFloatValue = _theme == CUTipsViewThemeDark ? 0.0f : 1.0f;
+        waitingView.backgroundColor = [UIColor colorWithWhite:whiteColorFloatValue alpha:0.7];
+        waitingView.layer.borderWidth = 1.0f;
+        waitingView.layer.borderColor = [[[UIColor grayColor] colorWithAlphaComponent:0.5f] CGColor];
         waitingView.layer.cornerRadius = 10;
         waitingView.layer.masksToBounds = YES;
         
-        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleWhite : UIActivityIndicatorViewStyleGray];
         [indicatorView startAnimating];
-        indicatorView.center = CGPointMake(waitingView.bounds.size.width / 2, waitingView.bounds.size.height / 2 - 30);
+        indicatorView.center = CGPointMake(waitingView.bounds.size.width / 2, 32);
         [waitingView addSubview:indicatorView];
         
         if (_message) {
-            UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(indicatorView.frame) + 15, waitingView.bounds.size.width, 60)];
-            messageLabel.font = [UIFont systemFontOfSize:20.0f];
+            UILabel *messageLabel = [[UILabel alloc] init];
+            messageLabel.font = [UIFont systemFontOfSize:18.0f];
             messageLabel.textAlignment = NSTextAlignmentCenter;
-            messageLabel.textColor = [UIColor whiteColor];
+            messageLabel.textColor = _theme == CUTipsViewThemeDark ? [UIColor whiteColor] : [UIColor blackColor];
             messageLabel.text = _message;
             messageLabel.numberOfLines = 0;
             
             [waitingView addSubview:messageLabel];
+            
+            CGSize size = [CULabel sizeOfLabel:messageLabel inView:waitingView];
+            messageLabel.frame = CGRectMake(10, CGRectGetMaxY(indicatorView.frame) + 10, waitingView.frame.size.width - 20, size.height);
         }
         [waitingViewContainerView addSubview:waitingView];
         [view addSubview:waitingViewContainerView];
     } else {
         [waitingViewContainerView removeFromSuperview];
-        [CUTipsView showWaitingViewInView:view frame:_frame message:_message];
+        [CUTipsView showWaitingViewInView:view frame:_frame message:_message theme:_theme];
     }
 }
 
