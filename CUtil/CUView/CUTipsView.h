@@ -12,8 +12,11 @@
 
 #import "CUDefine.h"
 
+/**
+ 预定义的CUTipsView样式，每一个样式对应一组显示效果
+ */
 typedef enum {
-    CUTipsViewThemeDark,
+    CUTipsViewThemeDark, //Treated as the default value.
     CUTipsViewThemeLight
 } CUTipsViewTheme;
 

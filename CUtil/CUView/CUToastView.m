@@ -10,13 +10,14 @@
 
 #import "CUToastView.h"
 #import "CUTipsView.h"
+#import "CULabel.h"
 
 @implementation CUToastView
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 0.0f, CGRectGetWidth(frame) - 10.0f, CGRectGetHeight(frame))];
+        _messageLabel = [[UILabel alloc] init];//WithFrame:CGRectMake(10.0f, 0.0f, CGRectGetWidth(frame) - 20.0f, CGRectGetHeight(frame))];
         _messageLabel.textColor = [UIColor whiteColor];
         _messageLabel.textAlignment = NSTextAlignmentCenter;
         _messageLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0f];
@@ -31,6 +32,14 @@
     return self;
 }
 
+/**
+ Make sure to invoke this method AFTER setting the text for _messageLabel.
+ */
+-(void)updateLayoutOfMessageLabel {
+    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self];
+    self.messageLabel.frame = CGRectMake(10, (CGRectGetHeight(self.frame) - size.height) / 2, CGRectGetWidth(self.frame) - 20, size.height);
+}
+
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay {
     UIView *toastContainerView = [view viewWithTag:kDefault_Tag_4_Toast_View];
     if (toastContainerView == nil) {
@@ -39,6 +48,7 @@
         
         CUToastView *toastView = [[CUToastView alloc] initWithFrame:CGRectMake(40, view.frame.size.height / 3, view.frame.size.width - 80, 100)];
         toastView.messageLabel.text = message;
+        [toastView updateLayoutOfMessageLabel];
         
         [toastContainerView addSubview:toastView];
         [view addSubview:toastContainerView];
