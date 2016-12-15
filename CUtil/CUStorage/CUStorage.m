@@ -13,7 +13,7 @@
 @implementation CUStorage
 
 + (void)storeInKeychainWithKey:(NSString *)key data:(id)data {
-#ifndef TARGET_IPHONE_SIMULATOR
+#if TARGET_OS_IPHONE
     //Get search dictionary
     NSMutableDictionary *keychainQuery = [self getKeychainWithKey:key];
     //Delete old item before add new item
@@ -28,7 +28,7 @@
 }
 
 + (NSMutableDictionary *)getKeychainWithKey:(NSString *)key {
-#ifndef TARGET_IPHONE_SIMULATOR
+#if TARGET_OS_IPHONE
     return [NSMutableDictionary dictionaryWithObjectsAndKeys:
             (__bridge id)kSecClassGenericPassword,(__bridge id)kSecClass,
             key, (__bridge id)kSecAttrService,
@@ -42,7 +42,7 @@
 }
 
 + (id)loadFromKeychainWithKey:(NSString *)key {
-#ifndef TARGET_IPHONE_SIMULATOR
+#if TARGET_OS_IPHONE
     id ret = nil;
     NSMutableDictionary *keychainQuery = [self getKeychainWithKey:key];
     
