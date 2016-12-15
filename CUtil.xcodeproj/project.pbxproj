@@ -32,7 +32,6 @@
 		7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B971DEC3401006E9EB3 /* CUTipsView.m */; };
 		7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBA9B991DF9004400F06AF7 /* CUToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */; };
-		7DDE1D481DF6865B009C012D /* CUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDE1D471DF6865B009C012D /* CUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +75,6 @@
 		7D852B981DEC3401006E9EB3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DBA9B991DF9004400F06AF7 /* CUToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUToastView.h; sourceTree = "<group>"; };
 		7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUToastView.m; sourceTree = "<group>"; };
-		7DDE1D471DF6865B009C012D /* CUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CUtil.swift; sourceTree = "<group>"; };
 		7DFC3F561DDF074800E90E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7DFC3F581DDF074E00E90E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -138,7 +136,6 @@
 				7D852B921DEC3401006E9EB3 /* CUtil.h */,
 				7D852B861DEC3401006E9EB3 /* CUDefine.h */,
 				7D852B981DEC3401006E9EB3 /* Info.plist */,
-				7DDE1D471DF6865B009C012D /* CUtil.swift */,
 			);
 			path = CUtil;
 			sourceTree = "<group>";
@@ -414,7 +411,6 @@
 				7D852B9E1DEC3401006E9EB3 /* CUDate.m in Sources */,
 				7D852BA11DEC3401006E9EB3 /* CUFile.m in Sources */,
 				7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */,
-				7DDE1D481DF6865B009C012D /* CUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +523,6 @@
 		7D852B611DEC314A006E9EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -543,7 +538,6 @@
 		7D852B621DEC314A006E9EB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
