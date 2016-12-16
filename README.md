@@ -29,7 +29,14 @@ pod 'CUtil', '~> x.x.x'
 CUtil在CocoaPods中的版本请参见：*[[CUtil on CocoaPods.org]](https://cocoapods.org/pods/CUtil){:target="_blank"}*。
 
 **需要注意的是，当你需要更新本地已有的CUtil库时，还是需要指定你要升级到的版本的。**
-比如，我要将本地的`CUtil ~> 0.0.10` 升级到 `CUtil ~> 0.1.8`就需要修改Podfile中的版本号为0.1.8，并执行`pod install`:
+比如，我要将本地的`CUtil ~> 0.0.10` 升级到 `CUtil ~> 0.1.8`就需要修改Podfile中的版本号为0.1.8:
+
+```
+pod 'CUtil', '~> 0.1.8'  
+# was pod 'CUtil', '~> 0.0.10'
+```
+
+并执行`pod install`:
 
 ```
 [acttos@acttos.org:~/CUtilPod]$pod install
