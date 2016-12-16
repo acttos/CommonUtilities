@@ -50,9 +50,14 @@ Sending stats
 Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.
 ```
 
-使用CUtil时，只需要在使用到CUtil的地方引入Module：
+使用CUtil时，只需要在使用到CUtil的类中引入CUtil模块：
 
 ```
+#import <Foundation/Foundation.h>
+#import "AppDelegate.h"
+//.... 以上为示例 ....
+
+//.... 引入CUtil模块 ....
 @import CUtil;
 ```
 
