@@ -14,8 +14,8 @@
 -(NSUInteger)indexOf:(NSString *)pattern;
 -(NSUInteger)lastIndexOf:(NSString *)pattern;
 
--(void)replaceFirst:(NSString *)pattern with:(NSString *)replacement;
--(void)replaceLast:(NSString *)pattern with:(NSString *)replacement;
--(void)replaceAll:(NSString *)pattern with:(NSString *)replacement;
+-(NSString *)replaceFirst:(NSString *)pattern with:(NSString *)replacement;
+-(NSString *)replaceLast:(NSString *)pattern with:(NSString *)replacement;
+-(NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement;
 
 @end

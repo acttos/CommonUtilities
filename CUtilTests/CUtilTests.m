@@ -140,10 +140,16 @@
     XCTAssertNotNil([CUJSON JSONStringFromDictionary:dic]);
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    // 测试用例的例子，注意测试用例一定要test开头
+- (void)testCUString {
+    NSString *source = @"Hello,Hello,Hello,How are you!";
+    NSString *pattern = @"Hello";
+    
+    XCTAssertTrue([source indexOf:pattern] == 0);
+    XCTAssertTrue([source lastIndexOf:pattern] == 12);
+    
+    XCTAssertTrue([[source replaceFirst:pattern with:@""] isEqualToString:@",Hello,Hello,How are you!"]);
+    XCTAssertTrue([[source replaceLast:pattern with:@""] isEqualToString:@"Hello,Hello,,How are you!"]);
+    XCTAssertTrue([[source replaceAll:pattern with:@""] isEqualToString:@",,,How are you!"]);
 }
 
 - (void)testPerformanceExample {

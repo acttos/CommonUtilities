@@ -12,23 +12,25 @@
 @implementation NSString (CUString)
 
 -(NSUInteger)indexOf:(NSString *)pattern {
-    return 0;
+    return [self rangeOfString:pattern].location;
 }
 
 -(NSUInteger)lastIndexOf:(NSString *)pattern {
-    return 0;
+    return [self rangeOfString:pattern options:NSBackwardsSearch].location;
 }
 
--(void)replaceFirst:(NSString *)pattern with:(NSString *)replacement {
-    
+-(NSString *)replaceFirst:(NSString *)pattern with:(NSString *)replacement {
+    NSRange range = [self rangeOfString:pattern];
+    return [self stringByReplacingCharactersInRange:range withString:replacement];
 }
 
--(void)replaceLast:(NSString *)pattern with:(NSString *)replacement {
-    
+-(NSString *)replaceLast:(NSString *)pattern with:(NSString *)replacement {
+    NSRange range = [self rangeOfString:pattern options:NSBackwardsSearch];
+    return [self stringByReplacingCharactersInRange:range withString:replacement];
 }
 
--(void)replaceAll:(NSString *)pattern with:(NSString *)replacement {
-    
+-(NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement {
+    return [self stringByReplacingOccurrencesOfString:pattern withString:replacement];
 }
 
 @end
