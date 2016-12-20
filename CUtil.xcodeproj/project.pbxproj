@@ -32,6 +32,8 @@
 		7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B971DEC3401006E9EB3 /* CUTipsView.m */; };
 		7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBA9B991DF9004400F06AF7 /* CUToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */; };
+		7DFE12511E09213C009811EC /* NSString+CUString.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DFE124F1E09213C009811EC /* NSString+CUString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DFE12521E09213C009811EC /* NSString+CUString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFE12501E09213C009811EC /* NSString+CUString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUToastView.m; sourceTree = "<group>"; };
 		7DFC3F561DDF074800E90E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7DFC3F581DDF074E00E90E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7DFE124F1E09213C009811EC /* NSString+CUString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CUString.h"; sourceTree = "<group>"; };
+		7DFE12501E09213C009811EC /* NSString+CUString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CUString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,8 @@
 				7D852B8F1DEC3401006E9EB3 /* CUConfig.m */,
 				7D852B901DEC3401006E9EB3 /* CUJSON.h */,
 				7D852B911DEC3401006E9EB3 /* CUJSON.m */,
+				7DFE124F1E09213C009811EC /* NSString+CUString.h */,
+				7DFE12501E09213C009811EC /* NSString+CUString.m */,
 			);
 			path = CUString;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFE12511E09213C009811EC /* NSString+CUString.h in Headers */,
 				7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */,
 				7D852BAB1DEC3401006E9EB3 /* CUTipsView.h in Headers */,
 				7D852BA81DEC3401006E9EB3 /* CUtil.h in Headers */,
@@ -403,6 +410,7 @@
 			files = (
 				7D852BA71DEC3401006E9EB3 /* CUJSON.m in Sources */,
 				7D852BA31DEC3401006E9EB3 /* CUStorage.m in Sources */,
+				7DFE12521E09213C009811EC /* NSString+CUString.m in Sources */,
 				7D852B9A1DEC3401006E9EB3 /* CUCode.m in Sources */,
 				7D852B9C1DEC3401006E9EB3 /* CUColor.m in Sources */,
 				7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */,

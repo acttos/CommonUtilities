@@ -19,6 +19,7 @@
     #import "CUStorage.h"
     #import "CUJSON.h"
     #import "CUConfig.h"
+    #import "NSString+CUString.h"
     #import "CULabel.h"
     #import "CUTipsView.h"
     #import "CUToastView.h"
