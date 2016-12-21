@@ -44,7 +44,7 @@ typedef enum {
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay;
 
 /**
- 已全屏幕的方式展现出一个带有转动菊花的Waiting视图
+ 以全屏幕的方式展现出一个带有转动菊花的Waiting视图
  
  @param tag 视图对应的tag，方便隐藏时使用
  @param _message Waiting视图中显示的文字消息

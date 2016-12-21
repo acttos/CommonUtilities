@@ -11,6 +11,12 @@
 
 @interface NSString (CUString)
 
+-(BOOL)isEmpty;
+-(BOOL)startsWith:(NSString *)string;
+-(BOOL)endsWith:(NSString *)string;
+-(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex;
+-(NSMutableArray *)split:(NSString *)pattern;
+
 /**
  获取字符串中符合匹配的首个索引
 
