@@ -58,9 +58,8 @@
     return trimedString;
 }
 
--(NSMutableArray *)split:(NSString *)pattern {
-    
-    return nil;
+-(NSArray *)splitBy:(NSString *)pattern {
+    return [self componentsSeparatedByString:pattern];
 }
 
 -(NSUInteger)indexOf:(NSString *)pattern {

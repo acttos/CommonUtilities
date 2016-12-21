@@ -210,6 +210,53 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
+ 判断当前字符串是否为空；空代表：”nil“，”“ 或者 ”  “，任何无字符的字符串均为空
+
+ @return YES：为空，NO：不为空
+ */
+-(BOOL)isEmpty;
+
+/**
+ 判断当前字符串是否由给定的字符串作为开头
+
+ @param string 给定的开头字符串，用来做判断条件
+ @return YES：符合开头判断，NO：不符合开头判断
+ */
+-(BOOL)startsWith:(NSString *)string;
+
+/**
+ 判断当前字符串是否由给定的字符串作为结尾
+ 
+ @param string 给定的结尾字符串，用来做判断条件
+ @return YES：符合结尾判断，NO：不符合结尾判断
+ */
+-(BOOL)endsWith:(NSString *)string;
+
+/**
+ 按照给定的索引来截取字符串
+
+ @param beginIndex 开始索引，截取后的字符串[包含]该索引对应的字符
+ @param endIndex 结束索引，截取后的字符串[不包含]该索引对应的字符
+ @return 截取后的字符串
+ */
+-(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex;
+
+/**
+ 将当前字符串首尾处的空字符删除并返回
+
+ @return 删除收尾空字符后的字符串
+ */
+-(NSString *)trim;
+
+/**
+ 将当前字符串按照给定的分隔符进行拆分
+
+ @param pattern 给定的分隔符
+ @return 根据分隔符拆分后的数组
+ */
+-(NSArray *)splitBy:(NSString *)pattern;
+
+/**
  获取字符串中符合匹配的首个索引
 
  @param pattern 需要匹配的字符串
