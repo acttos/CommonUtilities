@@ -249,7 +249,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 -(NSString *)trim;
 
 /**
- 将当前字符串按照给定的分隔符进行拆分
+ 将当前字符串按照给定的分隔符进行拆分,拆分后的数组不包含空元素
 
  @param pattern 给定的分隔符
  @return 根据分隔符拆分后的数组
