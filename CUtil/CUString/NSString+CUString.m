@@ -12,22 +12,54 @@
 @implementation NSString (CUString)
 
 -(BOOL)isEmpty {
-    return NO;
+    return (self == nil || self.length == 0 || [self trim].length == 0);
 }
 
 -(BOOL)startsWith:(NSString *)string {
+    if (!string) {
+        return NO;
+    }
+    
+    if ([self indexOf:string] == 0) {
+        return YES;
+    }
+    
     return NO;
 }
 
 -(BOOL)endsWith:(NSString *)string {
+    if (!string) {
+        return NO;
+    }
+    
+    if ([self lastIndexOf:string] == self.length - string.length) {
+        return YES;
+    }
+    
     return NO;
 }
 
 -(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex {
-    return nil;
+    NSString *substring = [self substringWithRange:NSMakeRange(beginIndex, endIndex - beginIndex)];
+    
+    return substring;
+}
+
+-(NSString *)trim {
+    NSString *trimedString = self;
+    while ([trimedString startsWith:@" "]) {
+        trimedString = [trimedString replaceFirst:@" " with:@""];
+    }
+    
+    while ([trimedString endsWith:@" "]) {
+        trimedString = [trimedString replaceLast:@" " with:@""];
+    }
+    
+    return trimedString;
 }
 
 -(NSMutableArray *)split:(NSString *)pattern {
+    
     return nil;
 }
 

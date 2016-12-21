@@ -15,6 +15,7 @@
 -(BOOL)startsWith:(NSString *)string;
 -(BOOL)endsWith:(NSString *)string;
 -(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex;
+-(NSString *)trim;
 -(NSMutableArray *)split:(NSString *)pattern;
 
 /**

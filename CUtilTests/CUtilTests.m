@@ -150,6 +150,23 @@
     XCTAssertTrue([[source replaceFirst:pattern with:@""] isEqualToString:@",Hello,Hello,How are you!"]);
     XCTAssertTrue([[source replaceLast:pattern with:@""] isEqualToString:@"Hello,Hello,,How are you!"]);
     XCTAssertTrue([[source replaceAll:pattern with:@""] isEqualToString:@",,,How are you!"]);
+    
+    XCTAssertTrue([@"" isEmpty]);
+    XCTAssertTrue([@"   " isEmpty]);
+    XCTAssertFalse([@"s" isEmpty]);
+    
+    NSString *fullString = @"0123456789";
+    
+    XCTAssertTrue([fullString startsWith:@"012"]);
+    XCTAssertFalse([fullString startsWith:@"34"]);
+    
+    XCTAssertTrue([fullString endsWith:@"789"]);
+    XCTAssertFalse([fullString endsWith:@"34"]);
+    
+    XCTAssertTrue([@"012" isEqualToString:[fullString substring:0 to:3]]);
+
+    XCTAssertTrue([[@"  123  456  " trim] isEqualToString:@"123  456"]);
+//    -(NSMutableArray *)split:(NSString *)pattern;
 }
 
 - (void)testPerformanceExample {
