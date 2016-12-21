@@ -58,8 +58,20 @@
     return trimedString;
 }
 
--(NSArray *)splitBy:(NSString *)pattern {
-    return [self componentsSeparatedByString:pattern];
+-(NSArray<NSString *> *)splitBy:(NSString *)pattern {
+    NSArray<NSString *> *sourceArray = [self componentsSeparatedByString:pattern];
+    if (sourceArray == nil) {
+        return nil;
+    }
+    
+    NSMutableArray<NSString *> *result = [NSMutableArray arrayWithCapacity:10];
+    for (NSString *string in sourceArray) {
+        if (![string isEmpty]) {
+            [result addObject:string];
+        }
+    }
+    
+    return result;
 }
 
 -(NSUInteger)indexOf:(NSString *)pattern {

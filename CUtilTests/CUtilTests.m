@@ -166,7 +166,7 @@
     XCTAssertTrue([@"012" isEqualToString:[fullString substring:0 to:3]]);
 
     XCTAssertTrue([[@"  123  456  " trim] isEqualToString:@"123  456"]);
-//    -(NSMutableArray *)split:(NSString *)pattern;
+    Logger(@"%@", [@"1,2,3,4,5,6,7,8,9,,,,,," splitBy:@","]);
 }
 
 - (void)testPerformanceExample {
