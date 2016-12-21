@@ -210,8 +210,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- 判断当前字符串是否为空；空代表：”nil“，”“ 或者 ”  “，任何无字符的字符串均为空
-
+ 判断当前字符串是否为空；空代表：“nil”，“” 或者 “  ”，即：任何无字符的字符串均为空
  @return YES：为空，NO：不为空
  */
 -(BOOL)isEmpty;
