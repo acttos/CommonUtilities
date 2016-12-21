@@ -43,6 +43,8 @@
             messageLabel.text = _message;
             messageLabel.numberOfLines = 0;
             [waitingViewContainerView addSubview:messageLabel];
+        } else {
+            indicatorView.center = CGPointMake(currentWindow.center.x, currentWindow.center.y);
         }
         
         [currentWindow addSubview:waitingViewContainerView];
@@ -71,6 +73,8 @@
             messageLabel.text = _message;
             messageLabel.numberOfLines = 0;
             [waitingViewContainerView addSubview:messageLabel];
+        } else {
+            indicatorView.center = CGPointMake(view.center.x, view.center.y);
         }
         
         [view addSubview:waitingViewContainerView];
@@ -102,7 +106,7 @@
         
         UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleWhite : UIActivityIndicatorViewStyleGray];
         [indicatorView startAnimating];
-        indicatorView.center = CGPointMake(waitingView.bounds.size.width / 2, 32);
+        indicatorView.center = indicatorView.center = CGPointMake(CGRectGetWidth(waitingView.frame) / 2, 32);
         [waitingView addSubview:indicatorView];
         
         if (_message) {
@@ -117,7 +121,10 @@
             
             CGSize size = [CULabel sizeOfLabel:messageLabel inView:waitingView];
             messageLabel.frame = CGRectMake(10, CGRectGetMaxY(indicatorView.frame) + 10, waitingView.frame.size.width - 20, size.height);
+        } else {
+            indicatorView.center = CGPointMake(CGRectGetWidth(waitingView.frame) / 2, CGRectGetHeight(waitingView.frame) / 2);
         }
+        
         [waitingViewContainerView addSubview:waitingView];
         [currentWindow addSubview:waitingViewContainerView];
     } else {
@@ -147,7 +154,7 @@
         
         UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleWhite : UIActivityIndicatorViewStyleGray];
         [indicatorView startAnimating];
-        indicatorView.center = CGPointMake(waitingView.bounds.size.width / 2, 32);
+        indicatorView.center = indicatorView.center = CGPointMake(CGRectGetWidth(waitingView.frame) / 2, 32);
         [waitingView addSubview:indicatorView];
         
         if (_message) {
@@ -162,7 +169,10 @@
             
             CGSize size = [CULabel sizeOfLabel:messageLabel inView:waitingView];
             messageLabel.frame = CGRectMake(10, CGRectGetMaxY(indicatorView.frame) + 10, waitingView.frame.size.width - 20, size.height);
+        } else {
+            indicatorView.center = CGPointMake(CGRectGetWidth(waitingView.frame) / 2, CGRectGetHeight(waitingView.frame) / 2);
         }
+        
         [waitingViewContainerView addSubview:waitingView];
         [view addSubview:waitingViewContainerView];
     } else {
@@ -178,9 +188,11 @@
         indicatorViewContainerView.userInteractionEnabled = YES;
         indicatorViewContainerView.tag = kDefault_Tag_4_Indicator_View;
         
-        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleWhite : UIActivityIndicatorViewStyleGray];
-        [indicatorView startAnimating];
+        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleGray : UIActivityIndicatorViewStyleWhite];
         indicatorView.center = _center;
+        CGAffineTransform scaledTransform = CGAffineTransformMakeScale(1.3f, 1.3f);
+        indicatorView.transform = scaledTransform;
+        [indicatorView startAnimating];
     
         [indicatorViewContainerView addSubview:indicatorView];
         [view addSubview:indicatorViewContainerView];
