@@ -101,6 +101,15 @@ typedef enum {
 +(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
 
 /**
+ 在制定的view中显示一个转动的ActivityIndicatorView
+
+ @param view ActivityIndicatorView的父视图
+ @param _center ActivityIndicatorView的中心点坐标
+ @param _theme ActivityIndicatorView的视图样式
+ */
++(void)showActivityIndicatorInView:(UIView *)view center:(CGPoint)_center theme:(CUTipsViewTheme)_theme;
+
+/**
  在视图顶部显示的一个Tips视图，可包含文字和图片，该Tips视图会自动以向上滑出的方式消失
  
  @param view Tips视图的父View

@@ -171,6 +171,25 @@
     }
 }
 
++(void)showActivityIndicatorInView:(UIView *)view center:(CGPoint)_center theme:(CUTipsViewTheme)_theme {
+    UIView *indicatorViewContainerView = [view viewWithTag:kDefault_Tag_4_Indicator_View];
+    if (indicatorViewContainerView == nil) {
+        indicatorViewContainerView = [[UIView alloc] initWithFrame:view.bounds];
+        indicatorViewContainerView.userInteractionEnabled = YES;
+        indicatorViewContainerView.tag = kDefault_Tag_4_Indicator_View;
+        
+        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleWhite : UIActivityIndicatorViewStyleGray];
+        [indicatorView startAnimating];
+        indicatorView.center = _center;
+    
+        [indicatorViewContainerView addSubview:indicatorView];
+        [view addSubview:indicatorViewContainerView];
+    } else {
+        [indicatorViewContainerView removeFromSuperview];
+        [CUTipsView showActivityIndicatorInView:view center:_center theme:_theme];
+    }
+}
+
 +(void)showPopDownTipsViewInView:(UIView *)view withImage:(UIImage *)aImage message:(NSString *)aMessage yOffset:(CGFloat)_yOffset {
     if (!view) {
         Logger(@"The param 'view' is as the container of this PopDownTipsView, it can NOT be nil.");

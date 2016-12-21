@@ -22,6 +22,7 @@
 #define kDefault_Tag_4_Pop_Down_Tips_View                   2016120801
 #define kDefault_Tag_4_Toast_View                           2016120802
 #define kDefault_Tag_4_Waiting_View                         2016120803
+#define kDefault_Tag_4_Indicator_View                       2016122101
 
 
 /**
