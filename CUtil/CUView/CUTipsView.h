@@ -101,7 +101,7 @@ typedef enum {
 +(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
 
 /**
- 在制定的view中显示一个转动的ActivityIndicatorView
+ 在指定的view中显示一个转动的ActivityIndicatorView
 
  @param view ActivityIndicatorView的父视图
  @param _center ActivityIndicatorView的中心点坐标
