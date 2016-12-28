@@ -534,7 +534,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- Initialize a CUAlertView instance
+ Initialize a CUAlertView instance.Remember to invoke this method to initialize CUAlertView only.
 
  @param title The title texts in this alert view
  @param message The message texts in this alert view
