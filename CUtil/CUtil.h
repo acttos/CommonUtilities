@@ -21,6 +21,7 @@
     #import "CUConfig.h"
     #import "NSString+CUString.h"
     #import "CULabel.h"
+    #import "CUAlertView.h"
     #import "CUTipsView.h"
     #import "CUToastView.h"
 
