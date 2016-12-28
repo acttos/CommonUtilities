@@ -530,6 +530,28 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay;
 ```
 
+> CUAlertView.h
+
+```
+/**
+ Initialize a CUAlertView instance
+
+ @param title The title texts in this alert view
+ @param message The message texts in this alert view
+ @param leftBtnText The texts of left button in this alert view
+ @param leftClickedBlock The clicked-block of the left button in this alert view
+ @param rightBtnText The texts of right button in this alert view
+ @param rightClickedBlock The clicked-block of the right button in this alert view
+ @return The instance of this CUAlertView.
+ */
+-(instancetype)initWithTitle:(NSString *)title message:(NSString *)message leftButtonText:(NSString *)leftBtnText leftClicked:(void(^)(void))leftClickedBlock rightButtonText:(NSString *)rightBtnText rightClicked:(void(^)(void))rightClickedBlock;
+
+/**
+ Invoke this method to show up the alert view
+ */
+-(void)show;
+```
+
 ## 编解码相关
 > CUCode.h
 
