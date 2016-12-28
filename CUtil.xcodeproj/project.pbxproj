@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7D3D53651DF018DF00E2F346 /* CUtilUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D53641DF018DF00E2F346 /* CUtilUITests.m */; };
+		7D409A561E13618000E6F247 /* CUAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D409A541E13618000E6F247 /* CUAlertView.h */; };
+		7D409A571E13618000E6F247 /* CUAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D409A551E13618000E6F247 /* CUAlertView.m */; };
 		7D852B571DEC314A006E9EB3 /* CUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D852B4E1DEC314A006E9EB3 /* CUtil.framework */; };
 		7D852B5C1DEC314A006E9EB3 /* CUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */; };
 		7D852B991DEC3401006E9EB3 /* CUCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B7E1DEC3401006E9EB3 /* CUCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,6 +52,8 @@
 		7D3D53621DF018DF00E2F346 /* CUtilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUtilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3D53641DF018DF00E2F346 /* CUtilUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUtilUITests.m; sourceTree = "<group>"; };
 		7D3D53661DF018DF00E2F346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D409A541E13618000E6F247 /* CUAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUAlertView.h; sourceTree = "<group>"; };
+		7D409A551E13618000E6F247 /* CUAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUAlertView.m; sourceTree = "<group>"; };
 		7D852B4E1DEC314A006E9EB3 /* CUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D852B561DEC314A006E9EB3 /* CUtilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUtilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUtilTests.m; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				7D852B971DEC3401006E9EB3 /* CUTipsView.m */,
 				7DBA9B991DF9004400F06AF7 /* CUToastView.h */,
 				7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */,
+				7D409A541E13618000E6F247 /* CUAlertView.h */,
+				7D409A551E13618000E6F247 /* CUAlertView.m */,
 			);
 			path = CUView;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				7D852BA81DEC3401006E9EB3 /* CUtil.h in Headers */,
 				7D852BA61DEC3401006E9EB3 /* CUJSON.h in Headers */,
 				7D852BA21DEC3401006E9EB3 /* CUStorage.h in Headers */,
+				7D409A561E13618000E6F247 /* CUAlertView.h in Headers */,
 				7D852BA91DEC3401006E9EB3 /* CULabel.h in Headers */,
 				7D852B9B1DEC3401006E9EB3 /* CUColor.h in Headers */,
 				7D852BA41DEC3401006E9EB3 /* CUConfig.h in Headers */,
@@ -415,6 +422,7 @@
 				7D852B9C1DEC3401006E9EB3 /* CUColor.m in Sources */,
 				7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */,
 				7D852BAA1DEC3401006E9EB3 /* CULabel.m in Sources */,
+				7D409A571E13618000E6F247 /* CUAlertView.m in Sources */,
 				7D852BA51DEC3401006E9EB3 /* CUConfig.m in Sources */,
 				7D852B9E1DEC3401006E9EB3 /* CUDate.m in Sources */,
 				7D852BA11DEC3401006E9EB3 /* CUFile.m in Sources */,
