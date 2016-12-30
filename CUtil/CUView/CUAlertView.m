@@ -59,15 +59,15 @@
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20)];
     self.titleLabel.text = self.title;
-    self.titleLabel.textColor = [CUColor colorWithHexString:@"#000000"];
+    self.titleLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     [self.contentView addSubview:self.titleLabel];
     
     self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.titleLabel.frame) + 20, CGRectGetWidth(self.contentView.frame) - 20, 100)];
-    self.messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
+    self.messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     self.messageLabel.text = self.message;
-    self.messageLabel.textColor = [CUColor colorWithHexString:@"#050505"];
+    self.messageLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
     self.messageLabel.textAlignment = NSTextAlignmentCenter;
     self.messageLabel.numberOfLines = 0;
     [self.contentView addSubview:self.messageLabel];
