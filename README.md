@@ -556,6 +556,14 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  Invoke this method to show up the alert view
  */
 -(void)show;
+
+/**
+ Show up the alert view with a certain theme.
+ 
+ @param theme The theme of CUAlertView
+ */
+-(void)showWithTheme:(CUAlertViewTheme)theme;
+
 ```
 
 ## 编解码相关
