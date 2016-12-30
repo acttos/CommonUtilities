@@ -47,5 +47,6 @@ typedef enum {
  Invoke this method to show up the alert view
  */
 -(void)show;
+-(void)showWithTheme:(CUAlertViewTheme)theme;
 
 @end

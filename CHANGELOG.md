@@ -2,6 +2,7 @@
 
 ## 0.1.12:
 
+- Add `CUAlertViewTheme` support for CUAlertView;
 - Change the font-size of `messageLabel` in CUAlertView;
 - Change the colors of `title` and `message` in CUAlertView.
 
