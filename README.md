@@ -534,7 +534,8 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 /**
- Initialize a CUAlertView instance.Remember to invoke this method to initialize CUAlertView only.
+ Initialize a CUAlertView instance.
+ @warning Remember to invoke this method to initialize CUAlertView only.
 
  @param title The title texts in this alert view
  @param message The message texts in this alert view
@@ -544,7 +545,12 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  @param rightClickedBlock The clicked-block of the right button in this alert view
  @return The instance of this CUAlertView.
  */
--(instancetype)initWithTitle:(NSString *)title message:(NSString *)message leftButtonText:(NSString *)leftBtnText leftClicked:(void(^)(void))leftClickedBlock rightButtonText:(NSString *)rightBtnText rightClicked:(void(^)(void))rightClickedBlock;
+-(instancetype)initWithTitle:(NSString *)title
+                     message:(NSString *)message
+              leftButtonText:(NSString *)leftBtnText
+                 leftClicked:(void(^)(void))leftClickedBlock
+             rightButtonText:(NSString *)rightBtnText
+                rightClicked:(void(^)(void))rightClickedBlock;
 
 /**
  Invoke this method to show up the alert view
