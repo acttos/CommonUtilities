@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.13:
+
+- Modify the logic of layouting subview in CUAlertView to reduce the memory cost.
+
 ## 0.1.12:
 
 - Add `CUAlertViewTheme` support for CUAlertView;
