@@ -36,6 +36,8 @@
         self.leftBtnClickedBlock = leftClickedBlock;
         self.rightBtnClickedBlock = rightClickedBlock;
         
+        [self _initViews];
+        
         return self;
     }
     
@@ -66,7 +68,7 @@
 }
 
 //MARK: - Private Methods for Initialization of UI
--(void)_initViewsWithDefaultTheme {
+-(void)_initViews {
     self.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
     self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4f];
     
@@ -94,9 +96,8 @@
     self.messageLabel.numberOfLines = 0;
     [self.contentView addSubview:self.messageLabel];
     
-    //Update the frame of messageLabel
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.messageLabel.frame) - size.height) / 2 + CGRectGetMaxY(self.titleLabel.frame) - 10, CGRectGetWidth(self.messageLabel.frame), size.height + 20);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.messageLabel.frame) - size.height) / 2 + CGRectGetMaxY(self.titleLabel.frame) - 10, size.width, size.height + 20);
     
     self.buttonsContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44)];
     
@@ -123,118 +124,43 @@
     [self addSubview:self.mainAlertView];
 }
 
--(void)_initViewsWithPopDownTheme {
-    self.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
-    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4f];
+-(void)_updateViewsWithDefaultTheme {
+    self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - 190) / 2 - 40, kScreen_Width - 40, 190);
+    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
+    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    self.mainAlertView = [[UIView alloc] initWithFrame:CGRectMake(8, 24, kScreen_Width - 16, 190)];
-    self.mainAlertView.layer.cornerRadius = 6.0f;
-    self.mainAlertView.layer.masksToBounds = YES;
-    self.mainAlertView.userInteractionEnabled = YES;
-    
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame))];
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    [self.mainAlertView addSubview:self.contentView];
-    
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20)];
-    self.titleLabel.text = self.title;
-    self.titleLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
-    [self.contentView addSubview:self.titleLabel];
-    
-    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.titleLabel.frame) + 20, CGRectGetWidth(self.contentView.frame) - 20, 100)];
-    self.messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
-    self.messageLabel.text = self.message;
-    self.messageLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
-    self.messageLabel.textAlignment = NSTextAlignmentCenter;
-    self.messageLabel.numberOfLines = 0;
-    [self.contentView addSubview:self.messageLabel];
-    
-    //Update the frame of messageLabel
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.messageLabel.frame) - size.height) / 2 + CGRectGetMaxY(self.titleLabel.frame) - 10, CGRectGetWidth(self.messageLabel.frame), size.height + 20);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
+    self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
-    self.buttonsContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44)];
-    
-    self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
-    self.leftButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.leftButton.backgroundColor = [CUColor colorWithHexString:@"#F2F2F2"];
-    [self.leftButton setTitle:self.leftBtnText forState:UIControlStateNormal];
-    [self.leftButton setTitleColor:[CUColor colorWithHexString:@"#1E63D2"] forState:UIControlStateNormal];
-    [self.leftButton addTarget:self action:@selector(_leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.buttonsContainerView addSubview:self.leftButton];
-    
-    self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
-    self.rightButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.rightButton.backgroundColor = [CUColor colorWithHexString:@"#FF4444"];
-    [self.rightButton setTitle:self.rightBtnText forState:UIControlStateNormal];
-    [self.rightButton setTitleColor:[CUColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
-    [self.rightButton addTarget:self action:@selector(_rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.buttonsContainerView addSubview:self.rightButton];
-    
-    [self.contentView addSubview:self.buttonsContainerView];
-    
-    [self addSubview:self.mainAlertView];
 }
 
--(void)_initViewsWithPopUpTheme {
-    self.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
-    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4f];
+-(void)_updateViewsWithPopDownTheme {
+    self.mainAlertView.frame = CGRectMake(8, 24, kScreen_Width - 16, 190);
+    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
+    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    self.mainAlertView = [[UIView alloc] initWithFrame:CGRectMake(8, kScreen_Height - 198, kScreen_Width - 16, 190)];
-    self.mainAlertView.layer.cornerRadius = 6.0f;
-    self.mainAlertView.layer.masksToBounds = YES;
-    self.mainAlertView.userInteractionEnabled = YES;
-    
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame))];
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    [self.mainAlertView addSubview:self.contentView];
-    
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20)];
-    self.titleLabel.text = self.title;
-    self.titleLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
-    [self.contentView addSubview:self.titleLabel];
-    
-    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.titleLabel.frame) + 20, CGRectGetWidth(self.contentView.frame) - 20, 100)];
-    self.messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
-    self.messageLabel.text = self.message;
-    self.messageLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
-    self.messageLabel.textAlignment = NSTextAlignmentCenter;
-    self.messageLabel.numberOfLines = 0;
-    [self.contentView addSubview:self.messageLabel];
-    
-    //Update the frame of messageLabel
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.messageLabel.frame) - size.height) / 2 + CGRectGetMaxY(self.titleLabel.frame) - 10, CGRectGetWidth(self.messageLabel.frame), size.height + 20);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
+    self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
-    self.buttonsContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44)];
-    
-    self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
-    self.leftButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.leftButton.backgroundColor = [CUColor colorWithHexString:@"#F2F2F2"];
-    [self.leftButton setTitle:self.leftBtnText forState:UIControlStateNormal];
-    [self.leftButton setTitleColor:[CUColor colorWithHexString:@"#1E63D2"] forState:UIControlStateNormal];
-    [self.leftButton addTarget:self action:@selector(_leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.buttonsContainerView addSubview:self.leftButton];
-    
-    self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
-    self.rightButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.rightButton.backgroundColor = [CUColor colorWithHexString:@"#FF4444"];
-    [self.rightButton setTitle:self.rightBtnText forState:UIControlStateNormal];
-    [self.rightButton setTitleColor:[CUColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
-    [self.rightButton addTarget:self action:@selector(_rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.buttonsContainerView addSubview:self.rightButton];
+}
+
+-(void)_updateViewsWithPopUpTheme {
+    self.mainAlertView.frame = CGRectMake(8, kScreen_Height - 198, kScreen_Width - 16, 190);
+    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
+    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    [self.contentView addSubview:self.buttonsContainerView];
+    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
+    self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
-    [self addSubview:self.mainAlertView];
+    self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
 }
 
 //MARK: - Private Methods for Button Actions
@@ -268,7 +194,7 @@
 
 //MARK: - Private Methods for the alert view's showing up
 -(void)_showThemeDefault {
-    [self _initViewsWithDefaultTheme];
+    [self _updateViewsWithDefaultTheme];
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];
@@ -291,7 +217,7 @@
 }
 //FIXME:Change the position animation
 -(void)_showThemePopDown {
-    [self _initViewsWithPopDownTheme];
+    [self _updateViewsWithPopDownTheme];
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];
@@ -307,7 +233,7 @@
 }
 //FIXME:Change the position animation
 -(void)_showThemePopUp {
-    [self _initViewsWithPopUpTheme];
+    [self _updateViewsWithPopUpTheme];
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];
