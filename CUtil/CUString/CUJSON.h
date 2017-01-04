@@ -33,6 +33,22 @@
  @param object 任意NSObject对象
  @return 解析的JSON或错误内容
  */
-+(NSString *)parseJSONStringFromObject:(NSObject *)object;
++(NSString *)JSONStringFromObject:(NSObject *)object;
+
+/**
+ Parse the given JSON string to an array instance
+
+ @param JSON The JSON string
+ @return An array instance parsed from the JSON
+ */
++(NSArray *)arrayFromJSON:(NSString *)JSON;
+
+/**
+ Parse the given JSON string to a dictionary instance
+ 
+ @param JSON The JSON string
+ @return A dictionary instance parsed from the JSON
+ */
++(NSDictionary *)dictionaryFromJSON:(NSString *)JSON;
 
 @end

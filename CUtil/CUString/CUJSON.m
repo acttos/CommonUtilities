@@ -8,19 +8,21 @@
 //
 
 #import "CUJSON.h"
+
 #import "CUDefine.h"
+#import "NSString+CUString.h"
 
 @implementation CUJSON
 
 +(NSString *)JSONStringFromArray:(NSArray *)array {
-    return [CUJSON parseJSONStringFromObject:array];
+    return [CUJSON JSONStringFromObject:array];
 }
 
 +(NSString *)JSONStringFromDictionary:(NSDictionary *)dictionary {
-    return [CUJSON parseJSONStringFromObject:dictionary];
+    return [CUJSON JSONStringFromObject:dictionary];
 }
 
-+(NSString *)parseJSONStringFromObject:(NSObject *)object {
++(NSString *)JSONStringFromObject:(NSObject *)object {
     NSString *JSONString = nil;
     NSError *error;
     
@@ -34,6 +36,50 @@
     Logger(@"%@", JSONString);
     
     return JSONString;
+}
+
++(NSArray *)arrayFromJSON:(NSString *)JSON {
+    if ([JSON isEmpty]) {
+        Logger(@"The parameter 'JSON' can NOT be empty.");
+        return nil;
+    }
+    
+    if (!([JSON startsWith:@"["] && [JSON endsWith:@"]"])) {
+        Logger(@"The parameter 'JSON' does NOT fit array pattern:'[]'");
+        return nil;
+    }
+    
+    NSError *error;
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:[JSON dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    
+    if (error) {
+        Logger(@"There is an error: \n'%@'\n occurs when parsing the given JSON string.", error);
+        return nil;
+    }
+    
+    return array;
+}
+
++(NSDictionary *)dictionaryFromJSON:(NSString *)JSON {
+    if ([JSON isEmpty]) {
+        Logger(@"The parameter 'JSON' can NOT be empty.");
+        return nil;
+    }
+    
+    if (!([JSON startsWith:@"{"] && [JSON endsWith:@"}"])) {
+        Logger(@"The parameter 'JSON' does NOT fit dictionary pattern:'{}'");
+        return nil;
+    }
+    
+    NSError *error;
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:[JSON dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    
+    if (error) {
+        Logger(@"There is an error: \n'%@'\n occurs when parsing the given JSON string.", error);
+        return nil;
+    }
+    
+    return dictionary;
 }
 
 @end

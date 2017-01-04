@@ -47,7 +47,7 @@
     NSString *decodedString = [CUCode BASE64DecodeWithString:encodedString];
     XCTAssertTrue([decodedString isEqualToString:sourceString]);
     
-    NSString *path = @"/Volumes/Data/Documents/GitHub_Code/personal/iOS/CUtilDev/CUtilDemo/images/cut.png";
+    NSString *path = @"/Volumes/Data/Documents/GitHub_Code/personal/iOS/CUtilDev/CUtilDev/images/cut.png";
     NSURL *url = [NSURL URLWithString:path];
     NSData *data = [NSData dataWithContentsOfFile:path];
     XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithData:data]]);
@@ -57,7 +57,7 @@
     XCTAssertTrue([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithFileAtURL:url]]);
     XCTAssertTrue([@"22df248ead75d4a95cae001344417fb464168582" isEqualToString:[CUCode SHA1CodeWithFileAtURL:url]]);
     
-    path = @"file:///Volumes/Data/Documents/GitHub_Code/personal/iOS/CUtilDev/CUtilDemo/images/cut.png";
+    path = @"file:///Volumes/Data/Documents/GitHub_Code/personal/iOS/CUtilDev/CUtilDev/images/cut.png";
     url = [NSURL URLWithString:path];
     data = [NSData dataWithContentsOfFile:path];
     XCTAssertFalse([@"48ee371f2994ef69e5cd5bb5d1835d51" isEqualToString:[CUCode MD5CodeWithData:data]]);
@@ -130,14 +130,21 @@
 
 - (void)testCUJSON {
     NSArray *array = @[@"A", @"B", @"C", @"D", @"E"];
-    XCTAssertNotNil([CUJSON JSONStringFromArray:array]);
+    NSString *arrayJSON = [CUJSON JSONStringFromArray:array];
+    XCTAssertNotNil(arrayJSON);
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:4];
     [dic setValue:@"Value1" forKey:@"key1"];
     [dic setValue:[NSNumber numberWithInt:2] forKey:@"key2"];
     [dic setValue:array forKey:@"key3"];
     [dic setValue:@"Value4" forKey:@"key4"];
-    XCTAssertNotNil([CUJSON JSONStringFromDictionary:dic]);
+    NSString *dicJSON = [CUJSON JSONStringFromDictionary:dic];
+    XCTAssertNotNil(dicJSON);
+    
+    NSArray *parsedArray = [CUJSON arrayFromJSON:arrayJSON];
+    XCTAssertNotNil(parsedArray);
+    NSDictionary *parsedDic = [CUJSON dictionaryFromJSON:dicJSON];
+    XCTAssertNotNil(parsedDic);
 }
 
 - (void)testCUString {
