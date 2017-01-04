@@ -2,6 +2,7 @@
 
 ## 0.1.13:
 
+- Add two methods in CUJSON for parsing JSON string to an array or a dictionary.
 - Modify the logic of layouting subview in CUAlertView to reduce the memory cost.
 
 ## 0.1.12:
