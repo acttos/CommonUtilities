@@ -138,6 +138,13 @@
     [dic setValue:[NSNumber numberWithInt:2] forKey:@"key2"];
     [dic setValue:array forKey:@"key3"];
     [dic setValue:@"Value4" forKey:@"key4"];
+    
+    NSMutableDictionary *subDic = [NSMutableDictionary dictionaryWithCapacity:4];
+    [subDic setValue:@"SubValue1" forKey:@"SubKey1"];
+    [subDic setValue:[NSNumber numberWithInt:2] forKey:@"SubKey2"];
+    [subDic setValue:array forKey:@"SubKey3"];
+    [subDic setValue:@"Value4" forKey:@"SubKey4"];
+    [dic setValue:subDic forKey:@"subDic"];
     NSString *dicJSON = [CUJSON JSONStringFromDictionary:dic];
     XCTAssertNotNil(dicJSON);
     

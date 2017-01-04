@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.14:
+
+- Make the JSON string looks pretty.
+
 ## 0.1.13:
 
 - Add two methods in CUJSON for parsing JSON string to an array or a dictionary.

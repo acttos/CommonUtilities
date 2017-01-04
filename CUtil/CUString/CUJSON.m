@@ -26,9 +26,10 @@
     NSString *JSONString = nil;
     NSError *error;
     
-    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:0 error:&error];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:&error];
     if (!data || error) {
-        JSONString = @"{\"error\":\"-1\"}";
+        Logger(@"There is an error:%@",error);
+        return nil;
     } else {
         JSONString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }

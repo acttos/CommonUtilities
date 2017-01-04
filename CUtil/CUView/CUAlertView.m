@@ -215,7 +215,7 @@
                                           }];
                      }];
 }
-//FIXME:Change the position animation
+
 -(void)_showThemePopDown {
     [self _updateViewsWithPopDownTheme];
     
@@ -231,7 +231,7 @@
                          self.mainAlertView.transform = oriTransform;
                      }];
 }
-//FIXME:Change the position animation
+
 -(void)_showThemePopUp {
     [self _updateViewsWithPopUpTheme];
     
