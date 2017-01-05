@@ -2,6 +2,7 @@
 
 ## 0.1.14:
 
+- Add NSData+CUData to compress & decompress, encrypt & decrypt data;
 - Make the JSON string looks pretty.
 
 ## 0.1.13:

@@ -136,6 +136,56 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 + (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 ```
 
+## 二进制数据相关
+> NSData+CUData.h
+
+```
+/**
+ Decompress the data with zlib
+
+ @return Decompressed data
+ */
+- (NSData *) zlibDecompress;
+
+/**
+ Compress the data with zlib
+
+ @return Compressed data
+ */
+- (NSData *) zlibCompress;
+
+/**
+ Decompress the data with gzip
+
+ @return Decompressed data
+ */
+- (NSData *) gzipDecompress;
+
+/**
+ Compress the data with gzip
+ 
+ @return Compressed data
+ */
+- (NSData *) gzipCompress;
+
+/**
+ Encrypt the data with a key
+
+ @param key The key with which to encrypt data
+ @return Ecrypted data
+ */
+- (NSData *)AES256EncryptWithKey:(NSString *)key;
+
+/**
+ Decrypt the data with a key
+
+ @param key The key with which to decrypt data
+ @return Decrypted data
+ */
+- (NSData *)AES256DecryptWithKey:(NSString *)key;
+
+```
+
 ## 文件目录相关
 > CUFile.h
 
