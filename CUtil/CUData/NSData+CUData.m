@@ -143,7 +143,7 @@
         if (status == Z_STREAM_END) {
             done = YES;
         } else if (status != Z_OK) {
-            break；
+            break;
         }
     }
     if (inflateEnd (&strm) != Z_OK) {
