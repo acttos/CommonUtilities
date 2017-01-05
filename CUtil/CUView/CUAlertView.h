@@ -3,7 +3,8 @@
 //  CUtil
 //
 //  Created by Acttos on 28/12/2016.
-//  Copyright © 2016 Acttos.org. All rights reserved.
+//  Sources https://github.com/acttos/CommonUtilities
+//  Copyright © 2016 Acttos.org. All codes follow MIT License.
 //
 
 #import <UIKit/UIKit.h>

@@ -183,6 +183,29 @@
     Logger(@"%@", [@"1,2,3,4,5,6,7,8,9,,,,,," splitBy:@","]);
 }
 
+- (void)testCUData {
+    NSString *sourceString = @"/Users/majinshou/Library/Developer/Xcode/DerivedData/CUtilDev-bntonewhxafmvchfbzmhidvthpkf/Logs/Test/C4106638-EFAF-42CF-882D-4C9FD29C3A4C/Session-CUtilTests-2017-01-05_173915-27sbPP.log";
+    NSData *sourceData = [sourceString dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *compressedData = [sourceData zlibCompress];
+    XCTAssertTrue(sourceData.length > compressedData.length);
+    
+    NSData *decompressedData = [compressedData zlibDecompress];
+    XCTAssertTrue(sourceData.length == decompressedData.length);
+    
+    compressedData = [sourceData gzipCompress];
+    XCTAssertTrue(sourceData.length > compressedData.length);
+    
+    decompressedData = [compressedData gzipDecompress];
+    XCTAssertTrue(sourceData.length == decompressedData.length);
+    
+    NSData *encryptedData = [sourceData AES256EncryptWithKey:@"HULUCAT"];
+    NSData *decryptedData = [encryptedData AES256DecryptWithKey:@"HULUCAT"];
+    Logger(@"Encrypted:%@", [[NSString alloc] initWithData:encryptedData encoding:NSUTF8StringEncoding]);
+    Logger(@"Decrypted:%@", [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding]);
+    XCTAssertTrue(sourceData.length == decryptedData.length);
+    XCTAssertTrue([sourceString isEqualToString:[[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding]]);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     // 测试性能例子
