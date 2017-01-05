@@ -34,6 +34,8 @@
 		7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B971DEC3401006E9EB3 /* CUTipsView.m */; };
 		7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBA9B991DF9004400F06AF7 /* CUToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */; };
+		7DBFB8061E1E2E6200FBF1BE /* NSData+CUData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBFB8041E1E2E6200FBF1BE /* NSData+CUData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DBFB8071E1E2E6200FBF1BE /* NSData+CUData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBFB8051E1E2E6200FBF1BE /* NSData+CUData.m */; };
 		7DFE12511E09213C009811EC /* NSString+CUString.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DFE124F1E09213C009811EC /* NSString+CUString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DFE12521E09213C009811EC /* NSString+CUString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFE12501E09213C009811EC /* NSString+CUString.m */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		7D852B981DEC3401006E9EB3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DBA9B991DF9004400F06AF7 /* CUToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUToastView.h; sourceTree = "<group>"; };
 		7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUToastView.m; sourceTree = "<group>"; };
+		7DBFB8041E1E2E6200FBF1BE /* NSData+CUData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CUData.h"; sourceTree = "<group>"; };
+		7DBFB8051E1E2E6200FBF1BE /* NSData+CUData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CUData.m"; sourceTree = "<group>"; };
 		7DFC3F561DDF074800E90E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7DFC3F581DDF074E00E90E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7DFE124F1E09213C009811EC /* NSString+CUString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CUString.h"; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			children = (
 				7D852B7D1DEC3401006E9EB3 /* CUCode */,
 				7D852B801DEC3401006E9EB3 /* CUColor */,
+				7DBFB8031E1E2E3F00FBF1BE /* CUData */,
 				7D852B831DEC3401006E9EB3 /* CUDate */,
 				7D852B871DEC3401006E9EB3 /* CUFile */,
 				7D852B8A1DEC3401006E9EB3 /* CUStorage */,
@@ -221,6 +226,15 @@
 			path = CUView;
 			sourceTree = "<group>";
 		};
+		7DBFB8031E1E2E3F00FBF1BE /* CUData */ = {
+			isa = PBXGroup;
+			children = (
+				7DBFB8041E1E2E6200FBF1BE /* NSData+CUData.h */,
+				7DBFB8051E1E2E6200FBF1BE /* NSData+CUData.m */,
+			);
+			path = CUData;
+			sourceTree = "<group>";
+		};
 		7DE156941C917A68002611D2 = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +281,7 @@
 				7D852BA21DEC3401006E9EB3 /* CUStorage.h in Headers */,
 				7D852BA91DEC3401006E9EB3 /* CULabel.h in Headers */,
 				7D852B9B1DEC3401006E9EB3 /* CUColor.h in Headers */,
+				7DBFB8061E1E2E6200FBF1BE /* NSData+CUData.h in Headers */,
 				7D852BA41DEC3401006E9EB3 /* CUConfig.h in Headers */,
 				7D852B9D1DEC3401006E9EB3 /* CUDate.h in Headers */,
 				7D852BA01DEC3401006E9EB3 /* CUFile.h in Headers */,
@@ -426,6 +441,7 @@
 				7D852BA51DEC3401006E9EB3 /* CUConfig.m in Sources */,
 				7D852B9E1DEC3401006E9EB3 /* CUDate.m in Sources */,
 				7D852BA11DEC3401006E9EB3 /* CUFile.m in Sources */,
+				7DBFB8071E1E2E6200FBF1BE /* NSData+CUData.m in Sources */,
 				7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

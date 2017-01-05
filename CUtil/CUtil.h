@@ -20,6 +20,7 @@
     #import "CUJSON.h"
     #import "CUConfig.h"
     #import "NSString+CUString.h"
+    #import "NSData+CUData.h"
     #import "CULabel.h"
     #import "CUAlertView.h"
     #import "CUTipsView.h"
