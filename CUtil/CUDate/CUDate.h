@@ -12,33 +12,33 @@
 @interface CUDate : NSObject
 
 /**
- 根据当前时间创建时间戳
+ Generate a millisecond value based on current time.
  
- @return 当前时间的时间戳，精确到毫秒
+ @return The current milliseconds.
  */
 +(long long)generateMillisecondTime;
 
 /**
- 根据给定日期创建时间戳
+ Generate a millisecond value based on the given date.
  
- @param date 需要转换为时间戳的NSDate对象,date为nil时，取当前时刻
- @return 转换后的时间戳，精确到毫秒
+ @param date The date which will be converted into milliseconds, current date will replace this parameter when the give date is nil
+ @return The milliseconds based on the give date.
  */
 +(long long)generateMillisecondTimeWithDate:(NSDate *)date;
 
 /**
- 将毫秒的时间转化为NSDate实例
+ Convert the milliseconds into a NSDate instance
  
- @param milliseconds 某个时间对应的毫秒值
- @return 给定时间戳对应的NSDate对象
+ @param milliseconds The milliseconds to convert with.
+ @return The NSDate instance based on the milliseconds.
  */
 +(NSDate *)generateDateWithMilliseconds:(long long)milliseconds;
 
 /**
- 将NSDate对象进行格式化，采用当前时区
+ Format the date with a format string
  
- @param date   NSDate对象
- @param format 格式化字符串，如果为空或者nil，采用“yyyy-MM-dd HH:mm:ss”
+ @param date   The NSDate instance to convert and format
+ @param format The format string, "yyyy-MM-dd HH:mm:ss" will be used when parameter 'format' is nil.
  @return 格式化后的字符串
  */
 +(NSString *)stringOfDate:(NSDate *)date withFormat:(NSString *)format;

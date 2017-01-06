@@ -208,10 +208,8 @@
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
-    // 测试性能例子
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
-        // 需要测试性能的代码
     }];
 }
 @end

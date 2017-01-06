@@ -13,36 +13,36 @@
 @interface CUColor : NSObject
 
 /**
- 根据传递的16进制数据生成UIColor实例
+ Return the UIColor instance generated with a hex value
  
- @param hexValue 16进制的颜色表示方式。如：0xFF00FF
- @return 对应色值的UIColor实例
+ @param hexValue The value of color in hex format, such as: 0xFF00FF
+ @return The UIColor instance
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue;
 
 /**
- 根据传递的16进制数据生成UIColor实例，该UIColor包含指定的透明度
+ Return the UIColor instance generated with a hex and alpha values
  
- @param hexValue 16进制的颜色表示方式。如：0xFF00FF
- @param alpha    颜色的透明度
- @return 对应色值的UIColor实例
+ @param hexValue The value of color in hex format, such as: 0xFF00FF
+ @param alpha    The alpha property of this color
+ @return The UIColor instance with alpha.
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue alpha:(CGFloat)alpha;
 
 /**
- 根据传递的色值字符串生成UIColor实例
+ Return the UIColor instance generated with a hex string value
  
- @param hexString 以#开头的16进制色值字符串。如：#FF00FF
- @return 对应色值的UIColor实例
+ @param hexString The color value in format of hex string, such as: @"#FF00FF"
+ @return The UIColor instance from hexString.
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 
 /**
- 根据传递的色值字符串生成UIColor实例，该UIColor包含指定的透明度
+ Return the UIColor instance generated with a hex string and alpha values.
  
- @param hexString 以#开头的16进制色值字符串。如：#FF00FF
- @param alpha     颜色的透明度
- @return 对应色值的UIColor实例
+ @param hexString The color value in format of hex string, such as: @"#FF00FF"
+ @param alpha The alpha property of this color
+ @return The UIColor instance from hexString and alpha.
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 

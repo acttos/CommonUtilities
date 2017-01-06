@@ -14,107 +14,107 @@
 @interface CUCode : NSObject
 
 /**
- 生成一个全球唯一的Id ^_-。<br/>
- 可结合本类中其它方法将此Id持久化，并保持不变。<br/>
- 适应需要唯一确定用户身份的场景。
+ Generate a global unique identifer ^_-。<br/>
+ You can use other methods in this class to persistent this value for later use.<br/>
+ This method is usually used in condition of 'UserId,DeviceId' and so on.
 
- @return 全球唯一的编号
+ @return The global unique identifier
  */
 + (NSString *)uniqueIdentifier;
 
 /**
- 采用Keychain来保存唯一ID,如果之前有保存过，则覆盖旧值
+ Save the unique identifier into Keychain, if the value exists, will be rewrote.
 
- @param identifier 用来保存的唯一ID
- @warning 跟Keychain相关的读写操作，仅在真机上验证通过
+ @param identifier The ID to be saved.
+ @warning The operactions associated with Keychain, please use it on real devices.
  */
 + (void)saveInKeychainWithIdentifier:(NSString *)identifier;
 
 /**
- 从Keychain中加载保存的唯一ID
+ Load the unique identifier form Keychain
 
- @return Key中保存的唯一ID，如果之前未保存过，返回nil
- @warning 跟Keychain相关的读写操作，仅在真机上验证通过
+ @return nil or the identifier saved before
+ @warning The operactions associated with Keychain, please use it on real devices.
  */
 + (NSString *)loadIdentifierFromKeychain;
 
 /**
- 将给定的字符串进行BASE64编码
+ Encode the given string with BASE64 encoding
 
- @param string 源字符串
- @return 经过BASE64编码后的字符串
+ @param string The source string to encode with.
+ @return Encoded BASE64 string
  */
 + (NSString*) BASE64EncodeWithString:(NSString*)string;
 
 /**
- 将给定的字符串进行BASE64解码
+ Decode the BASE64 string
 
- @param string 源字符串
- @return 经过BASE64解码后的字符串
+ @param string The string to decode with.
+ @return Decoded string
  */
 + (NSString*) BASE64DecodeWithString:(NSString*)string;
 
 /**
- 将给定的字符串进行MD5摘要
+ Return the MD5 digest string of sourceString
  
- @param sourceString 源字符串
- @return 进行了MD5摘要后的字符串
+ @param sourceString The string to digest.
+ @return The MD5 digest string
  */
 + (NSString *) MD5CodeWithString:(NSString *)sourceString;
 
 /**
- 将给定的NSData实例进行MD5摘要
+ Return the MD5 digest string of data
  
- @param data 给定的NSData实例
- @return 进行了MD5摘要后的字符串
+ @param data The data to digest
+ @return The MD5 digest string
  */
 + (NSString *) MD5CodeWithData:(NSData *) data;
 
 /**
- 根据给定的path对应的文件进行MD5摘要
+ Return the MD5 digest string of file at specified path
 
- @param path 文件的path，需要直接写具体路径，如："/home/user/photo.png"
- @return 文件的MD5摘要
+ @param path The path of a file, such as: "/home/user/photo.png"
+ @return The MD5 digest of file at path.
  */
 + (NSString *) MD5CodeWithFileAtPath:(NSString *) path;
 
 /**
- 根据给定的url对应的文件进行MD5摘要
+ Return the MD5 digest string of file at specified URL
  
- @param url 文件的url，url的构建需要符合文件头scheme，如："file:///home/user/photo.png"
- @return 文件的MD5摘要
+ @param url The URL of a file, must start with scheme flag. such as: "file:///home/user/photo.png"
+ @return The MD5 digest of file at url.
  */
 + (NSString *) MD5CodeWithFileAtURL:(NSURL *) url;
 
 /**
- 将给定的字符串进行SHA1摘要
+ Return the SHA1 digest string of sourceString
 
- @param sourceString 源字符串
- @return 进行了SHA1摘要后的字符串
+ @param sourceString The source string to digest with.
+ @return The SHA1 digest string.
  */
 + (NSString *) SHA1CodeWithString:(NSString *)sourceString;
 
 /**
- 将给定的NSData实例进行SHA1摘要
+ Return the SHA1 digest string of a data
  
- @param data 给定的NSData实例
- @return 进行了SHA1摘要后的字符串
+ @param data The data to digest
+ @return The SHA1 digest string
  */
 + (NSString*) SHA1CodeWithData:(NSData*)data;
 
 /**
- 根据给定的path对应的文件进行SHA1摘要
+ Return the SHA1 digest string of a file at path.
  
- @param path 文件的path，需要直接写具体路径，如："/home/user/photo.png"
- @return 文件的SHA1摘要
+ @param path The path of a file, such as: "/home/user/photo.png"
+ @return The SHA1 digest string of file.
  */
 + (NSString *) SHA1CodeWithFileAtPath:(NSString *) path;
 
 /**
- 根据给定的url对应的文件进行SHA1摘要
+ Return the SHA1 digest string of a file at url.
  
- @param url 文件的url，url的构建需要符合文件头scheme，如："file:///home/user/photo.png"
- @return 文件的SHA1摘要
+ @param url The URL of a file, must start with a scheme flag. such as: "file:///home/user/photo.png"
+ @return The SHA1 digest string of file.
  */
 + (NSString *) SHA1CodeWithFileAtURL:(NSURL *) url;
 
