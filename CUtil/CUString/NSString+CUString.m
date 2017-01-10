@@ -12,7 +12,7 @@
 @implementation NSString (CUString)
 
 -(BOOL)isEmpty {
-    return (self == nil || self.length == 0 || [self trim].length == 0);
+    return (self.length == 0 || [self trim].length == 0);
 }
 
 -(BOOL)startsWith:(NSString *)string {

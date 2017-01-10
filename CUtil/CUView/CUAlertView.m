@@ -118,7 +118,7 @@
         rightButtonFrame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
     } else {
         rightButtonFrame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.buttonsContainerView.frame));
-        rightButtonBgColor = [CUColor colorWithHexString:@"#FF1844"];
+        rightButtonBgColor = [CUColor colorWithHexString:@"#1E63D2"];
     }
     
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
