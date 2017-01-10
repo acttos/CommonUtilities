@@ -5,7 +5,7 @@
 - CUAlertView supports only one button(in fact, the right one);
 - Add a method in CUAlertView to hide activity indicator view;
 - Make the theme of CUTipsView stand for CUTipsView;
-- Add NSData+CUData to compress & decompress, encrypt & decrypt data;
+- Add NSData+CUData to compress & decompress, encrypt & decrypt data; -- unavailable
 - Make the JSON string looks pretty.
 
 ## 0.1.13:
