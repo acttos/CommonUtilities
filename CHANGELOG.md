@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.1.14:
+## 0.1.14 & 0.1.15:
 
 - CUAlertView supports only one button(in fact, the right one);
 - Add a method in CUAlertView to hide activity indicator view;
