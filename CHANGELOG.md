@@ -1,7 +1,8 @@
 # Change Log
 
-## 0.1.14 & 0.1.15:
+## 0.1.14 & 0.1.15 & 0.1.16:
 
+- Correct an issue in NSString+CUString.m;
 - CUAlertView supports only one button(in fact, the right one);
 - Add a method in CUAlertView to hide activity indicator view;
 - Make the theme of CUTipsView stand for CUTipsView;
