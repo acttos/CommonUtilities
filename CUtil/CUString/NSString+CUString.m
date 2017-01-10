@@ -16,7 +16,7 @@
 }
 
 -(BOOL)startsWith:(NSString *)string {
-    if (!string) {
+    if (!string || [string isEmpty]) {
         return NO;
     }
     

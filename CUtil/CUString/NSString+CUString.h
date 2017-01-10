@@ -12,9 +12,10 @@
 @interface NSString (CUString)
 
 /**
- 判断当前字符串是否为空；空代表：“” 或者 “  ”，即：任何无字符的字符串均为空
+ Determine whether the string is empty, such as: "" or "    "
+ @warning when the instance string is nil,this method will return NO, that must be handled by yourself
 
- @return YES：为空，NO：不为空
+ @return YES: empty, NO: otherwise
  */
 -(BOOL)isEmpty;
 
