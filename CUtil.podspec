@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.public_header_files = "CUtil/*.h", "CUtil/**/*.h"
   s.source_files  = "CUtil/*.h", "CUtil/**/*.{h,m}"
 
-  s.ios.frameworks = "UIKit", "Foundation"
+  s.ios.frameworks = "UIKit"
 
 end

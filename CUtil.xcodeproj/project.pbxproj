@@ -33,6 +33,7 @@
 		7D852BAB1DEC3401006E9EB3 /* CUTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B961DEC3401006E9EB3 /* CUTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B971DEC3401006E9EB3 /* CUTipsView.m */; };
 		7D92393A1E24C26B006B2C8B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DBFB80A1E1E32AF00FBF1BE /* libz.tbd */; };
+		7D92393F1E24D5F5006B2C8B /* libz.tbd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DBFB80A1E1E32AF00FBF1BE /* libz.tbd */; };
 		7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBA9B991DF9004400F06AF7 /* CUToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */; };
 		7DBFB8061E1E2E6200FBF1BE /* NSData+CUData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBFB8041E1E2E6200FBF1BE /* NSData+CUData.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,6 +51,19 @@
 			remoteInfo = CUtil;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D92393E1E24D5E8006B2C8B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D92393F1E24D5F5006B2C8B /* libz.tbd in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D3D53621DF018DF00E2F346 /* CUtilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUtilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,6 +338,7 @@
 				7D852B4A1DEC314A006E9EB3 /* Frameworks */,
 				7D852B4B1DEC314A006E9EB3 /* Headers */,
 				7D852B4C1DEC314A006E9EB3 /* Resources */,
+				7D92393E1E24D5E8006B2C8B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -522,7 +537,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.cutil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -555,7 +570,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.acttos.cutil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
