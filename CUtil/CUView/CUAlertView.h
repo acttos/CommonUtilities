@@ -27,7 +27,6 @@ typedef enum {
 
 /**
  Initialize a CUAlertView instance
- @warning Remember to invoke this method to initialize CUAlertView only.
  
  @param title The title texts in this alert view
  @param message The message texts in this alert view
@@ -43,6 +42,20 @@ typedef enum {
                  leftClicked:(void(^)(void))leftClickedBlock
              rightButtonText:(NSString *)rightBtnText
                 rightClicked:(void(^)(void))rightClickedBlock;
+
+/**
+ Initialize a CUAlertView instance in style of confirmation with only one centered bottom button
+ 
+ @param title The title texts in this alert view
+ @param message The message texts in this alert view
+ @param btnText The texts of left button in this alert view
+ @param clickedBlock The clicked-block of the left button in this alert view
+ @return The instance of this CUAlertView.
+ */
+-(instancetype)initWithTitle:(NSString *)title
+                     message:(NSString *)message
+              buttonText:(NSString *)btnText
+                 clicked:(void(^)(void))clickedBlock;
 
 /**
  Invoke this method to show up the alert view.

@@ -134,6 +134,13 @@ typedef enum {
 +(void)hideWaitingViewInView:(UIView *)view;
 
 /**
+ Hide the Activity Indicator view
+
+ @param view The container view of Activity Indicator
+ */
++(void)hideActivityIndicatorInView:(UIView *)view;
+
+/**
  根据宽和高生成一个在屏幕（Screen）上下左右居中的CGRect结构体
 
  @param width 宽数值

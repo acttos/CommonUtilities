@@ -10,6 +10,7 @@
 #import "CUAlertView.h"
 
 #import "CUDefine.h"
+#import "NSString+CUString.h"
 #import "CULabel.h"
 #import "CUColor.h"
 
@@ -102,19 +103,28 @@
     
     self.buttonsContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44)];
     
-    self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
-    self.leftButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.leftButton.backgroundColor = [CUColor colorWithHexString:@"#F2F2F2"];
-    [self.leftButton setTitle:self.leftBtnText forState:UIControlStateNormal];
-    [self.leftButton setTitleColor:[CUColor colorWithHexString:@"#1E63D2"] forState:UIControlStateNormal];
-    [self.leftButton addTarget:self action:@selector(_leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.buttonsContainerView addSubview:self.leftButton];
+    CGRect rightButtonFrame = CGRectZero;
+    UIColor *rightButtonBgColor = [CUColor colorWithHexString:@"#FF4444"];
+    if (self.leftBtnText && ![self.leftBtnText isEmpty]) {
+        self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+        self.leftButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+        self.leftButton.backgroundColor = [CUColor colorWithHexString:@"#F2F2F2"];
+        [self.leftButton setTitle:self.leftBtnText forState:UIControlStateNormal];
+        [self.leftButton setTitleColor:[CUColor colorWithHexString:@"#1E63D2"] forState:UIControlStateNormal];
+        [self.leftButton addTarget:self action:@selector(_leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.buttonsContainerView addSubview:self.leftButton];
+        
+        rightButtonFrame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    } else {
+        rightButtonFrame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.buttonsContainerView.frame));
+        rightButtonBgColor = [CUColor colorWithHexString:@"#FF1844"];
+    }
     
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    self.rightButton.frame = rightButtonFrame;
     self.rightButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.rightButton.backgroundColor = [CUColor colorWithHexString:@"#FF4444"];
+    self.rightButton.backgroundColor = rightButtonBgColor;
     [self.rightButton setTitle:self.rightBtnText forState:UIControlStateNormal];
     [self.rightButton setTitleColor:[CUColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(_rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
@@ -134,8 +144,13 @@
     self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
-    self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
-    self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
+        self.leftButton.frame = CGRectZero;
+        self.rightButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.buttonsContainerView.frame));
+    } else {
+        self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+        self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    }
 }
 
 -(void)_updateViewsWithPopDownTheme {
@@ -147,8 +162,13 @@
     self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
-    self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
-    self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
+        self.leftButton.frame = CGRectZero;
+        self.rightButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.buttonsContainerView.frame));
+    } else {
+        self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+        self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    }
 }
 
 -(void)_updateViewsWithPopUpTheme {
@@ -160,8 +180,13 @@
     self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
-    self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
-    self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
+        self.leftButton.frame = CGRectZero;
+        self.rightButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.buttonsContainerView.frame));
+    } else {
+        self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+        self.rightButton.frame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
+    }
 }
 
 //MARK: - Private Methods for Button Actions

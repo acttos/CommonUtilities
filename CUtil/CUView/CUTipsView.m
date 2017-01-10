@@ -185,10 +185,12 @@
     UIView *indicatorViewContainerView = [view viewWithTag:kDefault_Tag_4_Indicator_View];
     if (indicatorViewContainerView == nil) {
         indicatorViewContainerView = [[UIView alloc] initWithFrame:view.bounds];
+        CGFloat whiteColorFloatValue = _theme == CUTipsViewThemeDark ? 0.0f : 1.0f;
+        indicatorViewContainerView.backgroundColor = [UIColor colorWithWhite:whiteColorFloatValue alpha:0.7];
         indicatorViewContainerView.userInteractionEnabled = YES;
         indicatorViewContainerView.tag = kDefault_Tag_4_Indicator_View;
         
-        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleGray : UIActivityIndicatorViewStyleWhite];
+        UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_theme == CUTipsViewThemeDark ? UIActivityIndicatorViewStyleWhite : UIActivityIndicatorViewStyleGray];
         indicatorView.center = _center;
         CGAffineTransform scaledTransform = CGAffineTransformMakeScale(1.3f, 1.3f);
         indicatorView.transform = scaledTransform;
@@ -265,16 +267,23 @@
 
 +(void)hideViewInWindowWithTag:(NSUInteger)tag {
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
-    UIView *waitingViewContainerView = [currentWindow viewWithTag:tag];
-    if (waitingViewContainerView) {
-        [waitingViewContainerView removeFromSuperview];
+    UIView *tagedView = [currentWindow viewWithTag:tag];
+    if (tagedView) {
+        [tagedView removeFromSuperview];
     }
 }
 
 +(void)hideWaitingViewInView:(UIView *)view {
-    UIView *waitingView = [view viewWithTag:kDefault_Tag_4_Waiting_View];
-    if (waitingView) {
-        [waitingView removeFromSuperview];
+    UIView *tagedView = [view viewWithTag:kDefault_Tag_4_Waiting_View];
+    if (tagedView) {
+        [tagedView removeFromSuperview];
+    }
+}
+
++(void)hideActivityIndicatorInView:(UIView *)view {
+    UIView *tagedView = [view viewWithTag:kDefault_Tag_4_Indicator_View];
+    if (tagedView) {
+        [tagedView removeFromSuperview];
     }
 }
 

@@ -2,6 +2,8 @@
 
 ## 0.1.14:
 
+- Add a method in CUAlertView to hide activity indicator view;
+- Make the theme of CUTipsView stand for CUTipsView;
 - Add NSData+CUData to compress & decompress, encrypt & decrypt data;
 - Make the JSON string looks pretty.
 
