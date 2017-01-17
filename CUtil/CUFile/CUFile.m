@@ -95,7 +95,7 @@
     }
     
     if ([path hasSuffix:@"/"]) {
-        Logger(@"The param 'path' can NOT end with '/'.");
+        Logger(@"The param 'path' ends with '/'.");
         path = [path substringToIndex:path.length - 1];
     }
     
