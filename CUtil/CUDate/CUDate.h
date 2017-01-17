@@ -39,7 +39,7 @@
  
  @param date   The NSDate instance to convert and format
  @param format The format string, "yyyy-MM-dd HH:mm:ss" will be used when parameter 'format' is nil.
- @return 格式化后的字符串
+ @return The formated string
  */
 +(NSString *)stringOfDate:(NSDate *)date withFormat:(NSString *)format;
 
