@@ -15,5 +15,6 @@ Pod::Spec.new do |s|
   s.source_files  = "CUtil/*.h", "CUtil/**/*.{h,m}"
 
   s.ios.frameworks = "UIKit"
+  s.libraries = "z"
 
 end
