@@ -20,85 +20,85 @@
 -(BOOL)isEmpty;
 
 /**
- 判断当前字符串是否由给定的字符串作为开头
+ Judge whether the string starts with given string
 
- @param string 给定的开头字符串，用来做判断条件
- @return YES：符合开头判断，NO：不符合开头判断
+ @param string The string to judge with
+ @return Starts with the given string: YES, otherwise: NO
  */
 -(BOOL)startsWith:(NSString *)string;
 
 /**
- 判断当前字符串是否由给定的字符串作为结尾
+ Judge whether the string ends with given string
  
- @param string 给定的结尾字符串，用来做判断条件
- @return YES：符合结尾判断，NO：不符合结尾判断
+ @param string The string to judge with
+ @return Ends with the given string: YES, otherwise: NO
  */
 -(BOOL)endsWith:(NSString *)string;
 
 /**
- 按照给定的索引来截取字符串
+ Return the substring cut with given indexes.
 
- @param beginIndex 开始索引，截取后的字符串[包含]该索引对应的字符
- @param endIndex 结束索引，截取后的字符串[不包含]该索引对应的字符
- @return 截取后的字符串
+ @param beginIndex The index where to begin, the characher at this index is included in the cut string.
+ @param endIndex The index where to end, the characher at this index is NOT included in the cut string.
+ @return The cut string.
  */
 -(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex;
 
 /**
- 将当前字符串首尾处的空字符删除并返回
+ Return the clean string which deleted the blank characters at the beginning and the ending.
 
- @return 删除收尾空字符后的字符串
+ @return The string without blank charachers at the beginning or ending
  */
 -(NSString *)trim;
 
 /**
- 将当前字符串按照给定的分隔符进行拆分,拆分后的数组不包含空元素
+ Return an array split from a string with given separator.
 
- @param pattern 给定的分隔符
- @return 根据分隔符拆分后的数组
+ @param pattern The separator's pattern
+ @return The array split from the string.
  */
 -(NSArray<NSString *> *)splitBy:(NSString *)pattern;
 
 /**
- 获取字符串中符合匹配的首个索引
+ Return the first index where matches the pattern.
 
- @param pattern 需要匹配的字符串
- @return 匹配字符的首个匹配索引
+ @param pattern The string's pattern to match
+ @return The first index of the matched string.
  */
 -(NSUInteger)indexOf:(NSString *)pattern;
 
 /**
- 获取字符串中符合匹配的最后一个索引
-
- @param pattern 需要匹配的字符串
- @return 匹配字符的最后一个匹配索引
+ Return the last index where matches the pattern.
+ 
+ @param pattern The string's pattern to match
+ @return The last index of the matched string.
  */
 -(NSUInteger)lastIndexOf:(NSString *)pattern;
 
 /**
- 替换首个匹配的字符
+ Replace the first matched characters with the replacement.
 
- @param pattern 需要进行匹配的字符
- @param replacement 用于将匹配到的字符替换为的字符
- @return 替换完毕的新字符串
+ @param pattern The string's pattern to match.
+ @param replacement The replacement string.
+ @return The new string replaced the first match.
  */
 -(NSString *)replaceFirst:(NSString *)pattern with:(NSString *)replacement;
 
 /**
- 替换最后一个匹配的字符
+ Replace the last matched characters with the replacement.
  
- @param pattern 需要进行匹配的字符
- @param replacement 用于将匹配到的字符替换为的字符
- @return 替换完毕的新字符串
+ @param pattern The string's pattern to match.
+ @param replacement The replacement string.
+ @return The new string replaced the last match.
  */
 -(NSString *)replaceLast:(NSString *)pattern with:(NSString *)replacement;
 
 /**
- 替换所有匹配的字符
+ Replace all the matched characters with the replacement.
  
- @param pattern 需要进行匹配的字符
- @param replacement 用于将匹配到的字符替换为的字符
- @return 替换完毕的新字符串
+ @param pattern The string's pattern to match.
+ @param replacement The replacement string.
+ @return The new string replaced the match.
  */
 -(NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement;
 

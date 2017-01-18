@@ -12,48 +12,49 @@
 @interface CUConfig : NSObject
 
 /**
- 获取当前系统首选的语言标识
- @return 当前系统首选的语言，采用系统给出的值
+ Return the preffered language as the language of the device
+ @return The language currently used by the device
  */
 + (NSString *)getDeviceLanguage;
 
 /**
- 获取当前系统的语言编码
- @return 语言编码，如：en,zh,ar,fr等
+ Return the language code of the device
+ @return The language code. such as: en, zh, ar, fr and so on.
  */
 + (NSString *)getDeviceLanguageCode;
 
 /**
- 获取当先系统的国家或地区编码
+ Return the country code of the device
 
- @return 国家或地区编码，如：CN,US,UK,AR,FR,TW,HK等
+ @return The country code. such as: CN, US, UK, AR, FR, TW, HK and so on.
  */
 + (NSString *)getDeviceCountryCode;
 
 /**
- 以i18N的格式输出当前系统的语言和地域，如"en_US,zh_CN,zh_TW,en_FR"
- @return 将国家码和语言码组合后返回，是目前网络协议中常见的格式。
+ Return the language code and country code in the format of 'i18N'. such as: en_US, zh_CN, zh_TW, en_FR and so on.
+ 
+ @return The mixed code of language and country. Mostly used in the communication protocol between the client and the server.
  */
 + (NSString *)getLocalStringIni18N;
 
 /**
- 是否为中文环境
+ Is the device using Chinese as the prefrered language.
 
- @return 中文：YES，否则：NO
+ @return Chinese: YES, otherwise: NO
  */
 + (BOOL)isChineseLang;
 
 /**
- 是否为阿拉伯语环境，因为阿拉伯语在界面布局时，需要从右向左设计，因此，这个方法有较高的使用率。
+ Is the device using Arabic as the prefrered language.
  
- @return 阿拉伯语：YES，否则：NO
+ @return Arabic: YES, otherwise: NO
  */
 + (BOOL)isArabicLang;
 
 /**
- 是否为法语环境
+ Is the device using French as the prefrered language.
  
- @return 法语：YES，否则：NO
+ @return French: YES, otherwise: NO
  */
 + (BOOL)isFrenchLang;
 
