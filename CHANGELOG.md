@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.17:
+
+- Make NSData+CUData work through CocoaPods;
+- Add 'libz.tbd' into CUtil.podspec to support compression or uncompression;
+- Add NSData+CUData to compress & decompress, encrypt & decrypt data; -- It works now.
+
 ## 0.1.14 & 0.1.15 & 0.1.16:
 
 - Correct an issue in NSString+CUString.m;
