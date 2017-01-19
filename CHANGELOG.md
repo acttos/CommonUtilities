@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.18:
+
+- Translate the Comments from Chinese to English;
+- Translate the README.md file from Chinese to English.
+
 ## 0.1.17:
 
 - Make NSData+CUData work through CocoaPods;
