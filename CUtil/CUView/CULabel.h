@@ -13,11 +13,12 @@
 @interface CULabel : NSObject
 
 /**
- 计算一个UILabel视图在父视图中的大小和位置，UILabel的高度和宽度在实际布局中，还是很有实际意义的。
+ Caculate the size of an UILabel instance in it's super view. Usually used in condition where needs to change the size of UILable due to the texts in it.
 
- @param label 要用于计算的UILabel实例
- @param view UILabel实例的父视图
- @return UILabel在父视图中的大小和位置参数
+ @param label The UILabel instance to caculate
+ @param view The super view of the UILabel instance
+ @warning You'd better set the text of the UILabel before invoke this method, otherwise you will get an useless size.
+ @return The size of UILable instance.
  */
 +(CGSize)sizeOfLabel:(UILabel *)label inView:(UIView *)view;
 

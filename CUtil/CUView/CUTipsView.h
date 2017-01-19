@@ -13,7 +13,7 @@
 #import "CUDefine.h"
 
 /**
- 预定义的CUTipsView样式，每一个样式对应一组显示效果
+ Defined theme types of CUTipsView.
  */
 typedef enum {
     CUTipsViewThemeDark, //Treated as the default value.
@@ -23,23 +23,24 @@ typedef enum {
 @interface CUTipsView : NSObject
 
 /**
- 在给定的view中显示一个类似于Android Toast效果的弹框。
+ Show up a tost view (like on Android) with message and time.
  
- @param view     弹框的父视图容器View
- @param message  弹框需要显示的文字内容
- @param _duration Toast消失过程持续的时间，单位：秒
- @param _delay    Toast持续显示的时间，单位：秒
+ @param view     The super view of the toast view
+ @param message  The message shown in the toast view
+ @param _duration The time of disappearance, Unit: second
+ @param _delay    The time of delay, means the time seconds of showing of the toast, Unit: second
  */
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay;
 
 /**
- 在给定的view中显示一个类似于Android Toast效果的弹框。该弹框支持自定义frame
+ Show up a tost view (like on Android) with message, frame and time.
+ 
+ @param view     The super view of the toast view
+ @param frame    The frame of the toast view
+ @param _message  The message shown in the toast view
+ @param _duration The time of disappearance, Unit: second
+ @param _delay    The time of delay, means the time seconds of showing of the toast, Unit: second
 
- @param view 弹框的父视图容器view
- @param frame 弹框的frame
- @param _message 弹框要显示的消息
- @param _duration Toast消失过程持续的时间，单位：秒
- @param _delay Toast持续显示的时间，单位：秒
  */
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay;
 
