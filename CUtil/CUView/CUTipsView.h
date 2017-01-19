@@ -16,7 +16,7 @@
  Defined theme types of CUTipsView.
  */
 typedef enum {
-    CUTipsViewThemeDark, //Treated as the default value.
+    CUTipsViewThemeDark = 1, //The default value.
     CUTipsViewThemeLight
 } CUTipsViewTheme;
 
@@ -40,97 +40,97 @@ typedef enum {
  @param _message  The message shown in the toast view
  @param _duration The time of disappearance, Unit: second
  @param _delay    The time of delay, means the time seconds of showing of the toast, Unit: second
-
  */
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay;
 
 /**
- 以全屏幕的方式展现出一个带有转动菊花的Waiting视图
+ Show up an animating UIActivityIndicator in full screen with message.
  
- @param tag 视图对应的tag，方便隐藏时使用
- @param _message Waiting视图中显示的文字消息
- @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
+ @param tag The tag of the view, for later use: hiding or removing
+ @param _message The message to show
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
  */
 +(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message;
 
 /**
- 在给定的view上展示一个全屏的waiting视图，采用默认tag运算，隐藏时调用[CUTipsView hideWaitingViewInView:]。
+ Show up an animating UIActivityIndicator view in full screen with a super view as container. The waiting view uses the default tag defined.
+ The full screen here means the waiting view fills full of the super view. When you need to hide this waiting view, just call [CUTipsView hideWaitingViewInView:].
 
- @param view Waiting视图覆盖的低层视图
- @param _message 需要在Waiting视图中显示的消息
+ @param view The super view of waiting view
+ @param _message The message shows up.
  */
 +(void)showFullScreenWaitingViewInView:(UIView *)view message:(NSString *)_message;
 
 /**
- 显示一个根据给定frame生成的带有转动菊花的Waiting视图
+ Show up a waiting view with a certain tag, frame, message and an UIActivityIndicator view.
  
- @param tag 视图对应的tag，方便隐藏时使用
- @param _frame 视图整体的大小和位置参数
- @param _message Waiting视图中显示的文字消息
- @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
+ @param tag The tag of the waiting view, for later hiding or removing.
+ @param _frame The frame of the waiting view.
+ @param _message The message to show.
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
  */
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
 
 /**
- 显示一个根据给定frame生成的带有转动菊花的Waiting视图
+ Show up a waiting view with a certain tag, frame, message, theme and an UIActivityIndicator view.
  
- @param tag 视图对应的tag，方便隐藏时使用
- @param _frame 视图整体的大小和位置参数
- @param _message Waiting视图中显示的文字消息
- @param _theme  Waiting视图的样式
- @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
+ @param tag The tag of the waiting view, for later hiding or removing.
+ @param _frame The frame of the waiting view.
+ @param _message The message to show.
+ @param _theme  The theme of the waiting view.
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
  */
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
 
 /**
- 在指定的view中显示一个根据frame生成的带有转动菊花的Waiting视图
+ Show up a waiting view in a given super view with frame and message.
  
- @param view waiting视图的父视图
- @param _frame 视图整体的大小和位置参数
- @param _message Waiting视图中显示的文字消息
+ @param view The super view to contain the waiting view.
+ @param _frame The frame of the waiting view.
+ @param _message The message to show.
  */
 +(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message;
 
 /**
- 在指定的view中显示一个根据frame生成的带有转动菊花的Waiting视图
+ Show up a waiting view in a given super view with frame, message and theme.
  
- @param view waiting视图的父视图
- @param _frame 视图整体的大小和位置参数
- @param _message Waiting视图中显示的文字消息
- @param _theme  Waiting视图的样式
+ @param view The super view to contain the waiting view.
+ @param _frame The frame of the waiting view.
+ @param _message The message to show.
+ @param _theme  The theme of the waiting view.
  */
 +(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
 
 /**
- 在指定的view中显示一个转动的ActivityIndicatorView
+ Show up an UIActivityIndicator view in a super view with a center point and theme
 
- @param view ActivityIndicatorView的父视图
- @param _center ActivityIndicatorView的中心点坐标
- @param _theme ActivityIndicatorView的视图样式
+ @param view The super view of the waiting view
+ @param _center The center point of the UIActivityIndicator view
+ @param _theme The theme of the waiting view.
  */
 +(void)showActivityIndicatorInView:(UIView *)view center:(CGPoint)_center theme:(CUTipsViewTheme)_theme;
 
 /**
- 在视图顶部显示的一个Tips视图，可包含文字和图片，该Tips视图会自动以向上滑出的方式消失
+ Show a 'PopDown' alert tips view from the top of the given view with an optional image, a message and an offset of vertical.
  
- @param view Tips视图的父View
- @param aImage Tips视图中的图片，位于aMessage的左侧
- @param aMessage Tips视图中显示的文字消息
- @param _yOffset Tips视图距离屏幕顶部的偏移量，一般为0.0f
+ @param view The super view of the alert tips view.
+ @param aImage The image of the alert tips view, placed at the left side of the message label.
+ @param aMessage The message to show.
+ @param _yOffset The vertical offset of the alert tips view, usually set it to be 0.0f.
  */
 +(void)showPopDownTipsViewInView:(UIView *)view withImage:(UIImage *)aImage message:(NSString *)aMessage yOffset:(CGFloat)_yOffset;
 
 /**
- 隐藏某个tag对应的视图，并从父视图中移除
+ Hide and remove a view from UIWindow with a tag.
  
- @param tag 视图对应的tag
+ @param tag The tag of view to hide and remove.
  */
 +(void)hideViewInWindowWithTag:(NSUInteger)tag;
 
 /**
- 隐藏waiting视图，采用默认tag运算
+ Hide and remove the waiting view from super view
 
- @param view waiting视图覆盖的视图
+ @param view The super view of the waiting view.
  */
 +(void)hideWaitingViewInView:(UIView *)view;
 
@@ -142,11 +142,11 @@ typedef enum {
 +(void)hideActivityIndicatorInView:(UIView *)view;
 
 /**
- 根据宽和高生成一个在屏幕（Screen）上下左右居中的CGRect结构体
+ Return a centered frame's rect with the given width and height.
 
- @param width 宽数值
- @param _height 高数值
- @return 全居中的frame数值
+ @param width The width of the rect
+ @param _height The height of the rect
+ @return An centered frame's rect.
  */
 +(CGRect)centeredFrameWithWidth:(float)width height:(float)_height;
 
