@@ -54,4 +54,5 @@
  @return Decrypted data
  */
 - (NSData *)AES256DecryptWithKey:(NSString *)key;
+
 @end

@@ -1,43 +1,44 @@
-# 介绍
+# Summary
 
-CUtil是一个日常的、适用于iOS开发的、通用的、工具类的Framework，采用Objective-C编写。
-所有代码来源并总结于平时，会不定期更新，欢迎[提出意见和建议](mailto:acttosma@gmail.com)。
+`CUtil` is a common utility framework based on Objective-C. It is for iOS developments with some useful methods in it.  
 
-### 注意：
+All the codes in `CUtil` is from the daily work, it will be uploaded frome time to time. Your are welcomed to [Give Suggestions](mailto:acttosma@gmail.com).
 
-*       *CUtil最近修正了一个问题，请采用0.1.8及以上版本。*
+### Warning:
+
+*       *CUtil has corrected an issue, please make sure you update your CUtil to version 0.1.8 and higher.*
 	
 
-# 使用方法
+# How to use it:
 
-## 1、使用CocoaPods集成：
+## 1. Use it with CocoaPods:
 
-CUtil已经支持通过Cocoapods进行安装：
+CUtil is uploaded to CocoaPods, so you can use `pod` command to integrate CUtil:
 
-在工程的Podfile中添加：
+Create a Podfile and add these lines below:
 
 ```
 pod 'CUtil'
 ```
 
-或者指定版本号，不指定版本号会默认安装最新版本
+Or you can set the version of CUtil:
 
 ```
 pod 'CUtil', '~> x.x.x'
 ```
 
-CUtil在CocoaPods中的版本请参见：*[[CUtil on CocoaPods.org]](https://cocoapods.org/pods/CUtil){:target="_blank"}*。
+The versions of CUtil can be found in: *[[CUtil on CocoaPods.org]](https://cocoapods.org/pods/CUtil){:target="_blank"}*。
 
-**需要注意的是，当你需要更新本地已有的CUtil库时，还是需要指定你要升级到的版本的。**
+**Attentaion: If you need to update your local CUtil to a higher version, you do need to set the version you want to update to.**
 
-*比如，我要将本地的 `CUtil ~> 0.0.10` 升级到 `CUtil ~> 0.1.8` 就需要修改Podfile中的版本号为0.1.8:*
+*Such as: I want to update my CUtil from 0.0.10 to 0.1.8, I need to modify my Podfile like below:*
 
 ```
 pod 'CUtil', '~> 0.1.8'  
 # was pod 'CUtil', '~> 0.0.10'
 ```
 
-并执行 `pod install` :
+And then run `pod install` :
 
 ```
 [acttos@acttos.org:~/CUtilPod]$pod install
@@ -50,93 +51,92 @@ Sending stats
 Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.
 ```
 
-使用CUtil时，只需要在使用到CUtil的类中引入CUtil模块：
+The time you use CUtil, you just need import the module in your header file：
 
 ```
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-//.... 以上为示例 ....
+//.... Some Codes ....
 
-//.... 引入CUtil模块 ....
+//.... Import CUtil Module by '@import' ....
 @import CUtil;
 ```
 
-## 2、未使用CocoaPods，手动集成:
+## 2. Use CUtil without CocoaPods:
 
-如果工程尚未支持CocoaPods，则需要将CUtil下的所有文件拷贝到项目的frameworks下，并添加到Xcode的groups中。然后在需要使用CUtil的文件中引入：
-
+If you don't use CocoaPods, which I strongly recommand you do, you can just copy all the file in GitHub to your frameworks group in your project, and in the header file import CUtil.h:
 
 ```
 #import <CUtil/CUtil.h>
 ```
 
 
-# 功能介绍
+# CUtil's Functions Introduction
 
-## 存储功能相关
+## Functions of storage:
 
 > CUStorage.h
 
 ```
 /**
- 将自定义data的数据写入系统Keychain中，data的值不随app的卸载、重装而发生变化，常用于存储固定的UserId。
+ Write the custom data into Keychain of OS, the data will not change when re-install the app. Mostly used to save non-changed UserId.
  
- @param key  用来存储数据的Key
- @param data 需要存储的数据
- @warning 跟Keychain相关的读写操作，仅在真机上验证通过
+ @param key  The key to save the data in Keychain
+ @param data The data to save
+ @warning Only passed on real devices, not support Simulators.
  */
 + (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
 
 /**
- 根据key名称获取写入系统Keychain的数据
+ Load the data from Keychain through the given key
  
- @param key 获取数据对应的Key
- @warning 跟Keychain相关的读写操作，仅在真机上验证通过
- @return 存储在keychain中的数据
+ @param key The data's key to load.
+ @warning Only passed on real devices, not support Simulators.
+ @return The data saved in Keychain with the given key
  */
 + (id)loadFromKeychainWithKey:(NSString *)key;
 ```
 
-## 颜色设置相关
+## Functions of color:
 > CUColor.h
 
 ```
 /**
- 根据传递的16进制数据生成UIColor实例
+ Return the UIColor instance generated with a hex value
  
- @param hexValue 16进制的颜色表示方式。如：0xFF00FF
- @return 对应色值的UIColor实例
+ @param hexValue The value of color in hex format, such as: 0xFF00FF
+ @return The UIColor instance
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue;
 
 /**
- 根据传递的16进制数据生成UIColor实例，该UIColor包含指定的透明度
+ Return the UIColor instance generated with a hex and alpha values
  
- @param hexValue 16进制的颜色表示方式。如：0xFF00FF
- @param alpha    颜色的透明度
- @return 对应色值的UIColor实例
+ @param hexValue The value of color in hex format, such as: 0xFF00FF
+ @param alpha    The alpha property of this color
+ @return The UIColor instance with alpha.
  */
 + (UIColor *)colorWithHex:(NSInteger)hexValue alpha:(CGFloat)alpha;
 
 /**
- 根据传递的色值字符串生成UIColor实例
+ Return the UIColor instance generated with a hex string value
  
- @param hexString 以#开头的16进制色值字符串。如：#FF00FF
- @return 对应色值的UIColor实例
+ @param hexString The color value in format of hex string, such as: @"#FF00FF"
+ @return The UIColor instance from hexString.
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 
 /**
- 根据传递的色值字符串生成UIColor实例，该UIColor包含指定的透明度
+ Return the UIColor instance generated with a hex string and alpha values.
  
- @param hexString 以#开头的16进制色值字符串。如：#FF00FF
- @param alpha     颜色的透明度
- @return 对应色值的UIColor实例
+ @param hexString The color value in format of hex string, such as: @"#FF00FF"
+ @param alpha The alpha property of this color
+ @return The UIColor instance from hexString and alpha.
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 ```
 
-## 二进制数据相关
+## Functions of data and binary:
 > NSData+CUData.h
 
 ```
@@ -183,74 +183,73 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  @return Decrypted data
  */
 - (NSData *)AES256DecryptWithKey:(NSString *)key;
-
 ```
 
-## 文件目录相关
+## Functions of file and directory:
 > CUFile.h
 
 ```
 /**
- 返回当前App的Documents路径
+ Return the default Documents URL
 
- @return Documents的URL
+ @return Documents' URL
  */
 + (NSURL *)getDocumentsDirectory;
 
 /**
- 在指定路径创建目录，创建的目录包括父目录。
+ Create a directory at the given path, including the parent directories.
 
- @param path 给定的创建目录，需要直接写具体路径，如："/videos/2016/12/"
- @warning 该方法的根目录为当前应用的data目录，所有目录的建立，均在此data目录下。PS：data目录可理解为沙河中可访问的顶层目录。
- @return 目录存在或创建成功：YES，否则：NO
+ @param path The full path of the directory to create, such as: "/videos/2016/12/"
+ @warning The root directory of this method is the 'data' directory of the device, all the directories will be created under the 'data' folder.
+ @return Created: YES, otherwise: NO
  */
 + (BOOL)createDirectoryAtPath:(NSString *)path;
 
 /**
- 在指定的path目录存储data数据
+ Save the data to the given path.
 
- @param data 要存储的数据
- @param path 存储数据的具体路径，注意这个路径是"包含文件名的"路径，不是存放文件的目录，不能以"/"结尾
- @return 保存成功：YES，否则：NO
+ @param data The data to save.
+ @param path The path which to save the data. PS:This path should contain the name of the file, path can NOT end with '/'.
+ @return Saved: YES, otherwise: NO
  */
 + (BOOL)saveFile:(NSData *)data atPath:(NSString *)path;
 
 /**
- 在指定的path目录，按照fileName存储数据data。
+ Save the data to the given path with a given file name.
 
- @param data 要存储的数据
- @param path 存储数据的具体目录，此处为文件存储的具体目录，不能以"/"结尾
- @param fileName 要存放的data的文件名称
- @return 保存成功：YES，否则：NO
+ @param data The data to save.
+ @param path The path which to save the data. PS:This path CAN contain the name of the file, path CAN end with '/'.
+ @param fileName The file name of the file to create.
+ @return Saved: YES, otherwise: NO
  */
 + (BOOL)saveFile:(NSData *)data atPath:(NSString *)path withName:(NSString *)fileName;
 ```
 
-## JSON解析相关
+## Functions of JSON-related:
 > CUJSON.h
 
 ```
 /**
- 根据给定的NSArray实例生成JSON字符串
+ Return the JSON string generated from an array
  
- @param array NSArray实例
- @return NSArray对应的JSON字符串
+ @param array The array used to generate JSON string
+ @return The JSON string from an array
  */
 +(NSString *)JSONStringFromArray:(NSArray *)array;
 
 /**
- 根据给定的NSDictionary实例生成JSON字符串
+ Return the JSON string generated from a dictionary
  
- @param dictionary NSDictionary实例
- @return NSDictionary对应的JSON字符串
+ @param dictionary The dictionary used to generate JSON string
+ @return The JSON string from a dictionary
  */
 +(NSString *)JSONStringFromDictionary:(NSDictionary *)dictionary;
 
 /**
- 将任意对象转换成JSON字符串，当给定object为nil或者不可解析为JSON时，返回错误
+ Generate JSON string with object.
  
- @param object 任意NSObject对象
- @return 解析的JSON或错误内容
+ @param object Any NSObject instance
+ @return The JSON string or nil when the object is nil or can NOT be parsed into JSON.
  */
 +(NSString *)JSONStringFromObject:(NSObject *)object;
 
@@ -271,302 +270,334 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 +(NSDictionary *)dictionaryFromJSON:(NSString *)JSON;
 ```
 
-## 字符串操作相关
+## Functions of string operations:
 > NSString+CUString.h
 
 ```
 /**
- 判断当前字符串是否为空；空代表：“nil”，“” 或者 “  ”，即：任何无字符的字符串均为空
- @return YES：为空，NO：不为空
+ Determine whether the string is empty, such as: "" or "    "
+ @warning when the instance string is nil,this method will return NO, that must be handled by yourself
+
+ @return YES: empty, NO: otherwise
  */
 -(BOOL)isEmpty;
 
 /**
- 判断当前字符串是否由给定的字符串作为开头
+ Judge whether the string starts with given string
 
- @param string 给定的开头字符串，用来做判断条件
- @return YES：符合开头判断，NO：不符合开头判断
+ @param string The string to judge with
+ @return Starts with the given string: YES, otherwise: NO
  */
 -(BOOL)startsWith:(NSString *)string;
 
 /**
- 判断当前字符串是否由给定的字符串作为结尾
+ Judge whether the string ends with given string
  
- @param string 给定的结尾字符串，用来做判断条件
- @return YES：符合结尾判断，NO：不符合结尾判断
+ @param string The string to judge with
+ @return Ends with the given string: YES, otherwise: NO
  */
 -(BOOL)endsWith:(NSString *)string;
 
 /**
- 按照给定的索引来截取字符串
+ Return the substring cut with given indexes.
 
- @param beginIndex 开始索引，截取后的字符串[包含]该索引对应的字符
- @param endIndex 结束索引，截取后的字符串[不包含]该索引对应的字符
- @return 截取后的字符串
+ @param beginIndex The index where to begin, the characher at this index is included in the cut string.
+ @param endIndex The index where to end, the characher at this index is NOT included in the cut string.
+ @return The cut string.
  */
 -(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex;
 
 /**
- 将当前字符串首尾处的空字符删除并返回
+ Return the clean string which deleted the blank characters at the beginning and the ending.
 
- @return 删除收尾空字符后的字符串
+ @return The string without blank charachers at the beginning or ending
  */
 -(NSString *)trim;
 
 /**
- 将当前字符串按照给定的分隔符进行拆分,拆分后的数组不包含空元素
+ Return an array split from a string with given separator.
 
- @param pattern 给定的分隔符
- @return 根据分隔符拆分后的数组
+ @param pattern The separator's pattern
+ @return The array split from the string.
  */
--(NSArray *)splitBy:(NSString *)pattern;
+-(NSArray<NSString *> *)splitBy:(NSString *)pattern;
 
 /**
- 获取字符串中符合匹配的首个索引
+ Return the first index where matches the pattern.
 
- @param pattern 需要匹配的字符串
- @return 匹配字符的首个匹配索引
+ @param pattern The string's pattern to match
+ @return The first index of the matched string.
  */
 -(NSUInteger)indexOf:(NSString *)pattern;
 
 /**
- 获取字符串中符合匹配的最后一个索引
-
- @param pattern 需要匹配的字符串
- @return 匹配字符的最后一个匹配索引
+ Return the last index where matches the pattern.
+ 
+ @param pattern The string's pattern to match
+ @return The last index of the matched string.
  */
 -(NSUInteger)lastIndexOf:(NSString *)pattern;
 
 /**
- 替换首个匹配的字符
+ Replace the first matched characters with the replacement.
 
- @param pattern 需要进行匹配的字符
- @param replacement 用于将匹配到的字符替换为的字符
- @return 替换完毕的新字符串
+ @param pattern The string's pattern to match.
+ @param replacement The replacement string.
+ @return The new string replaced the first match.
  */
 -(NSString *)replaceFirst:(NSString *)pattern with:(NSString *)replacement;
 
 /**
- 替换最后一个匹配的字符
+ Replace the last matched characters with the replacement.
  
- @param pattern 需要进行匹配的字符
- @param replacement 用于将匹配到的字符替换为的字符
- @return 替换完毕的新字符串
+ @param pattern The string's pattern to match.
+ @param replacement The replacement string.
+ @return The new string replaced the last match.
  */
 -(NSString *)replaceLast:(NSString *)pattern with:(NSString *)replacement;
 
 /**
- 替换所有匹配的字符
+ Replace all the matched characters with the replacement.
  
- @param pattern 需要进行匹配的字符
- @param replacement 用于将匹配到的字符替换为的字符
- @return 替换完毕的新字符串
+ @param pattern The string's pattern to match.
+ @param replacement The replacement string.
+ @return The new string replaced the match.
  */
 -(NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement;
 ```
 
-## 日期操作相关
+## Functions of date operations:
 > CUDate.h
 
 ```
 /**
- 根据当前时间创建时间戳
+ Generate a millisecond value based on current time.
  
- @return 当前时间的时间戳，精确到毫秒
+ @return The current milliseconds.
  */
 +(long long)generateMillisecondTime;
 
 /**
- 根据给定日期创建时间戳
+ Generate a millisecond value based on the given date.
  
- @param date 需要转换为时间戳的NSDate对象,date为nil时，取当前时刻
- @return 转换后的时间戳，精确到毫秒
+ @param date The date which will be converted into milliseconds, current date will replace this parameter when the give date is nil
+ @return The milliseconds based on the give date.
  */
 +(long long)generateMillisecondTimeWithDate:(NSDate *)date;
 
 /**
- 将毫秒的时间转化为NSDate实例
+ Convert the milliseconds into a NSDate instance
  
- @param milliseconds 某个时间对应的毫秒值
- @return 给定时间戳对应的NSDate对象
+ @param milliseconds The milliseconds to convert with.
+ @return The NSDate instance based on the milliseconds.
  */
 +(NSDate *)generateDateWithMilliseconds:(long long)milliseconds;
 
 /**
- 将NSDate对象进行格式化，采用当前时区
+ Format the date with a format string
  
- @param date   NSDate对象
- @param format 格式化字符串，如果为空或者nil，采用“yyyy-MM-dd HH:mm:ss”
- @return 格式化后的字符串
+ @param date   The NSDate instance to convert and format
+ @param format The format string, "yyyy-MM-dd HH:mm:ss" will be used when parameter 'format' is nil.
+ @return The formated string
  */
 +(NSString *)stringOfDate:(NSDate *)date withFormat:(NSString *)format;
 ```
 
-## 系统配置操作相关
+## Functions of system configurations:
 > CUConfig.h
 
 ```
 /**
- 获取当前系统首选的语言标识
- @return 当前系统首选的语言，采用系统给出的值
+ Return the preffered language as the language of the device
+ @return The language currently used by the device
  */
 + (NSString *)getDeviceLanguage;
 
 /**
- 获取当前系统的语言编码
- @return 语言编码，如：en,zh,ar,fr等
+ Return the language code of the device
+ @return The language code. such as: en, zh, ar, fr and so on.
  */
 + (NSString *)getDeviceLanguageCode;
 
 /**
- 获取当先系统的国家或地区编码
+ Return the country code of the device
 
- @return 国家或地区编码，如：CN,US,UK,AR,FR,TW,HK等
+ @return The country code. such as: CN, US, UK, AR, FR, TW, HK and so on.
  */
 + (NSString *)getDeviceCountryCode;
 
 /**
- 以i18N的格式输出当前系统的语言和地域，如"en_US,zh_CN,zh_TW,en_FR"
- @return 将国家码和语言码组合后返回，是目前网络协议中常见的格式。
+ Return the language code and country code in the format of 'i18N'. such as: en_US, zh_CN, zh_TW, en_FR and so on.
+ 
+ @return The mixed code of language and country. Mostly used in the communication protocol between the client and the server.
  */
 + (NSString *)getLocalStringIni18N;
 
 /**
- 是否为中文环境
+ Is the device using Chinese as the prefrered language.
 
- @return 中文：YES，否则：NO
+ @return Chinese: YES, otherwise: NO
  */
 + (BOOL)isChineseLang;
 
 /**
- 是否为阿拉伯语环境，因为阿拉伯语在界面布局时，需要从右向左设计，因此，这个方法有较高的使用率。
+ Is the device using Arabic as the prefrered language.
  
- @return 阿拉伯语：YES，否则：NO
+ @return Arabic: YES, otherwise: NO
  */
 + (BOOL)isArabicLang;
 
 /**
- 是否为法语环境
+ Is the device using French as the prefrered language.
  
- @return 法语：YES，否则：NO
+ @return French: YES, otherwise: NO
  */
 + (BOOL)isFrenchLang;
 ```
 
-## 视图相关
+## Functions of UIView operations:
 > CULabel.h
 
 ```
 /**
- 计算一个UILabel视图在父视图中的大小和位置，UILabel的高度和宽度在实际布局中，还是很有实际意义的。
+ Caculate the size of an UILabel instance in it's super view. Usually used in condition where needs to change the size of UILable due to the texts in it.
 
- @param label 要用于计算的UILabel实例
- @param view UILabel实例的父视图
- @return UILabel在父视图中的大小和位置参数
+ @param label The UILabel instance to caculate
+ @param view The super view of the UILabel instance
+ @warning You'd better set the text of the UILabel before invoke this method, otherwise you will get an useless size.
+ @return The size of UILable instance.
  */
 +(CGSize)sizeOfLabel:(UILabel *)label inView:(UIView *)view;
 ```
-
 
 > CUTipsView.h
 
 ```
 /**
- 在给定的view中显示一个类似于Android Toast效果的弹框。
+ Show up a tost view (like on Android) with message and time.
  
- @param view     弹框的父视图容器View
- @param message  弹框需要显示的文字内容
- @param _duration Toast消失过程持续的时间，单位：秒
- @param _delay    Toast持续显示的时间，单位：秒
+ @param view     The super view of the toast view
+ @param message  The message shown in the toast view
+ @param _duration The time of disappearance, Unit: second
+ @param _delay    The time of delay, means the time seconds of showing of the toast, Unit: second
  */
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay;
 
 /**
- 在给定的view中显示一个类似于Android Toast效果的弹框。该弹框支持自定义frame
-
- @param view 弹框的父视图容器view
- @param frame 弹框的frame
- @param _message 弹框要显示的消息
- @param _duration Toast消失过程持续的时间，单位：秒
- @param _delay Toast持续显示的时间，单位：秒
+ Show up a tost view (like on Android) with message, frame and time.
+ 
+ @param view     The super view of the toast view
+ @param frame    The frame of the toast view
+ @param _message  The message shown in the toast view
+ @param _duration The time of disappearance, Unit: second
+ @param _delay    The time of delay, means the time seconds of showing of the toast, Unit: second
  */
 + (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay;
 
 /**
- 已全屏幕的方式展现出一个带有转动菊花的Waiting视图
+ Show up an animating UIActivityIndicator in full screen with message.
  
- @param tag 视图对应的tag，方便隐藏时使用
- @param _message Waiting视图中显示的文字消息
- @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
+ @param tag The tag of the view, for later use: hiding or removing
+ @param _message The message to show
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
  */
 +(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message;
 
 /**
- 在给定的view上展示一个全屏的waiting视图，采用默认tag运算，隐藏时调用[CUTipsView hideWaitingViewInView:]。
+ Show up an animating UIActivityIndicator view in full screen with a super view as container. The waiting view uses the default tag defined.
+ The full screen here means the waiting view fills full of the super view. When you need to hide this waiting view, just call [CUTipsView hideWaitingViewInView:].
 
- @param view Waiting视图覆盖的低层视图
- @param _message 需要在Waiting视图中显示的消息
+ @param view The super view of waiting view
+ @param _message The message shows up.
  */
 +(void)showFullScreenWaitingViewInView:(UIView *)view message:(NSString *)_message;
 
 /**
- 显示一个根据给定frame生成的带有转动菊花的Waiting视图
+ Show up a waiting view with a certain tag, frame, message and an UIActivityIndicator view.
  
- @param tag 视图对应的tag，方便隐藏时使用
- @param _frame 视图整体的大小和位置参数
- @param _message Waiting视图中显示的文字消息
- @warning 本方法不能应用在Extension中，因为获取不到UIWindow.keyWindow.
+ @param tag The tag of the waiting view, for later hiding or removing.
+ @param _frame The frame of the waiting view.
+ @param _message The message to show.
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
  */
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
 
 /**
- 在指定的view中显示一个根据frame生成的带有转动菊花的Waiting视图
+ Show up a waiting view with a certain tag, frame, message, theme and an UIActivityIndicator view.
  
- @param view waiting视图的父视图
- @param _frame 视图整体的大小和位置参数
- @param _message Waiting视图中显示的文字消息
+ @param tag The tag of the waiting view, for later hiding or removing.
+ @param _frame The frame of the waiting view.
+ @param _message The message to show.
+ @param _theme  The theme of the waiting view.
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
+ */
++(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
+
+/**
+ Show up a waiting view in a given super view with frame and message.
+ 
+ @param view The super view to contain the waiting view.
+ @param _frame The frame of the waiting view.
+ @param _message The message to show.
  */
 +(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message;
 
 /**
- 在指定的view中显示一个转动的ActivityIndicatorView
+ Show up a waiting view in a given super view with frame, message and theme.
+ 
+ @param view The super view to contain the waiting view.
+ @param _frame The frame of the waiting view.
+ @param _message The message to show.
+ @param _theme  The theme of the waiting view.
+ */
++(void)showWaitingViewInView:(UIView *)view frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
 
- @param view ActivityIndicatorView的父视图
- @param _center ActivityIndicatorView的中心点坐标
- @param _theme ActivityIndicatorView的视图样式
+/**
+ Show up an UIActivityIndicator view in a super view with a center point and theme
+
+ @param view The super view of the waiting view
+ @param _center The center point of the UIActivityIndicator view
+ @param _theme The theme of the waiting view.
  */
 +(void)showActivityIndicatorInView:(UIView *)view center:(CGPoint)_center theme:(CUTipsViewTheme)_theme;
 
 /**
- 在视图顶部显示的一个Tips视图，可包含文字和图片，该Tips视图会自动以向上滑出的方式消失
+ Show a 'PopDown' alert tips view from the top of the given view with an optional image, a message and an offset of vertical.
  
- @param view Tips视图的父View
- @param aImage Tips视图中的图片，位于aMessage的左侧
- @param aMessage Tips视图中显示的文字消息
- @param _yOffset Tips视图距离屏幕顶部的偏移量，一般为0.0f
+ @param view The super view of the alert tips view.
+ @param aImage The image of the alert tips view, placed at the left side of the message label.
+ @param aMessage The message to show.
+ @param _yOffset The vertical offset of the alert tips view, usually set it to be 0.0f.
  */
 +(void)showPopDownTipsViewInView:(UIView *)view withImage:(UIImage *)aImage message:(NSString *)aMessage yOffset:(CGFloat)_yOffset;
 
 /**
- 隐藏某个tag对应的视图，并从父视图中移除
+ Hide and remove a view from UIWindow with a tag.
  
- @param tag 视图对应的tag
+ @param tag The tag of view to hide and remove.
  */
 +(void)hideViewInWindowWithTag:(NSUInteger)tag;
 
 /**
- 隐藏waiting视图，采用默认tag运算
+ Hide and remove the waiting view from super view
 
- @param view waiting视图覆盖的视图
+ @param view The super view of the waiting view.
  */
 +(void)hideWaitingViewInView:(UIView *)view;
 
 /**
- 根据宽和高生成一个在屏幕（Screen）上下左右居中的CGRect结构体
+ Hide the Activity Indicator view
 
- @param width 宽数值
- @param _height 高数值
- @return 全居中的frame数值
+ @param view The container view of Activity Indicator
+ */
++(void)hideActivityIndicatorInView:(UIView *)view;
+
+/**
+ Return a centered frame's rect with the given width and height.
+
+ @param width The width of the rect
+ @param _height The height of the rect
+ @return An centered frame's rect.
  */
 +(CGRect)centeredFrameWithWidth:(float)width height:(float)_height;
 ```
@@ -575,25 +606,24 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
  
 ```
 /**
- 在给定的view中显示一个类似于Android Toast效果的弹框。
-
- @param view     弹框的父视图容器View
- @param message  弹框需要显示的文字内容
- @param _duration Toast消失过程持续的时间，单位：秒
- @param _delay    Toast持续显示的时间，单位：秒
+ Show up a tost view (like on Android) with message and time.
+ 
+ @param view     The super view of the toast view
+ @param message  The message shown in the toast view
+ @param _duration The time of disappearance, Unit: second
+ @param _delay    The time of delay, means the time seconds of showing of the toast, Unit: second
  */
 + (void)showToastInView:(UIView *)view withMessage:(NSString *)message duration:(float)_duration delay:(float)_delay;
 
 /**
- 在给定的view中显示一个类似于Android Toast效果的弹框。该弹框支持自定义frame
+ Show up a tost view (like on Android) with message, frame and time.
  
- @param view 弹框的父视图容器view
- @param frame 弹框的frame
- @param _message 弹框要显示的消息
- @param _duration Toast消失过程持续的时间，单位：秒
- @param _delay Toast持续显示的时间，单位：秒
- */
-+ (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay;
+ @param view     The super view of the toast view
+ @param frame    The frame of the toast view
+ @param _message  The message shown in the toast view
+ @param _duration The time of disappearance, Unit: second
+ @param _delay    The time of delay, means the time seconds of showing of the toast, Unit: second
+ */+ (void)showToastInView:(UIView *)view withFrame:(CGRect)frame message:(NSString *)_message duration:(float)_duration delay:(float)_delay;
 ```
 
 > CUAlertView.h
@@ -632,117 +662,118 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 
 ```
 
-## 编解码相关
+## Functions of encoding and decoding:
 > CUCode.h
 
 ```
 /**
- 生成一个全球唯一的Id ^_-。<br/>
- 可结合本类中其它方法将此Id持久化，并保持不变。<br/>
- 适应需要唯一确定用户身份的场景。
+ /**
+ Generate a global unique identifer ^_-。<br/>
+ You can use other methods in this class to persistent this value for later use.<br/>
+ This method is usually used in condition of 'UserId,DeviceId' and so on.
 
- @return 全球唯一的编号
+ @return The global unique identifier
  */
 + (NSString *)uniqueIdentifier;
 
 /**
- 采用Keychain来保存唯一ID,如果之前有保存过，则覆盖旧值
+ Save the unique identifier into Keychain, if the value exists, will be rewrote.
 
- @param identifier 用来保存的唯一ID
- @warning 跟Keychain相关的读写操作，仅在真机上验证通过
+ @param identifier The ID to be saved.
+ @warning The operactions associated with Keychain, please use it on real devices.
  */
 + (void)saveInKeychainWithIdentifier:(NSString *)identifier;
 
 /**
- 从Keychain中加载保存的唯一ID
+ Load the unique identifier form Keychain
 
- @return Key中保存的唯一ID，如果之前未保存过，返回nil
- @warning 跟Keychain相关的读写操作，仅在真机上验证通过
+ @return nil or the identifier saved before
+ @warning The operactions associated with Keychain, please use it on real devices.
  */
 + (NSString *)loadIdentifierFromKeychain;
 
 /**
- 将给定的字符串进行BASE64编码
+ Encode the given string with BASE64 encoding
 
- @param string 源字符串
- @return 经过BASE64编码后的字符串
+ @param string The source string to encode with.
+ @return Encoded BASE64 string
  */
 + (NSString*) BASE64EncodeWithString:(NSString*)string;
 
 /**
- 将给定的字符串进行BASE64解码
+ Decode the BASE64 string
 
- @param string 源字符串
- @return 经过BASE64解码后的字符串
+ @param string The string to decode with.
+ @return Decoded string
  */
 + (NSString*) BASE64DecodeWithString:(NSString*)string;
 
 /**
- 将给定的字符串进行MD5摘要
+ Return the MD5 digest string of sourceString
  
- @param sourceString 源字符串
- @return 进行了MD5摘要后的字符串
+ @param sourceString The string to digest.
+ @return The MD5 digest string
  */
 + (NSString *) MD5CodeWithString:(NSString *)sourceString;
 
 /**
- 将给定的NSData实例进行MD5摘要
+ Return the MD5 digest string of data
  
- @param data 给定的NSData实例
- @return 进行了MD5摘要后的字符串
+ @param data The data to digest
+ @return The MD5 digest string
  */
 + (NSString *) MD5CodeWithData:(NSData *) data;
 
 /**
- 根据给定的path对应的文件进行MD5摘要
+ Return the MD5 digest string of file at specified path
 
- @param path 文件的path，需要直接写具体路径，如："/home/user/photo.png"
- @return 文件的MD5摘要
+ @param path The path of a file, such as: "/home/user/photo.png"
+ @return The MD5 digest of file at path.
  */
 + (NSString *) MD5CodeWithFileAtPath:(NSString *) path;
 
 /**
- 根据给定的url对应的文件进行MD5摘要
+ Return the MD5 digest string of file at specified URL
  
- @param url 文件的url，url的构建需要符合文件头scheme，如："file:///home/user/photo.png"
- @return 文件的MD5摘要
+ @param url The URL of a file, must start with scheme flag. such as: "file:///home/user/photo.png"
+ @return The MD5 digest of file at url.
  */
 + (NSString *) MD5CodeWithFileAtURL:(NSURL *) url;
 
 /**
- 将给定的字符串进行SHA1摘要
+ Return the SHA1 digest string of sourceString
 
- @param sourceString 源字符串
- @return 进行了SHA1摘要后的字符串
+ @param sourceString The source string to digest with.
+ @return The SHA1 digest string.
  */
 + (NSString *) SHA1CodeWithString:(NSString *)sourceString;
 
 /**
- 将给定的NSData实例进行SHA1摘要
+ Return the SHA1 digest string of a data
  
- @param data 给定的NSData实例
- @return 进行了SHA1摘要后的字符串
+ @param data The data to digest
+ @return The SHA1 digest string
  */
 + (NSString*) SHA1CodeWithData:(NSData*)data;
 
 /**
- 根据给定的path对应的文件进行SHA1摘要
+ Return the SHA1 digest string of a file at path.
  
- @param path 文件的path，需要直接写具体路径，如："/home/user/photo.png"
- @return 文件的SHA1摘要
+ @param path The path of a file, such as: "/home/user/photo.png"
+ @return The SHA1 digest string of file.
  */
 + (NSString *) SHA1CodeWithFileAtPath:(NSString *) path;
 
 /**
- 根据给定的url对应的文件进行SHA1摘要
+ Return the SHA1 digest string of a file at url.
  
- @param url 文件的url，url的构建需要符合文件头scheme，如："file:///home/user/photo.png"
- @return 文件的SHA1摘要
+ @param url The URL of a file, must start with a scheme flag. such as: "file:///home/user/photo.png"
+ @return The SHA1 digest string of file.
  */
 + (NSString *) SHA1CodeWithFileAtURL:(NSURL *) url;
 ```
 
-## 系统宏定义
+## The macros defined:
 > CUDefine.h
 
 ```
@@ -772,10 +803,10 @@ Pod installation complete! There is 1 dependency from the Podfile and 1 total po
 #endif
 ```
 
-# 开源协议
+# License
 
-[ [CUtil] ](https://github.com/acttos/CommonUtilities){:target="_blank"} 基于 [ [The MIT License(MIT)] ](https://mit-license.org/) 协议开源。
+[ [CUtil] ](https://github.com/acttos/CommonUtilities){:target="_blank"} is based on [ [The MIT License(MIT)] ](https://mit-license.org/) protocol.
 <br/>
 <br/>
 
-> 感谢来访！
+> Thanks for visiting!
