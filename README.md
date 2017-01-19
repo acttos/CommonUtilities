@@ -6,7 +6,7 @@ All the codes in `CUtil` is from the daily work, it will be uploaded frome time 
 
 ### Warning:
 
-*       *CUtil has corrected an issue, please make sure you update your CUtil to version 0.1.8 and higher.*
+*       *CUtil has corrected an issue, please make sure you update your CUtil to version 0.1.8 or higher.*
 	
 
 # How to use it:
@@ -15,7 +15,7 @@ All the codes in `CUtil` is from the daily work, it will be uploaded frome time 
 
 CUtil is uploaded to CocoaPods, so you can use `pod` command to integrate CUtil:
 
-Create a Podfile and add these lines below:
+Create a Podfile and add this line below:
 
 ```
 pod 'CUtil'

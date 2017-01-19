@@ -34,7 +34,7 @@
         JSONString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }
     
-    Logger(@"%@", JSONString);
+//    Logger(@"%@", JSONString);
     
     return JSONString;
 }
