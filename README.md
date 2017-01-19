@@ -27,7 +27,7 @@ Or you can set the version of CUtil:
 pod 'CUtil', '~> x.x.x'
 ```
 
-The versions of CUtil can be found in: *[[CUtil on CocoaPods.org]](https://cocoapods.org/pods/CUtil){:target="_blank"}*。
+The latest version of CUtil can be found in: *[[CUtil on CocoaPods.org]](https://cocoapods.org/pods/CUtil)*。
 
 **Attentaion: If you need to update your local CUtil to a higher version, you do need to set the version you want to update to.**
 
@@ -51,7 +51,7 @@ Sending stats
 Pod installation complete! There is 1 dependency from the Podfile and 1 total pod installed.
 ```
 
-The time you use CUtil, you just need import the module in your header file：
+The time you use CUtil, you just need import the module in your class file：
 
 ```
 #import <Foundation/Foundation.h>
@@ -64,7 +64,7 @@ The time you use CUtil, you just need import the module in your header file：
 
 ## 2. Use CUtil without CocoaPods:
 
-If you don't use CocoaPods, which I strongly recommand you do, you can just copy all the file in GitHub to your frameworks group in your project, and in the header file import CUtil.h:
+If you don't use CocoaPods, which I strongly recommand you do, you can just copy all the files in GitHub to your frameworks group in your project, and in the class file import CUtil.h:
 
 ```
 #import <CUtil/CUtil.h>
@@ -805,7 +805,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 # License
 
-[ [CUtil] ](https://github.com/acttos/CommonUtilities){:target="_blank"} is based on [ [The MIT License(MIT)] ](https://mit-license.org/) protocol.
+[ [CUtil] ](https://github.com/acttos/CommonUtilities) is based on [ [The MIT License(MIT)] ](https://mit-license.org/) protocol.
 <br/>
 <br/>
 
