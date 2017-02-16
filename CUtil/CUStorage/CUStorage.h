@@ -16,7 +16,6 @@
  
  @param key  The key to save the data in Keychain
  @param data The data to save
- @warning Only passed on real devices, not support Simulators.
  */
 + (void)storeInKeychainWithKey:(NSString *)key data:(id)data;
 
@@ -24,7 +23,6 @@
  Load the data from Keychain through the given key
  
  @param key The data's key to load.
- @warning Only passed on real devices, not support Simulators.
  @return The data saved in Keychain with the given key
  */
 + (id)loadFromKeychainWithKey:(NSString *)key;

@@ -4,6 +4,7 @@
 
 - Make the 'hiding' of views with animations;
 - Increase the width of message label in CUAlertView to make the alert view look better;
+- Remove the 'warning' comments in CUCode.h, CUStorage.h&m files due to the keys can be stored in Keychain of both real devices and simulators;
 
 ## 0.1.18:
 

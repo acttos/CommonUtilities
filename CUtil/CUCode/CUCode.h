@@ -26,7 +26,6 @@
  Save the unique identifier into Keychain, if the value exists, will be rewrote.
 
  @param identifier The ID to be saved.
- @warning The operactions associated with Keychain, please use it on real devices.
  */
 + (void)saveInKeychainWithIdentifier:(NSString *)identifier;
 
@@ -34,7 +33,6 @@
  Load the unique identifier form Keychain
 
  @return nil or the identifier saved before
- @warning The operactions associated with Keychain, please use it on real devices.
  */
 + (NSString *)loadIdentifierFromKeychain;
 
