@@ -3,6 +3,7 @@
 ## Doing...
 
 - Make the 'hiding' of views with animations;
+- Increase the width of message label in CUAlertView to make the alert view look better;
 
 ## 0.1.18:
 

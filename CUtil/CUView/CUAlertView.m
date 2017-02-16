@@ -71,6 +71,7 @@
 
 //MARK: - Private Methods for Initialization of UI
 -(void)_initViews {
+    /** Don't pay much attention to the frames of views below, the frames may be changed in '_updateViewsWith***Theme' methods */
     self.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
     self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4f];
     
@@ -90,16 +91,13 @@
     self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     [self.contentView addSubview:self.titleLabel];
     
-    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.titleLabel.frame) + 20, CGRectGetWidth(self.contentView.frame) - 20, 100)];
+    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(self.titleLabel.frame) + 20, CGRectGetWidth(self.contentView.frame) - 40, 100)];
     self.messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     self.messageLabel.text = self.message;
     self.messageLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
     self.messageLabel.textAlignment = NSTextAlignmentCenter;
     self.messageLabel.numberOfLines = 0;
     [self.contentView addSubview:self.messageLabel];
-    
-    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.messageLabel.frame) - size.height) / 2 + CGRectGetMaxY(self.titleLabel.frame) - 10, size.width, size.height + 20);
     
     self.buttonsContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44)];
     
@@ -141,7 +139,7 @@
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
     if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
@@ -159,7 +157,7 @@
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
     if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
@@ -177,7 +175,7 @@
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 20, size.height + 20);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
     if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
