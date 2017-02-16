@@ -1,5 +1,9 @@
 # Change Log
 
+## Doing...
+
+- Make the 'hiding' of views with animations;
+
 ## 0.1.18:
 
 - Translate the Comments from Chinese to English;

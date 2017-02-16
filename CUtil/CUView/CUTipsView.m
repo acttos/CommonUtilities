@@ -269,21 +269,21 @@
     UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
     UIView *tagedView = [currentWindow viewWithTag:tag];
     if (tagedView) {
-        [tagedView removeFromSuperview];
+        [CUTipsView _hideView:tagedView];
     }
 }
 
 +(void)hideWaitingViewInView:(UIView *)view {
     UIView *tagedView = [view viewWithTag:kDefault_Tag_4_Waiting_View];
     if (tagedView) {
-        [tagedView removeFromSuperview];
+        [CUTipsView _hideView:tagedView];
     }
 }
 
 +(void)hideActivityIndicatorInView:(UIView *)view {
     UIView *tagedView = [view viewWithTag:kDefault_Tag_4_Indicator_View];
     if (tagedView) {
-        [tagedView removeFromSuperview];
+        [CUTipsView _hideView:tagedView];
     }
 }
 
@@ -292,6 +292,14 @@
     CGRect result = CGRectMake((screen.size.width - width) / 2, (screen.size.height - _height) / 2, width, _height);
     
     return result;
+}
+
++(void)_hideView:(UIView *)view {
+    [UIView animateWithDuration:0.25 animations:^{
+        view.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [view removeFromSuperview];
+    }];
 }
 
 @end

@@ -215,7 +215,11 @@
 }
 
 -(void)_hide {
-    [self removeFromSuperview];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
 }
 
 //MARK: - Private Methods for the alert view's showing up
