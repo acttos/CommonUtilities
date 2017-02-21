@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.20:
+
+- Adjust the parameters of position in CUAlertView to fit the dynamic length of 'message';
+- Make the height of CUAlertView change with the height of message label.
+
 ## 0.1.19:
 
 - Make the 'hiding' of views with animations;
