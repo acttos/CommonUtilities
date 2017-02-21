@@ -1,5 +1,10 @@
 # Change Log
 
+## Doing:
+
+- Increase the width of message label to contain more letters;
+- Decrease the x-position of message label.
+
 ## 0.1.20:
 
 - Adjust the parameters of position in CUAlertView to fit the dynamic length of 'message';
