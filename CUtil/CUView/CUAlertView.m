@@ -134,12 +134,18 @@
 }
 
 -(void)_updateViewsWithDefaultTheme {
-    self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - 190) / 2 - 40, kScreen_Width - 40, 190);
+    self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - (CGRectGetHeight(self.messageLabel.frame) + 95)) / 2 - 40, kScreen_Width - 40, (CGRectGetHeight(self.messageLabel.frame) + 95));
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame), CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
+    
+    float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 85);
+    mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 40) / 3 ? (kScreen_Width - 40) / 3 : mainAlertViewHeight;
+    self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - mainAlertViewHeight) / 2 - 40, kScreen_Width - 40, mainAlertViewHeight);
+    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
+    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
     if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
@@ -152,12 +158,12 @@
 }
 
 -(void)_updateViewsWithPopDownTheme {
-    self.mainAlertView.frame = CGRectMake(8, 24, kScreen_Width - 16, 190);
-    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
-    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
-    
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
     self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
+    
+    self.mainAlertView.frame = CGRectMake(8, 24, kScreen_Width - 16, (CGRectGetHeight(self.messageLabel.frame) + 95));
+    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
+    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
     if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
@@ -170,12 +176,12 @@
 }
 
 -(void)_updateViewsWithPopUpTheme {
-    self.mainAlertView.frame = CGRectMake(8, kScreen_Height - 198, kScreen_Width - 16, 190);
-    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
-    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
-    
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
     self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
+    
+    self.mainAlertView.frame = CGRectMake(8, kScreen_Height - (CGRectGetHeight(self.messageLabel.frame) + 95), kScreen_Width - 16, (CGRectGetHeight(self.messageLabel.frame) + 95));
+    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
+    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
     
     if (!self.leftBtnText || [self.leftBtnText isEmpty]) {
@@ -250,7 +256,7 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];
     CGAffineTransform oriTransform = self.mainAlertView.transform;
-    self.mainAlertView.transform = CGAffineTransformTranslate(oriTransform, 0, -190);
+    self.mainAlertView.transform = CGAffineTransformTranslate(oriTransform, 0, -CGRectGetHeight(self.mainAlertView.frame));
     //CGAffineTransformScale(oriTransform, 0.1, 0.1);
     [UIView animateWithDuration:0.2
                      animations:^{
@@ -266,7 +272,7 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self];
     CGAffineTransform oriTransform = self.mainAlertView.transform;
-    self.mainAlertView.transform = CGAffineTransformTranslate(oriTransform, 0, 190);
+    self.mainAlertView.transform = CGAffineTransformTranslate(oriTransform, 0, CGRectGetHeight(self.mainAlertView.frame));
     //CGAffineTransformScale(oriTransform, 0.1, 0.1);
     [UIView animateWithDuration:0.2
                      animations:^{

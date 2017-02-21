@@ -48,7 +48,7 @@ typedef enum {
  
  @param tag The tag of the view, for later use: hiding or removing
  @param _message The message to show
- @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT be instantiated.
  */
 +(void)showFullScreenWaitingViewWithTag:(NSUInteger)tag message:(NSString *)_message;
 
@@ -67,7 +67,7 @@ typedef enum {
  @param tag The tag of the waiting view, for later hiding or removing.
  @param _frame The frame of the waiting view.
  @param _message The message to show.
- @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT be instantiated.
  */
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message;
 
@@ -78,7 +78,7 @@ typedef enum {
  @param _frame The frame of the waiting view.
  @param _message The message to show.
  @param _theme  The theme of the waiting view.
- @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
+ @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT be instantiated.
  */
 +(void)showWaitingViewWithTag:(NSUInteger)tag frame:(CGRect)_frame message:(NSString *)_message theme:(CUTipsViewTheme)_theme;
 
