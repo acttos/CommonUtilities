@@ -143,6 +143,7 @@
     
     float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 85);
     mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 40) / 3 ? (kScreen_Width - 40) / 3 : mainAlertViewHeight;
+    
     self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - mainAlertViewHeight) / 2 - 40, kScreen_Width - 40, mainAlertViewHeight);
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
@@ -158,10 +159,17 @@
 }
 
 -(void)_updateViewsWithPopDownTheme {
-    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), (CGRectGetHeight(self.contentView.frame) - CGRectGetMaxY(self.titleLabel.frame) - CGRectGetHeight(self.buttonsContainerView.frame) - size.height + CGRectGetMaxY(self.titleLabel.frame)) / 2, CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
-    
     self.mainAlertView.frame = CGRectMake(8, 24, kScreen_Width - 16, (CGRectGetHeight(self.messageLabel.frame) + 95));
+    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
+    self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
+    
+    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 10, CGRectGetWidth(self.contentView.frame) - 40, size.height + 30);
+    
+    float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 105);
+    mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 16) / 3 ? (kScreen_Width - 16) / 3 : mainAlertViewHeight;
+    
+    self.mainAlertView.frame = CGRectMake(8, 24, kScreen_Width - 16, mainAlertViewHeight);
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     self.buttonsContainerView.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44);
