@@ -91,7 +91,7 @@
     self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     [self.contentView addSubview:self.titleLabel];
     
-    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(self.titleLabel.frame) + 20, CGRectGetWidth(self.contentView.frame) - 40, 100)];
+    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.titleLabel.frame) + 20, CGRectGetWidth(self.contentView.frame) - 30, 100)];
     self.messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     self.messageLabel.text = self.message;
     self.messageLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
@@ -139,9 +139,9 @@
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame), CGRectGetWidth(self.contentView.frame) - 40, size.height + 20);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame), CGRectGetWidth(self.contentView.frame) - 30, size.height + 30);
     
-    float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 85);
+    float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 95);
     mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 40) / 3 ? (kScreen_Width - 40) / 3 : mainAlertViewHeight;
     
     self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - mainAlertViewHeight) / 2 - 40, kScreen_Width - 40, mainAlertViewHeight);
@@ -164,7 +164,7 @@
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 10, CGRectGetWidth(self.contentView.frame) - 40, size.height + 30);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 10, CGRectGetWidth(self.contentView.frame) - 30, size.height + 30);
     
     float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 105);
     mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 16) / 3 ? (kScreen_Width - 16) / 3 : mainAlertViewHeight;
@@ -189,7 +189,7 @@
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 10, CGRectGetWidth(self.contentView.frame) - 40, size.height + 30);
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 10, CGRectGetWidth(self.contentView.frame) - 30, size.height + 30);
     
     float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 105);
     mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 16) / 3 ? (kScreen_Width - 16) / 3 : mainAlertViewHeight;
