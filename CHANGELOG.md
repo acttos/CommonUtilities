@@ -3,7 +3,8 @@
 ## Doing:
 
 - Increase the width of message label to contain more letters;
-- Decrease the x-position of message label.
+- Decrease the x-position of message label;
+- Add an optional image view in CUAlertView and move the properties in CUAlertView.h to CUAlertView.m to avoid possible mistakes;
 
 ## 0.1.20:
 
