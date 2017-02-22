@@ -16,9 +16,18 @@
 
 @interface CUAlertView()
 
+@property (nonatomic, assign) NSString *title;
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, assign) NSString *message;
+@property (nonatomic, assign) NSString *leftBtnText;
+@property (nonatomic, assign) NSString *rightBtnText;
+@property (nonatomic, copy) void(^leftBtnClickedBlock)(void);
+@property (nonatomic, copy) void(^rightBtnClickedBlock)(void);
+
 @property(nonatomic, strong) UIView *mainAlertView;
 @property(nonatomic, strong) UIView *contentView;
 @property(nonatomic, strong) UILabel *titleLabel;
+@property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *messageLabel;
 @property(nonatomic, strong) UIView *buttonsContainerView;
 @property(nonatomic, strong) UIButton *leftButton;
@@ -32,6 +41,26 @@
     
     if (self = [super init]) {
         self.title = title;
+        self.message = message;
+        self.leftBtnText = leftBtnText;
+        self.rightBtnText = rightBtnText;
+        self.leftBtnClickedBlock = leftClickedBlock;
+        self.rightBtnClickedBlock = rightClickedBlock;
+        
+        [self _initViews];
+        
+        return self;
+    }
+    
+    Logger(@"Failed to init CUAlertView, maybe there is not enough memory left.");
+    return nil;
+}
+
+-(instancetype)initWithTitle:(NSString *)title image:(UIImage *)image message:(NSString *)message leftButtonText:(NSString *)leftBtnText leftClicked:(void(^)(void))leftClickedBlock rightButtonText:(NSString *)rightBtnText rightClicked:(void(^)(void))rightClickedBlock {
+    
+    if (self = [super init]) {
+        self.title = title;
+        self.image = image;
         self.message = message;
         self.leftBtnText = leftBtnText;
         self.rightBtnText = rightBtnText;
@@ -91,9 +120,22 @@
     self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     [self.contentView addSubview:self.titleLabel];
     
-    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.titleLabel.frame) + 20, CGRectGetWidth(self.contentView.frame) - 30, 100)];
+    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame);
+    
+    if (self.image) {
+        //假定imageView宽度为160，高度40，应该根据image.size参数等比例缩放。
+        float imageViewWidth = self.image.size.width / self.image.size.height * 40;
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.contentView.frame) - imageViewWidth) / 2, CGRectGetMaxY(self.titleLabel.frame) + 10, imageViewWidth, 40)];
+        self.imageView.image = self.image;
+        [self.contentView addSubview:self.imageView];
+        
+        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame) + 10;
+    }
+    
+    self.messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, messageLabelYPosition, CGRectGetWidth(self.contentView.frame) - 30, 100)];
     self.messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     self.messageLabel.text = self.message;
+//    self.messageLabel.backgroundColor = [UIColor redColor];
     self.messageLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
     self.messageLabel.textAlignment = NSTextAlignmentCenter;
     self.messageLabel.numberOfLines = 0;
@@ -134,14 +176,23 @@
 }
 
 -(void)_updateViewsWithDefaultTheme {
+    //TODO: self.imageView
     self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - (CGRectGetHeight(self.messageLabel.frame) + 95)) / 2 - 40, kScreen_Width - 40, (CGRectGetHeight(self.messageLabel.frame) + 95));
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame), CGRectGetWidth(self.contentView.frame) - 30, size.height + 30);
+    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame) + 10;
+    if (self.image) {
+        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame) + 5;
+    }
     
-    float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 95);
+    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), messageLabelYPosition, CGRectGetWidth(self.contentView.frame) - 30, size.height + 30);
+    
+    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 105;
+    if (self.image) {
+        mainAlertViewHeight = mainAlertViewHeight + self.imageView.frame.size.height;
+    }
     mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 40) / 3 ? (kScreen_Width - 40) / 3 : mainAlertViewHeight;
     
     self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - mainAlertViewHeight) / 2 - 40, kScreen_Width - 40, mainAlertViewHeight);
@@ -159,14 +210,23 @@
 }
 
 -(void)_updateViewsWithPopDownTheme {
+    //TODO: self.imageView
     self.mainAlertView.frame = CGRectMake(8, 24, kScreen_Width - 16, (CGRectGetHeight(self.messageLabel.frame) + 95));
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 10, CGRectGetWidth(self.contentView.frame) - 30, size.height + 30);
+    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame) + 10;
+    if (self.image) {
+        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame) + 5;
+    }
     
-    float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 105);
+    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), messageLabelYPosition, CGRectGetWidth(self.contentView.frame) - 30, size.height);
+    
+    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 105;
+    if (self.image) {
+        mainAlertViewHeight = mainAlertViewHeight + self.imageView.frame.size.height;
+    }
     mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 16) / 3 ? (kScreen_Width - 16) / 3 : mainAlertViewHeight;
     
     self.mainAlertView.frame = CGRectMake(8, 24, kScreen_Width - 16, mainAlertViewHeight);
@@ -184,14 +244,23 @@
 }
 
 -(void)_updateViewsWithPopUpTheme {
+    //TODO: self.imageView
     self.mainAlertView.frame = CGRectMake(8, kScreen_Height - (CGRectGetHeight(self.messageLabel.frame) + 95), kScreen_Width - 16, (CGRectGetHeight(self.messageLabel.frame) + 95));
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
-    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), CGRectGetMaxY(self.titleLabel.frame) + 10, CGRectGetWidth(self.contentView.frame) - 30, size.height + 30);
+    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame) + 10;
+    if (self.image) {
+        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame) + 5;
+    }
     
-    float mainAlertViewHeight = (CGRectGetHeight(self.messageLabel.frame) + 105);
+    CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
+    self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), messageLabelYPosition, CGRectGetWidth(self.contentView.frame) - 30, size.height);
+    
+    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 105;
+    if (self.image) {
+        mainAlertViewHeight = mainAlertViewHeight + self.imageView.frame.size.height;
+    }
     mainAlertViewHeight = mainAlertViewHeight < (kScreen_Width - 16) / 3 ? (kScreen_Width - 16) / 3 : mainAlertViewHeight;
     
     self.mainAlertView.frame = CGRectMake(8, kScreen_Height - mainAlertViewHeight - 8, kScreen_Width - 16, mainAlertViewHeight);

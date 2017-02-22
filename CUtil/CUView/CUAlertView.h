@@ -17,14 +17,6 @@ typedef enum {
 
 @interface CUAlertView : UIView
 
-@property (nonatomic, assign) NSString *title;
-@property (nonatomic, assign) NSString *message;
-@property (nonatomic, assign) NSString *leftBtnText;
-@property (nonatomic, assign) NSString *rightBtnText;
-@property (nonatomic, copy) void(^leftBtnClickedBlock)(void);
-@property (nonatomic, copy) void(^rightBtnClickedBlock)(void);
-
-
 /**
  Initialize a CUAlertView instance
  
@@ -37,6 +29,26 @@ typedef enum {
  @return The instance of this CUAlertView.
  */
 -(instancetype)initWithTitle:(NSString *)title
+                     message:(NSString *)message
+              leftButtonText:(NSString *)leftBtnText
+                 leftClicked:(void(^)(void))leftClickedBlock
+             rightButtonText:(NSString *)rightBtnText
+                rightClicked:(void(^)(void))rightClickedBlock;
+
+/**
+ Initialize a CUAlertView instance
+ 
+ @param title The title texts in this alert view
+ @param image The image shows in the alert view between title and massage
+ @param message The message texts in this alert view
+ @param leftBtnText The texts of left button in this alert view
+ @param leftClickedBlock The clicked-block of the left button in this alert view
+ @param rightBtnText The texts of right button in this alert view
+ @param rightClickedBlock The clicked-block of the right button in this alert view
+ @return The instance of this CUAlertView.
+ */
+-(instancetype)initWithTitle:(NSString *)title
+                       image:(UIImage *)image
                      message:(NSString *)message
               leftButtonText:(NSString *)leftBtnText
                  leftClicked:(void(^)(void))leftClickedBlock
