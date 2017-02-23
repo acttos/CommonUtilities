@@ -1,10 +1,11 @@
 # Change Log
 
-## Doing:
+## 0.1.21:
 
 - Increase the width of message label to contain more letters;
 - Decrease the x-position of message label;
 - Add an optional image view in CUAlertView and move the properties in CUAlertView.h to CUAlertView.m to avoid possible mistakes;
+- Adjust the frame of the image view to follow the size of the image in CUAlertView.
 
 ## 0.1.20:
 
