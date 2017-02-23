@@ -123,9 +123,8 @@
     float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame);
     
     if (self.image) {
-        //假定imageView宽度为160，高度40，应该根据image.size参数等比例缩放。
-        float imageViewWidth = self.image.size.width / self.image.size.height * 40;
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.contentView.frame) - imageViewWidth) / 2, CGRectGetMaxY(self.titleLabel.frame) + 10, imageViewWidth, 40)];
+//        float imageViewWidth = self.image.size.width / self.image.size.height * 40;
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.contentView.frame) - self.image.size.width) / 2, CGRectGetMaxY(self.titleLabel.frame) + 10, self.image.size.width, self.image.size.height)];
         self.imageView.image = self.image;
         [self.contentView addSubview:self.imageView];
         
@@ -176,7 +175,6 @@
 }
 
 -(void)_updateViewsWithDefaultTheme {
-    //TODO: self.imageView
     self.mainAlertView.frame = CGRectMake(20, (kScreen_Height - (CGRectGetHeight(self.messageLabel.frame) + 95)) / 2 - 40, kScreen_Width - 40, (CGRectGetHeight(self.messageLabel.frame) + 95));
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
@@ -210,7 +208,6 @@
 }
 
 -(void)_updateViewsWithPopDownTheme {
-    //TODO: self.imageView
     self.mainAlertView.frame = CGRectMake(8, 24, kScreen_Width - 16, (CGRectGetHeight(self.messageLabel.frame) + 95));
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
@@ -244,7 +241,6 @@
 }
 
 -(void)_updateViewsWithPopUpTheme {
-    //TODO: self.imageView
     self.mainAlertView.frame = CGRectMake(8, kScreen_Height - (CGRectGetHeight(self.messageLabel.frame) + 95), kScreen_Width - 16, (CGRectGetHeight(self.messageLabel.frame) + 95));
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
