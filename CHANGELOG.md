@@ -1,5 +1,9 @@
 # Change Log
 
+## Doing...
+
+- Adjut the Y-position of message label in CUAlertView and the height of main alert view too;
+
 ## 0.1.22:
 
 - Add a new method for initializing CUAlertView, it suppports specifying a color for the right button;
