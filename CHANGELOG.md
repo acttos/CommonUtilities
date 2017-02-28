@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.22:
+
+- Add a new method for initializing CUAlertView, it suppports specifying a color for the right button;
+- Add no less than three types of color for the right button;
+
 ## 0.1.21:
 
 - Increase the width of message label to contain more letters;
