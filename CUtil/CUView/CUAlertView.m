@@ -209,15 +209,15 @@
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame) + 10;
+    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame);
     if (self.image) {
-        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame) + 5;
+        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame);
     }
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
     self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), messageLabelYPosition, CGRectGetWidth(self.contentView.frame) - 30, size.height + 30);
     
-    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 105;
+    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 95;
     if (self.image) {
         mainAlertViewHeight = mainAlertViewHeight + self.imageView.frame.size.height;
     }
@@ -242,15 +242,15 @@
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame) + 10;
+    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame);
     if (self.image) {
-        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame) + 5;
+        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame);
     }
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
     self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), messageLabelYPosition, CGRectGetWidth(self.contentView.frame) - 30, size.height);
     
-    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 105;
+    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 95;
     if (self.image) {
         mainAlertViewHeight = mainAlertViewHeight + self.imageView.frame.size.height;
     }
@@ -275,15 +275,15 @@
     self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.mainAlertView.frame), CGRectGetHeight(self.mainAlertView.frame));
     self.titleLabel.frame = CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20);
     
-    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame) + 10;
+    float messageLabelYPosition = CGRectGetMaxY(self.titleLabel.frame);
     if (self.image) {
-        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame) + 5;
+        messageLabelYPosition = CGRectGetMaxY(self.imageView.frame);
     }
     
     CGSize size = [CULabel sizeOfLabel:self.messageLabel inView:self.contentView];
     self.messageLabel.frame = CGRectMake(CGRectGetMinX(self.messageLabel.frame), messageLabelYPosition, CGRectGetWidth(self.contentView.frame) - 30, size.height);
     
-    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 105;
+    float mainAlertViewHeight = CGRectGetHeight(self.messageLabel.frame) + 95;
     if (self.image) {
         mainAlertViewHeight = mainAlertViewHeight + self.imageView.frame.size.height;
     }
