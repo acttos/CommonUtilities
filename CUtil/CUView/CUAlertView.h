@@ -16,9 +16,9 @@ typedef enum {
 }CUAlertViewTheme;
 
 typedef enum {
-    CUAlertViewRightButtonColorDefault = 1,    //Like Light Gray
-    CUAlertViewRightButtonColorRedLike,        //Like Red
-    CUAlertViewRightButtonColorBlueLike        //Like Blue
+    CUAlertViewRightButtonColorDefault = 1,                                             //Like Blue
+    CUAlertViewRightButtonColorRedLike,                                                 //Like Red
+    CUAlertViewRightButtonColorBlueLike = CUAlertViewRightButtonColorDefault            //Same as CUAlertViewRightButtonColorDefault 
 }CUAlertViewRightButtonColor;
 
 @interface CUAlertView : UIView

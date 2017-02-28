@@ -173,7 +173,7 @@
     self.buttonsContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44)];
     
     CGRect rightButtonFrame = CGRectZero;
-    UIColor *rightButtonBgColor = [CUColor colorWithHexString:@"#FF4444"];
+//    UIColor *rightButtonBgColor = [CUColor colorWithHexString:@"#FF4444"];
     if (self.leftBtnText && ![self.leftBtnText isEmpty]) {
         self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
@@ -187,15 +187,15 @@
         rightButtonFrame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
     } else {
         rightButtonFrame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.buttonsContainerView.frame));
-        rightButtonBgColor = [CUColor colorWithHexString:@"#1E63D2"];
+//        rightButtonBgColor = [CUColor colorWithHexString:@"#1E63D2"];
     }
     
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = rightButtonFrame;
     self.rightButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.rightButton.backgroundColor = self.rightBtnColor > 0 ? [self _colorOfRightButton:self.rightBtnColor] : rightButtonBgColor;
+    self.rightButton.backgroundColor = [self _colorOfRightButton:self.rightBtnColor];
     [self.rightButton setTitle:self.rightBtnText forState:UIControlStateNormal];
-    [self.rightButton setTitleColor:[CUColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
+    [self.rightButton setTitleColor:[self _colorOfRightButtonText:self.rightBtnColor] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(_rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.buttonsContainerView addSubview:self.rightButton];
     
@@ -394,14 +394,28 @@
 
 -(UIColor *)_colorOfRightButton:(CUAlertViewRightButtonColor)color {
     switch (color) {
-        case CUAlertViewRightButtonColorDefault:
-            return [CUColor colorWithHexString:@"#F2F2F2"];
-            break;
         case CUAlertViewRightButtonColorRedLike:
             return [CUColor colorWithHexString:@"#FF4444"];
             break;
         case CUAlertViewRightButtonColorBlueLike:
             return [CUColor colorWithHexString:@"#1E63D2"];
+            break;
+            
+        default:
+            return [CUColor colorWithHexString:@"#1E63D2"];
+            break;
+    }
+    
+    return nil;
+}
+
+-(UIColor *)_colorOfRightButtonText:(CUAlertViewRightButtonColor)color {
+    switch (color) {
+        case CUAlertViewRightButtonColorRedLike:
+            return [CUColor colorWithHexString:@"#FFFFFF"];
+            break;
+        case CUAlertViewRightButtonColorBlueLike:
+            return [CUColor colorWithHexString:@"#F2F2F2"];
             break;
             
         default:
