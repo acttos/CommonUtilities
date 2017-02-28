@@ -21,6 +21,7 @@
 @property (nonatomic, assign) NSString *message;
 @property (nonatomic, assign) NSString *leftBtnText;
 @property (nonatomic, assign) NSString *rightBtnText;
+@property (nonatomic, assign) CUAlertViewRightButtonColor rightBtnColor;
 @property (nonatomic, copy) void(^leftBtnClickedBlock)(void);
 @property (nonatomic, copy) void(^rightBtnClickedBlock)(void);
 
@@ -44,6 +45,7 @@
         self.message = message;
         self.leftBtnText = leftBtnText;
         self.rightBtnText = rightBtnText;
+        self.rightBtnColor = CUAlertViewThemeDefault;
         self.leftBtnClickedBlock = leftClickedBlock;
         self.rightBtnClickedBlock = rightClickedBlock;
         
@@ -64,6 +66,34 @@
         self.message = message;
         self.leftBtnText = leftBtnText;
         self.rightBtnText = rightBtnText;
+        self.rightBtnColor = CUAlertViewThemeDefault;
+        self.leftBtnClickedBlock = leftClickedBlock;
+        self.rightBtnClickedBlock = rightClickedBlock;
+        
+        [self _initViews];
+        
+        return self;
+    }
+    
+    Logger(@"Failed to init CUAlertView, maybe there is not enough memory left.");
+    return nil;
+}
+
+-(instancetype)initWithTitle:(NSString *)title
+                       image:(UIImage *)image
+                     message:(NSString *)message
+              leftButtonText:(NSString *)leftBtnText
+                 leftClicked:(void(^)(void))leftClickedBlock
+             rightButtonText:(NSString *)rightBtnText
+            rightButtonColor:(CUAlertViewRightButtonColor)rightBtnColor
+                rightClicked:(void(^)(void))rightClickedBlock{
+    if (self = [super init]) {
+        self.title = title;
+        self.image = image;
+        self.message = message;
+        self.leftBtnText = leftBtnText;
+        self.rightBtnText = rightBtnText;
+        self.rightBtnColor = rightBtnColor;
         self.leftBtnClickedBlock = leftClickedBlock;
         self.rightBtnClickedBlock = rightClickedBlock;
         
@@ -163,7 +193,7 @@
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = rightButtonFrame;
     self.rightButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.rightButton.backgroundColor = rightButtonBgColor;
+    self.rightButton.backgroundColor = self.rightBtnColor > 0 ? [self _colorOfRightButton:self.rightBtnColor] : rightButtonBgColor;
     [self.rightButton setTitle:self.rightBtnText forState:UIControlStateNormal];
     [self.rightButton setTitleColor:[CUColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(_rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
@@ -360,6 +390,26 @@
                      } completion:^(BOOL finished) {
                          self.mainAlertView.transform = oriTransform;
                      }];
+}
+
+-(UIColor *)_colorOfRightButton:(CUAlertViewRightButtonColor)color {
+    switch (color) {
+        case CUAlertViewRightButtonColorDefault:
+            return [CUColor colorWithHexString:@"#F2F2F2"];
+            break;
+        case CUAlertViewRightButtonColorRedLike:
+            return [CUColor colorWithHexString:@"#FF4444"];
+            break;
+        case CUAlertViewRightButtonColorBlueLike:
+            return [CUColor colorWithHexString:@"#1E63D2"];
+            break;
+            
+        default:
+            return [CUColor colorWithHexString:@"#F2F2F2"];
+            break;
+    }
+    
+    return nil;
 }
 
 @end
