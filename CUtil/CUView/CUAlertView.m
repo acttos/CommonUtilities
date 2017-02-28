@@ -394,6 +394,9 @@
 
 -(UIColor *)_colorOfRightButton:(CUAlertViewRightButtonColor)color {
     switch (color) {
+        case CUAlertViewRightButtonColorGrayLike:
+            return [CUColor colorWithHexString:@"#F2F2F2"];
+            break;
         case CUAlertViewRightButtonColorRedLike:
             return [CUColor colorWithHexString:@"#FF4444"];
             break;
@@ -411,15 +414,18 @@
 
 -(UIColor *)_colorOfRightButtonText:(CUAlertViewRightButtonColor)color {
     switch (color) {
+        case CUAlertViewRightButtonColorGrayLike:
+            return [CUColor colorWithHexString:@"#1E63D2"];
+            break;
         case CUAlertViewRightButtonColorRedLike:
             return [CUColor colorWithHexString:@"#FFFFFF"];
             break;
         case CUAlertViewRightButtonColorBlueLike:
-            return [CUColor colorWithHexString:@"#F2F2F2"];
+            return [CUColor colorWithHexString:@"#FFFFFF"];
             break;
             
         default:
-            return [CUColor colorWithHexString:@"#F2F2F2"];
+            return [CUColor colorWithHexString:@"#FFFFFF"];
             break;
     }
     

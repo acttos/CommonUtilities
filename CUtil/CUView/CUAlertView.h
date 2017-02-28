@@ -17,6 +17,7 @@ typedef enum {
 
 typedef enum {
     CUAlertViewRightButtonColorDefault = 1,                                             //Like Blue
+    CUAlertViewRightButtonColorGrayLike,                                                //Like Gray
     CUAlertViewRightButtonColorRedLike,                                                 //Like Red
     CUAlertViewRightButtonColorBlueLike = CUAlertViewRightButtonColorDefault            //Same as CUAlertViewRightButtonColorDefault 
 }CUAlertViewRightButtonColor;
