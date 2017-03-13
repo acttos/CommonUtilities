@@ -90,6 +90,12 @@
     
     NSString *nilDateString = [CUDate stringOfDate:now withFormat:nil];
     XCTAssertTrue([nilDateString isEqualToString:[CUDate stringOfDate:now withFormat:@"yyyy-MM-dd HH:mm:ss"]]);
+    
+    NSString *aDate = @"2017/03/06 17:30:21";
+    long long timeOfDate = [CUDate generateMillisecondTimeWithStringDate:aDate format:@"yyyy/MM/dd HH:mm:ss"];
+    NSString *anotherDate = @"2017-03-06 17:30:21";
+    long long anotherTimeOfDate = [CUDate generateMillisecondTimeWithStringDate:anotherDate format:@"yyyy-MM-dd HH:mm:ss"];
+    XCTAssertEqual(timeOfDate, anotherTimeOfDate);
 }
 
 - (void)testCUFile {
@@ -110,7 +116,7 @@
 
 - (void)testCUConfig {
     NSString *lang = [CUConfig getDeviceLanguage];
-    XCTAssertTrue([lang isEqualToString:@"en"]);
+    XCTAssertTrue([lang isEqualToString:@"en-US"]);
     
     NSString *langCode = [CUConfig getDeviceLanguageCode];
     XCTAssertTrue([langCode isEqualToString:@"en"]);

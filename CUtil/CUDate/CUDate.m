@@ -22,6 +22,26 @@
     return (long long)(timeInterval * 1000);
 }
 
++(long long)generateMillisecondTimeWithStringDate:(NSString *)date format:(NSString *)format {
+    if (!format || [format isEqualToString:@""]) {
+        format = @"yyyy-MM-dd HH:mm:ss";
+        
+        Logger(@"The format string is Empty,default value is %@",format);
+    }
+    
+    if (!date) {
+        date = [CUDate stringOfDate:nil withFormat:format];
+        
+        Logger(@"The NSDate instance 'date' is nil,default value is [NSDate date]");
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
+    NSDate *exchangedDate = [dateFormatter dateFromString:date];
+    
+    return [CUDate generateMillisecondTimeWithDate:exchangedDate];
+}
+
 +(NSDate *)generateDateWithMilliseconds:(long long)milliseconds {
     return [NSDate dateWithTimeIntervalSince1970:milliseconds];
 }
@@ -39,10 +59,10 @@
         Logger(@"The NSDate instance 'date' is nil,default value is [NSDate date]");
     }
     
-    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-    [dateFormater setDateFormat:format];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
     
-    return [dateFormater stringFromDate:date];
+    return [dateFormatter stringFromDate:date];
 }
 
 @end
