@@ -149,7 +149,7 @@
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, CGRectGetWidth(self.contentView.frame), 20)];
     self.titleLabel.text = self.title;
-    self.titleLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
+    self.titleLabel.textColor = self.textColor;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     [self.contentView addSubview:self.titleLabel];
@@ -169,7 +169,7 @@
     self.messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     self.messageLabel.text = self.message;
 //    self.messageLabel.backgroundColor = [UIColor redColor];
-    self.messageLabel.textColor = [CUColor colorWithHexString:@"#13334A"];
+    self.messageLabel.textColor = self.textColor;
     self.messageLabel.textAlignment = NSTextAlignmentCenter;
     self.messageLabel.numberOfLines = 0;
     [self.contentView addSubview:self.messageLabel];
@@ -182,9 +182,9 @@
         self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
         self.leftButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-        self.leftButton.backgroundColor = self.leftBtnBgColor;
+        self.leftButton.backgroundColor = [self _colorOfButton:self.leftBtnBgColor];
         [self.leftButton setTitle:self.leftBtnText forState:UIControlStateNormal];
-        [self.leftButton setTitleColor:[CUColor colorWithHexString:@"#1E63D2"] forState:UIControlStateNormal];
+//        [self.leftButton setTitleColor:[CUColor colorWithHexString:@"#1E63D2"] forState:UIControlStateNormal];
         [self.leftButton addTarget:self action:@selector(_leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonsContainerView addSubview:self.leftButton];
         
@@ -197,9 +197,9 @@
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = rightButtonFrame;
     self.rightButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
-    self.rightButton.backgroundColor = [self _colorOfRightButton:self.rightBtnBgColor];
+    self.rightButton.backgroundColor = [self _colorOfButton:self.rightBtnBgColor];
     [self.rightButton setTitle:self.rightBtnText forState:UIControlStateNormal];
-    [self.rightButton setTitleColor:[self _colorOfRightButtonText:self.rightBtnBgColor] forState:UIControlStateNormal];
+//    [self.rightButton setTitleColor:[self _colorOfButtonText:self.rightBtnBgColor] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(_rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.buttonsContainerView addSubview:self.rightButton];
     
@@ -396,7 +396,7 @@
                      }];
 }
 
--(UIColor *)_colorOfRightButton:(UIColor *)color {
+-(UIColor *)_colorOfButton:(UIColor *)color {
     if (!color) {
         return [CUColor colorWithHexString:@"#1E63D2"];
     }
@@ -404,7 +404,7 @@
     return color;
 }
 
--(UIColor *)_colorOfRightButtonText:(UIColor *)color {
+-(UIColor *)_colorOfButtonText:(UIColor *)color {
     if (!color) {
         return [CUColor colorWithHexString:@"#FFFFFF"];
     }
