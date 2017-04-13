@@ -21,8 +21,10 @@
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) NSString *leftBtnText;
+@property (nonatomic, strong) UIColor *leftBtnTextColor;
 @property (nonatomic, strong) UIColor *leftBtnBgColor;
 @property (nonatomic, strong) NSString *rightBtnText;
+@property (nonatomic, strong) UIColor *rightBtnTextColor;
 @property (nonatomic, strong) UIColor *rightBtnBgColor;
 @property (nonatomic, copy) void(^leftBtnClickedBlock)(void);
 @property (nonatomic, copy) void(^rightBtnClickedBlock)(void);
@@ -52,6 +54,12 @@
         
         [self _initViews];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(_handleDeviceOrientationDidChangeNotification:)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil
+         ];
+        
         return self;
     }
     
@@ -59,8 +67,13 @@
     return nil;
 }
 
--(instancetype)initWithTitle:(NSString *)title image:(UIImage *)image message:(NSString *)message leftButtonText:(NSString *)leftBtnText leftClicked:(void(^)(void))leftClickedBlock rightButtonText:(NSString *)rightBtnText rightClicked:(void(^)(void))rightClickedBlock {
-    
+-(instancetype)initWithTitle:(NSString *)title
+                       image:(UIImage *)image
+                     message:(NSString *)message
+              leftButtonText:(NSString *)leftBtnText
+                 leftClicked:(void(^)(void))leftClickedBlock
+             rightButtonText:(NSString *)rightBtnText
+                rightClicked:(void(^)(void))rightClickedBlock {
     if (self = [super init]) {
         self.title = title;
         self.image = image;
@@ -71,6 +84,48 @@
         self.rightBtnClickedBlock = rightClickedBlock;
         
         [self _initViews];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(_handleDeviceOrientationDidChangeNotification:)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil
+         ];
+        
+        return self;
+    }
+    
+    Logger(@"Failed to init CUAlertView, maybe there is not enough memory left.");
+    return nil;
+}
+
+-(nullable instancetype)initWithTitle:(nullable NSString *)title
+                                image:(nullable UIImage *)image
+                              message:(nonnull NSString *)message
+                       leftButtonText:(nullable NSString *)leftBtnText
+                  leftButtonTextColor:(nullable UIColor *)leftBtnTextColor
+                          leftClicked:(nullable void(^)(void))leftClickedBlock
+                      rightButtonText:(nonnull NSString *)rightBtnText
+                     rightButtonColor:(nullable UIColor *)rightBtnTextColor
+                         rightClicked:(nonnull void(^)(void))rightClickedBlock {
+    if (self = [super init]) {
+        self.title = title;
+        self.image = image;
+        self.message = message;
+        self.leftBtnText = leftBtnText;
+        self.leftBtnBgColor = [self _colorOfButtonText:leftBtnTextColor];
+        self.leftBtnClickedBlock = leftClickedBlock;
+        
+        self.rightBtnText = rightBtnText;
+        self.rightBtnTextColor = [self _colorOfButtonText:rightBtnTextColor];
+        self.rightBtnClickedBlock = rightClickedBlock;
+        
+        [self _initViews];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(_handleDeviceOrientationDidChangeNotification:)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil
+         ];
         
         return self;
     }
@@ -103,11 +158,21 @@
         
         [self _initViews];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(_handleDeviceOrientationDidChangeNotification:)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil
+         ];
+        
         return self;
     }
     
     Logger(@"Failed to init CUAlertView, maybe there is not enough memory left.");
     return nil;
+}
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(void)show {
@@ -136,7 +201,7 @@
 -(void)_initViews {
     /** Don't pay much attention to the frames of views below, the frames may be changed in '_updateViewsWith***Theme' methods */
     self.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Height);
-    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4f];
+    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     
     self.mainAlertView = [[UIView alloc] initWithFrame:CGRectMake(20, (kScreen_Height - 190) / 2 - 40, kScreen_Width - 40, 190)];
     self.mainAlertView.layer.cornerRadius = 6.0f;
@@ -172,6 +237,7 @@
     self.messageLabel.textColor = self.textColor ? self.textColor : [CUColor colorWithHexString:@"#333333"];
     self.messageLabel.textAlignment = NSTextAlignmentCenter;
     self.messageLabel.numberOfLines = 0;
+    self.messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
     [self.contentView addSubview:self.messageLabel];
     
     self.buttonsContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 44, CGRectGetWidth(self.contentView.frame), 44)];
@@ -410,6 +476,25 @@
     }
     
     return color;
+}
+
+//MARK: - HandleDeviceOrientationDidChangeNotification
+-(void)_handleDeviceOrientationDidChangeNotification:(NSNotification *)notification {
+    [self _removeAllSubviews];
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    Logger(@"HandleDeviceOrientationDidChangeNotification:%@\n\norientation:%ld",notification, (long)orientation);
+    [self _showAlertViewWhenOrientationDidChange];
+}
+
+-(void)_removeAllSubviews {
+    NSArray *viewsToRemove = [self subviews];
+    for (UIView *v in viewsToRemove) {
+        [v removeFromSuperview];
+    }
+}
+
+-(void)_showAlertViewWhenOrientationDidChange {
+    [self _initViews];
 }
 
 @end

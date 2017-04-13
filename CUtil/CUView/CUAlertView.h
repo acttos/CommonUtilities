@@ -28,12 +28,12 @@ typedef enum {
  @param rightClickedBlock The clicked-block of the right button in this alert view
  @return The instance of this CUAlertView.
  */
--(instancetype)initWithTitle:(NSString *)title
-                     message:(NSString *)message
-              leftButtonText:(NSString *)leftBtnText
-                 leftClicked:(void(^)(void))leftClickedBlock
-             rightButtonText:(NSString *)rightBtnText
-                rightClicked:(void(^)(void))rightClickedBlock;
+-(nullable instancetype)initWithTitle:(nullable NSString *)title
+                     message:(nonnull NSString *)message
+              leftButtonText:(nullable NSString *)leftBtnText
+                 leftClicked:(nullable void(^)(void))leftClickedBlock
+             rightButtonText:(nonnull NSString *)rightBtnText
+                rightClicked:(nonnull void(^)(void))rightClickedBlock;
 
 /**
  Initialize a CUAlertView instance
@@ -47,13 +47,23 @@ typedef enum {
  @param rightClickedBlock The clicked-block of the right button in this alert view
  @return The instance of this CUAlertView.
  */
--(instancetype)initWithTitle:(NSString *)title
-                       image:(UIImage *)image
-                     message:(NSString *)message
-              leftButtonText:(NSString *)leftBtnText
-                 leftClicked:(void(^)(void))leftClickedBlock
-             rightButtonText:(NSString *)rightBtnText
-                rightClicked:(void(^)(void))rightClickedBlock;
+-(nullable instancetype)initWithTitle:(nullable NSString *)title
+                       image:(nullable UIImage *)image
+                     message:(nonnull NSString *)message
+              leftButtonText:(nullable NSString *)leftBtnText
+                 leftClicked:(nullable void(^)(void))leftClickedBlock
+             rightButtonText:(nonnull NSString *)rightBtnText
+                rightClicked:(nonnull void(^)(void))rightClickedBlock;
+
+-(nullable instancetype)initWithTitle:(nullable NSString *)title
+                                image:(nullable UIImage *)image
+                              message:(nonnull NSString *)message
+                       leftButtonText:(nullable NSString *)leftBtnText
+                  leftButtonTextColor:(nullable UIColor *)leftBtnTextColor
+                          leftClicked:(nullable void(^)(void))leftClickedBlock
+                      rightButtonText:(nonnull NSString *)rightBtnText
+                     rightButtonColor:(nullable UIColor *)rightBtnTextColor
+                         rightClicked:(nonnull void(^)(void))rightClickedBlock;
 
 /**
  Initialize a CUAlertView instance
@@ -70,16 +80,16 @@ typedef enum {
  @param rightClickedBlock The clicked-block of the right button in this alert view
  @return The instance of this CUAlertView.
  */
--(instancetype)initWithTitle:(NSString *)title
-                       image:(UIImage *)image
-                     message:(NSString *)message
-                   textColor:(UIColor *)textColor
-              leftButtonText:(NSString *)leftBtnText
-            leftButtonColor:(UIColor *)leftBtnBgColor
-                 leftClicked:(void(^)(void))leftClickedBlock
-             rightButtonText:(NSString *)rightBtnText
-            rightButtonColor:(UIColor *)rightBtnBgColor
-                rightClicked:(void(^)(void))rightClickedBlock;
+-(nullable instancetype)initWithTitle:(nullable NSString *)title
+                       image:(nullable UIImage *)image
+                     message:(nonnull NSString *)message
+                   textColor:(nullable UIColor *)textColor
+              leftButtonText:(nullable NSString *)leftBtnText
+            leftButtonColor:(nullable UIColor *)leftBtnBgColor
+                 leftClicked:(nullable void(^)(void))leftClickedBlock
+             rightButtonText:(nonnull NSString *)rightBtnText
+            rightButtonColor:(nullable UIColor *)rightBtnBgColor
+                rightClicked:(nonnull void(^)(void))rightClickedBlock;
 
 /**
  Invoke this method to show up the alert view.
