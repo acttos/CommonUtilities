@@ -38,9 +38,9 @@
 /**
  Return the substring cut with given indexes.
 
- @param beginIndex The index where to begin, the characher at this index is included in the cut string.
- @param endIndex The index where to end, the characher at this index is NOT included in the cut string.
- @return The cut string.
+ @param beginIndex The index where to begin, the characher at this index is included in the cut string. Make sure the value of it is equal to or bigger than 0 and less than the length of the source string.
+ @param endIndex The index where to end, the characher at this index is NOT included in the cut string. Make sure the value of it is bigger than 0 and equal to or less than the length of the source string.
+ @return The cut string or a warning string 'The indexes may be NOT correct, please check the the indexes or source string.'.
  */
 -(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex;
 

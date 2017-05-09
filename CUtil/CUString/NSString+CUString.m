@@ -40,6 +40,10 @@
 }
 
 -(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex {
+    if (endIndex < beginIndex || self.length < beginIndex || self.length < endIndex) {
+        return @"The indexes may be NOT correct, please check the the indexes or source string.";
+    }
+    
     NSString *substring = [self substringWithRange:NSMakeRange(beginIndex, endIndex - beginIndex)];
     
     return substring;

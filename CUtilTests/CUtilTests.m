@@ -175,6 +175,8 @@
     
     NSString *fullString = @"0123456789";
     
+    XCTAssertTrue([[fullString substring:0 to:5] isEqualToString:@"01234"]);
+    
     XCTAssertTrue([fullString startsWith:@"012"]);
     XCTAssertFalse([fullString startsWith:@"34"]);
     
