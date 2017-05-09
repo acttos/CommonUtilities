@@ -1,5 +1,9 @@
 # Change Log
 
+## Doing...
+
+- Add safty check to method 'substring:to:' in class 'NSString+CUString.m';
+
 ## 1.0.1
 
 - Add 'CUCustomAlertView.h' into CUtil.h to make it public;
