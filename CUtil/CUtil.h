@@ -23,6 +23,7 @@
     #import "NSData+CUData.h"
     #import "CULabel.h"
     #import "CUAlertView.h"
+    #import "CUCustomAlertView.h"
     #import "CUTipsView.h"
     #import "CUToastView.h"
 

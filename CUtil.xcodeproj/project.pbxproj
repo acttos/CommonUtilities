@@ -33,7 +33,7 @@
 		7D852BAB1DEC3401006E9EB3 /* CUTipsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B961DEC3401006E9EB3 /* CUTipsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B971DEC3401006E9EB3 /* CUTipsView.m */; };
 		7D9239411E24D6FB006B2C8B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DBFB80A1E1E32AF00FBF1BE /* libz.tbd */; };
-		7DB9514B1EC19E7400D6110E /* CUCustomAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB951491EC19E7300D6110E /* CUCustomAlertView.h */; };
+		7DB9514B1EC19E7400D6110E /* CUCustomAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB951491EC19E7300D6110E /* CUCustomAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DB9514C1EC19E7400D6110E /* CUCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9514A1EC19E7300D6110E /* CUCustomAlertView.m */; };
 		7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBA9B991DF9004400F06AF7 /* CUToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA9B9A1DF9004400F06AF7 /* CUToastView.m */; };
@@ -287,6 +287,7 @@
 				7DFE12511E09213C009811EC /* NSString+CUString.h in Headers */,
 				7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */,
 				7D409A561E13618000E6F247 /* CUAlertView.h in Headers */,
+				7DB9514B1EC19E7400D6110E /* CUCustomAlertView.h in Headers */,
 				7D852BAB1DEC3401006E9EB3 /* CUTipsView.h in Headers */,
 				7D852BA81DEC3401006E9EB3 /* CUtil.h in Headers */,
 				7D852BA61DEC3401006E9EB3 /* CUJSON.h in Headers */,
@@ -299,7 +300,6 @@
 				7D852BA01DEC3401006E9EB3 /* CUFile.h in Headers */,
 				7D852B991DEC3401006E9EB3 /* CUCode.h in Headers */,
 				7D852B9F1DEC3401006E9EB3 /* CUDefine.h in Headers */,
-				7DB9514B1EC19E7400D6110E /* CUCustomAlertView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +376,7 @@
 					};
 					7D852B4D1DEC314A006E9EB3 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = AXTCK4AA86;
+						DevelopmentTeam = TD37V5LBM9;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -521,7 +521,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = AXTCK4AA86;
+				DEVELOPMENT_TEAM = TD37V5LBM9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -556,7 +556,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = AXTCK4AA86;
+				DEVELOPMENT_TEAM = TD37V5LBM9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
