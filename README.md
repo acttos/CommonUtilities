@@ -744,7 +744,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
                 rightClicked:(nonnull void(^)(void))rightClickedBlock;
 
 /**
- Show up the alert view after get the instance. This method must be invoked to display the alert view.
+ Show up the alert view after got the instance. This method must be invoked to display the alert view.
  */
 -(void)show;
 ```
