@@ -1,7 +1,8 @@
 # Change Log
 
-## 1.0.0
+## 1.0.1
 
+- Add 'CUCustomAlertView.h' into CUtil.h to make it public;
 - Add a new class 'CUCustomAlertView' to support much more definition of alert view;
 - Adjust the Y-position of message label in CUAlertView and the height of main alert view too;
 - Add a new method in CUDate.h&m to generate milliseconds with a date and a format string;
