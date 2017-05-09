@@ -1,8 +1,9 @@
 # Change Log
 
-## Doing...
+## 1.0.0
 
-- Adjut the Y-position of message label in CUAlertView and the height of main alert view too;
+- Add a new class 'CUCustomAlertView' to support much more definition of alert view;
+- Adjust the Y-position of message label in CUAlertView and the height of main alert view too;
 - Add a new method in CUDate.h&m to generate milliseconds with a date and a format string;
 - Modify the style of CUAlertView, removed the defined enum 'CUAlertViewRightButtonColor' and accept custom color of text and button;
 
@@ -73,5 +74,3 @@
 ## v0.1.9:
 
 - Add commonly used API in Java to NSString+CUString.h&m.
-
-
