@@ -86,7 +86,7 @@
     self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
 
     self.mainAlertView = [[UIView alloc] initWithFrame:CGRectMake(46, (kScreen_Height - 230) / 2 - 40, kScreen_Width - 46 * 2, 230)];
-    self.mainAlertView.layer.cornerRadius = 4.0f;
+    self.mainAlertView.layer.cornerRadius = 14.0f;
     self.mainAlertView.layer.masksToBounds = YES;
     self.mainAlertView.userInteractionEnabled = YES;
 
