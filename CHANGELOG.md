@@ -2,6 +2,7 @@
 
 ## Doing...
 
+- Modify the cornerRadius of CUCustomAlertView to be 14, like the corner of UIAlertController's view;
 - Add safty check to method 'substring:to:' in class 'NSString+CUString.m';
 
 ## 1.0.1
