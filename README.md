@@ -7,7 +7,7 @@ All the codes in `CUtil` is from the daily work, it will be uploaded frome time 
 ### Warning:
 
 *       *CUtil has corrected an issue, please make sure you update your CUtil to version 0.1.8 or higher.*
-	
+
 
 # How to use it:
 
@@ -80,7 +80,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 ```
 /**
  Write the custom data into Keychain of OS, the data will not change when re-install the app. Mostly used to save non-changed UserId.
- 
+
  @param key  The key to save the data in Keychain
  @param data The data to save
  @warning Only passed on real devices, not support Simulators.
@@ -89,7 +89,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Load the data from Keychain through the given key
- 
+
  @param key The data's key to load.
  @warning Only passed on real devices, not support Simulators.
  @return The data saved in Keychain with the given key
@@ -103,7 +103,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 ```
 /**
  Return the UIColor instance generated with a hex value
- 
+
  @param hexValue The value of color in hex format, such as: 0xFF00FF
  @return The UIColor instance
  */
@@ -111,7 +111,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the UIColor instance generated with a hex and alpha values
- 
+
  @param hexValue The value of color in hex format, such as: 0xFF00FF
  @param alpha    The alpha property of this color
  @return The UIColor instance with alpha.
@@ -120,7 +120,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the UIColor instance generated with a hex string value
- 
+
  @param hexString The color value in format of hex string, such as: @"#FF00FF"
  @return The UIColor instance from hexString.
  */
@@ -128,12 +128,20 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the UIColor instance generated with a hex string and alpha values.
- 
+
  @param hexString The color value in format of hex string, such as: @"#FF00FF"
  @param alpha The alpha property of this color
  @return The UIColor instance from hexString and alpha.
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
+
+/**
+ Generate an UIImage instance with given UIColor
+
+ @param color The color to fill the image
+ @return The image with full of the given color
+ */
++ (UIImage *)imageWithColor:(UIColor *)color
 ```
 
 ## Functions of data and binary:
@@ -163,7 +171,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Compress the data with gzip
- 
+
  @return Compressed data
  */
 - (NSData *) gzipCompress;
@@ -231,7 +239,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 ```
 /**
  Return the JSON string generated from an array
- 
+
  @param array The array used to generate JSON string
  @return The JSON string from an array
  */
@@ -239,7 +247,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the JSON string generated from a dictionary
- 
+
  @param dictionary The dictionary used to generate JSON string
  @return The JSON string from a dictionary
  */
@@ -247,7 +255,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Generate JSON string with object.
- 
+
  @param object Any NSObject instance
  @return The JSON string or nil when the object is nil or can NOT be parsed into JSON.
  */
@@ -263,7 +271,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Parse the given JSON string to a dictionary instance
- 
+
  @param JSON The JSON string
  @return A dictionary instance parsed from the JSON
  */
@@ -292,7 +300,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Judge whether the string ends with given string
- 
+
  @param string The string to judge with
  @return Ends with the given string: YES, otherwise: NO
  */
@@ -332,7 +340,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the last index where matches the pattern.
- 
+
  @param pattern The string's pattern to match
  @return The last index of the matched string.
  */
@@ -349,7 +357,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Replace the last matched characters with the replacement.
- 
+
  @param pattern The string's pattern to match.
  @param replacement The replacement string.
  @return The new string replaced the last match.
@@ -358,7 +366,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Replace all the matched characters with the replacement.
- 
+
  @param pattern The string's pattern to match.
  @param replacement The replacement string.
  @return The new string replaced the match.
@@ -372,14 +380,14 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 ```
 /**
  Generate a millisecond value based on current time.
- 
+
  @return The current milliseconds.
  */
 +(long long)generateMillisecondTime;
 
 /**
  Generate a millisecond value based on the given date.
- 
+
  @param date The date which will be converted into milliseconds, current date will replace this parameter when the give date is nil
  @return The milliseconds based on the give date.
  */
@@ -396,7 +404,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Convert the milliseconds into a NSDate instance
- 
+
  @param milliseconds The milliseconds to convert with.
  @return The NSDate instance based on the milliseconds.
  */
@@ -404,7 +412,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Format the date with a format string
- 
+
  @param date   The NSDate instance to convert and format
  @param format The format string, "yyyy-MM-dd HH:mm:ss" will be used when parameter 'format' is nil.
  @return The formated string
@@ -437,7 +445,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the language code and country code in the format of 'i18N'. such as: en_US, zh_CN, zh_TW, en_FR and so on.
- 
+
  @return The mixed code of language and country. Mostly used in the communication protocol between the client and the server.
  */
 + (NSString *)getLocalStringIni18N;
@@ -451,14 +459,14 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Is the device using Arabic as the prefrered language.
- 
+
  @return Arabic: YES, otherwise: NO
  */
 + (BOOL)isArabicLang;
 
 /**
  Is the device using French as the prefrered language.
- 
+
  @return French: YES, otherwise: NO
  */
 + (BOOL)isFrenchLang;
@@ -484,7 +492,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 ```
 /**
  Show up a tost view (like on Android) with message and time.
- 
+
  @param view     The super view of the toast view
  @param message  The message shown in the toast view
  @param _duration The time of disappearance, Unit: second
@@ -494,7 +502,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show up a tost view (like on Android) with message, frame and time.
- 
+
  @param view     The super view of the toast view
  @param frame    The frame of the toast view
  @param _message  The message shown in the toast view
@@ -505,7 +513,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show up an animating UIActivityIndicator in full screen with message.
- 
+
  @param tag The tag of the view, for later use: hiding or removing
  @param _message The message to show
  @warning This method can NOT be used in Extension apps, because the UIWindow instance can NOT instantiated.
@@ -523,7 +531,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show up a waiting view with a certain tag, frame, message and an UIActivityIndicator view.
- 
+
  @param tag The tag of the waiting view, for later hiding or removing.
  @param _frame The frame of the waiting view.
  @param _message The message to show.
@@ -533,7 +541,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show up a waiting view with a certain tag, frame, message, theme and an UIActivityIndicator view.
- 
+
  @param tag The tag of the waiting view, for later hiding or removing.
  @param _frame The frame of the waiting view.
  @param _message The message to show.
@@ -544,7 +552,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show up a waiting view in a given super view with frame and message.
- 
+
  @param view The super view to contain the waiting view.
  @param _frame The frame of the waiting view.
  @param _message The message to show.
@@ -553,7 +561,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show up a waiting view in a given super view with frame, message and theme.
- 
+
  @param view The super view to contain the waiting view.
  @param _frame The frame of the waiting view.
  @param _message The message to show.
@@ -572,7 +580,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show a 'PopDown' alert tips view from the top of the given view with an optional image, a message and an offset of vertical.
- 
+
  @param view The super view of the alert tips view.
  @param aImage The image of the alert tips view, placed at the left side of the message label.
  @param aMessage The message to show.
@@ -582,7 +590,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Hide and remove a view from UIWindow with a tag.
- 
+
  @param tag The tag of view to hide and remove.
  */
 +(void)hideViewInWindowWithTag:(NSUInteger)tag;
@@ -612,11 +620,11 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 ```
 
 > CUToastView.h (Duplicated from CUTipsView.h)
- 
+
 ```
 /**
  Show up a tost view (like on Android) with message and time.
- 
+
  @param view     The super view of the toast view
  @param message  The message shown in the toast view
  @param _duration The time of disappearance, Unit: second
@@ -626,7 +634,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show up a tost view (like on Android) with message, frame and time.
- 
+
  @param view     The super view of the toast view
  @param frame    The frame of the toast view
  @param _message  The message shown in the toast view
@@ -640,7 +648,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 ```
 /**
  Initialize a CUAlertView instance
- 
+
  @param title The title texts in this alert view
  @param message The message texts in this alert view
  @param leftBtnText The texts of left button in this alert view
@@ -658,7 +666,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Initialize a CUAlertView instance
- 
+
  @param title The title texts in this alert view
  @param image The image shows in the alert view between title and massage
  @param message The message texts in this alert view
@@ -678,7 +686,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Initialize a CUAlertView instance
- 
+
  @param title The title texts in this alert view
  @param image The image shows in the alert view between title and massage
  @param message The message texts in this alert view
@@ -709,7 +717,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Show up the alert view with a certain theme.
- 
+
  @param theme The theme of CUAlertView
  */
 -(void)showWithTheme:(CUAlertViewTheme)theme;
@@ -797,7 +805,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the MD5 digest string of sourceString
- 
+
  @param sourceString The string to digest.
  @return The MD5 digest string
  */
@@ -805,7 +813,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the MD5 digest string of data
- 
+
  @param data The data to digest
  @return The MD5 digest string
  */
@@ -821,7 +829,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the MD5 digest string of file at specified URL
- 
+
  @param url The URL of a file, must start with scheme flag. such as: "file:///home/user/photo.png"
  @return The MD5 digest of file at url.
  */
@@ -837,7 +845,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the SHA1 digest string of a data
- 
+
  @param data The data to digest
  @return The SHA1 digest string
  */
@@ -845,7 +853,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the SHA1 digest string of a file at path.
- 
+
  @param path The path of a file, such as: "/home/user/photo.png"
  @return The SHA1 digest string of file.
  */
@@ -853,7 +861,7 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
 
 /**
  Return the SHA1 digest string of a file at url.
- 
+
  @param url The URL of a file, must start with a scheme flag. such as: "file:///home/user/photo.png"
  @return The SHA1 digest string of file.
  */
