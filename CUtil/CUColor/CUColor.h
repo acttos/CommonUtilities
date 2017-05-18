@@ -46,4 +46,12 @@
  */
 + (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 
+/**
+ Generate an UIImage instance with given UIColor
+
+ @param color The color to fill the image
+ @return The image with full of the given color
+ */
++ (UIImage *)imageWithColor:(UIColor *)color;
+
 @end

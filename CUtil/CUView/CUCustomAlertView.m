@@ -139,14 +139,15 @@
     CGRect rightButtonFrame = CGRectZero;
     if (self.leftBtnText && ![self.leftBtnText isEmpty]) {
         self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2 - 1, CGRectGetHeight(self.buttonsContainerView.frame));
+        self.leftButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
         self.leftButton.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:18];
         [self.leftButton setTitle:self.leftBtnText forState:UIControlStateNormal];
         [self.leftButton setTitleColor:self.leftBtnTextColor forState:UIControlStateNormal];
+        [self.leftButton setBackgroundImage:[CUColor imageWithColor:[CUColor colorWithHexString:@"#E5E5E5"]] forState:UIControlStateHighlighted];
         [self.leftButton addTarget:self action:@selector(_leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonsContainerView addSubview:self.leftButton];
 
-        rightButtonFrame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2 + 1, 0, CGRectGetWidth(self.contentView.frame) / 2 - 1, CGRectGetHeight(self.buttonsContainerView.frame));
+        rightButtonFrame = CGRectMake(CGRectGetWidth(self.contentView.frame) / 2 + 1, 0, CGRectGetWidth(self.contentView.frame) / 2, CGRectGetHeight(self.buttonsContainerView.frame));
     } else {
         rightButtonFrame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.buttonsContainerView.frame));
     }
@@ -157,6 +158,7 @@
         self.rightButton.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:18];
         [self.rightButton setTitle:self.rightBtnText forState:UIControlStateNormal];
         [self.rightButton setTitleColor:self.rightBtnTextColor forState:UIControlStateNormal];
+        [self.rightButton setBackgroundImage:[CUColor imageWithColor:[CUColor colorWithHexString:@"#E5E5E5"]] forState:UIControlStateHighlighted];
         [self.rightButton addTarget:self action:@selector(_rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonsContainerView addSubview:self.rightButton];
 
