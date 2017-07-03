@@ -1,11 +1,12 @@
 # Change Log
 
-## Doing...
+## 1.0.2
 
 - Add highlighted background color for CUCustomAlertView's buttons;
 - Add a new method in CUColor to generate image from color;
 - Modify the cornerRadius of CUCustomAlertView to be 14, like the corner of UIAlertController's view;
 - Add safty check to method 'substring:to:' in class 'NSString+CUString.m';
+- Correct an issue in CUDate when converting millisecond into NSDate.
 
 ## 1.0.1
 

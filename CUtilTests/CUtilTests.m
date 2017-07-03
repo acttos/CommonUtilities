@@ -83,7 +83,7 @@
 
 - (void)testCUDate {
     long long timestamp = [CUDate generateMillisecondTime];
-    XCTAssertEqual((long)[NSDate dateWithTimeIntervalSince1970:timestamp].timeIntervalSince1970 * 1000, (long)[CUDate generateDateWithMilliseconds:timestamp].timeIntervalSince1970 * 1000);
+    XCTAssertEqual((long)[NSDate dateWithTimeIntervalSince1970:timestamp / 1000].timeIntervalSince1970 * 1000, (long)[CUDate generateDateWithMilliseconds:timestamp].timeIntervalSince1970 * 1000);
     
     NSDate *now = [NSDate date];
     XCTAssertEqual([CUDate generateMillisecondTimeWithDate:now], (long long)([now timeIntervalSince1970] * 1000));
@@ -116,7 +116,7 @@
 
 - (void)testCUConfig {
     NSString *lang = [CUConfig getDeviceLanguage];
-    XCTAssertTrue([lang isEqualToString:@"en-US"]);
+    XCTAssertTrue([lang isEqualToString:@"en"]);
     
     NSString *langCode = [CUConfig getDeviceLanguageCode];
     XCTAssertTrue([langCode isEqualToString:@"en"]);
