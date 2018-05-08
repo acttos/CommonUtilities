@@ -23,7 +23,7 @@
 
  @param path The full path of the directory to create, such as: "/videos/2016/12/"
  @warning The root directory of this method is the 'data' directory of the device, all the directories will be created under the 'data' folder.
- @return Created: YES, otherwise: NO
+ @return Created or already exists: YES, otherwise: NO
  */
 + (BOOL)createDirectoryAtPath:(NSString *)path;
 
