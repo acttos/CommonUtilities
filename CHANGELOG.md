@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.0
+
+- Add a new class called 'CUQueryString' to handle the parameters for HTTP-Get;
+- Add a new method in CUFile.h&m to redirect the NSLog info into log files in Documents/logs;
+
 ## 1.0.2
 
 - Add highlighted background color for CUCustomAlertView's buttons;
