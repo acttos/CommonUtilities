@@ -46,4 +46,13 @@
  */
 + (BOOL)saveFile:(NSData *)data atPath:(NSString *)path withName:(NSString *)fileName;
 
+/**
+ Writes the logs to file in the sandbox of your app.
+ The file name of the logs matches date pattern 'yyyyMMddHHmmss', a new file will be added when you call this method.
+ The log files will be stored at 'Documents/logs'.
+ @warning The log files will be added ONLY in DEBUG mode in real devices, in Distribution mode or Simulators, there will be no file created.
+ This method is strongly recommanded called at -application:didFinishLaunchingWithOptions: in AppDelegate.m.
+ */
++ (void)redirectNSlogToDocumentFolder;
+
 @end

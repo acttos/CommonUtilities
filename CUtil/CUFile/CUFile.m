@@ -129,4 +129,26 @@
     return result;
 }
 
++ (void)redirectNSlogToDocumentFolder {
+    if(isatty(STDOUT_FILENO)) {
+        return;
+    }
+    
+    UIDevice *device = [UIDevice currentDevice];
+    if([[device model] hasSuffix:@"Simulator"]){
+        return;
+    }
+    
+    NSString *dateStr = [CUDate stringOfDate:[NSDate date] withFormat:@"yyyyMMddHHmmss"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    [CUFile createDirectoryAtPath:[NSString stringWithFormat:@"%@/logs", documentDirectory]];
+    NSString *fileName = [NSString stringWithFormat:@"logs/%@.log", dateStr];
+    NSString *logFilePath = [documentDirectory stringByAppendingPathComponent:fileName];
+    
+    // 将log输入到文件
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding],"a+", stdout);
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding],"a+", stderr);
+}
+
 @end
