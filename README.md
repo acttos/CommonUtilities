@@ -231,6 +231,15 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
  @return Saved: YES, otherwise: NO
  */
 + (BOOL)saveFile:(NSData *)data atPath:(NSString *)path withName:(NSString *)fileName;
+
+/**
+ Writes the logs to file in the sandbox of your app.
+ The file name of the logs matches date pattern 'yyyyMMddHHmmss', a new file will be added when you call this method.
+ The log files will be stored at 'Documents/logs'.
+ @warning The log files will be added ONLY in DEBUG mode in real devices, in Distribution mode or Simulators, there will be no file created.
+ This method is strongly recommanded called at -application:didFinishLaunchingWithOptions: in AppDelegate.m.
+ */
++ (void)redirectNSlogToDocumentFolder;
 ```
 
 ## Functions of JSON-related:
@@ -372,6 +381,20 @@ If you don't use CocoaPods, which I strongly recommand you do, you can just copy
  @return The new string replaced the match.
  */
 -(NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement;
+```
+
+## Functions of QueryString operations:
+> CUQueryString.h
+
+```
+/**
+ Puts the key-value pairs in paramDic to query string of given request path.
+ 
+ @param paramDic The key-value pairs container Dictionary.
+ @param requestURLPath The original http(s) request path
+ @return The Query String appended to the requestURLPath.
+ */
++ (NSString *)fillParameters:(NSDictionary<NSString *, NSString *> *)paramDic forPath:(NSString *)requestURLPath;
 ```
 
 ## Functions of date operations:
