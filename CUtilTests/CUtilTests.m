@@ -189,6 +189,16 @@
     Logger(@"%@", [@"1,2,3,4,5,6,7,8,9,,,,,," splitBy:@","]);
 }
 
+- (void)testQueryString {
+    NSDictionary *paramDic = @{@"name":@"Acttos Ma", @"age":@35, @"gender":@"Male"};
+    NSString *queryString = [CUQueryString fillParameters:paramDic forPath:@"http://www.acttos.org/#blog"];
+    Logger(@"QueryString:%@", queryString);
+    XCTAssertTrue([queryString isEqualToString:@"http://www.acttos.org/#blog?name=Acttos Ma&age=35&gender=Male"]);
+    queryString = [CUQueryString fillParameters:paramDic forPath:@"http://www.acttos.org/#blog?source=baidu"];
+    Logger(@"QueryString:%@", queryString);
+    XCTAssertTrue([queryString isEqualToString:@"http://www.acttos.org/#blog?source=baidu&name=Acttos Ma&age=35&gender=Male"]);
+}
+
 - (void)testCUData {
     NSString *sourceString = @"/Users/majinshou/Library/Developer/Xcode/DerivedData/CUtilDev-bntonewhxafmvchfbzmhidvthpkf/Logs/Test/C4106638-EFAF-42CF-882D-4C9FD29C3A4C/Session-CUtilTests-2017-01-05_173915-27sbPP.log";
     NSData *sourceData = [sourceString dataUsingEncoding:NSUTF8StringEncoding];

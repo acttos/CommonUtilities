@@ -10,6 +10,8 @@
 		7D3D53651DF018DF00E2F346 /* CUtilUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D53641DF018DF00E2F346 /* CUtilUITests.m */; };
 		7D409A561E13618000E6F247 /* CUAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D409A541E13618000E6F247 /* CUAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D409A571E13618000E6F247 /* CUAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D409A551E13618000E6F247 /* CUAlertView.m */; };
+		7D7EC29C20E38C23008793E8 /* CUQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EC29A20E38C23008793E8 /* CUQueryString.m */; };
+		7D7EC29D20E390D8008793E8 /* CUQueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D7EC29920E38C23008793E8 /* CUQueryString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D852B571DEC314A006E9EB3 /* CUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D852B4E1DEC314A006E9EB3 /* CUtil.framework */; };
 		7D852B5C1DEC314A006E9EB3 /* CUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */; };
 		7D852B991DEC3401006E9EB3 /* CUCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D852B7E1DEC3401006E9EB3 /* CUCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +61,8 @@
 		7D3D53661DF018DF00E2F346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D409A541E13618000E6F247 /* CUAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUAlertView.h; sourceTree = "<group>"; };
 		7D409A551E13618000E6F247 /* CUAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUAlertView.m; sourceTree = "<group>"; };
+		7D7EC29920E38C23008793E8 /* CUQueryString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CUQueryString.h; sourceTree = "<group>"; };
+		7D7EC29A20E38C23008793E8 /* CUQueryString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUQueryString.m; sourceTree = "<group>"; };
 		7D852B4E1DEC314A006E9EB3 /* CUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D852B561DEC314A006E9EB3 /* CUtilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUtilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D852B5B1DEC314A006E9EB3 /* CUtilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUtilTests.m; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 				7D852B911DEC3401006E9EB3 /* CUJSON.m */,
 				7DFE124F1E09213C009811EC /* NSString+CUString.h */,
 				7DFE12501E09213C009811EC /* NSString+CUString.m */,
+				7D7EC29920E38C23008793E8 /* CUQueryString.h */,
+				7D7EC29A20E38C23008793E8 /* CUQueryString.m */,
 			);
 			path = CUString;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D7EC29D20E390D8008793E8 /* CUQueryString.h in Headers */,
 				7DFE12511E09213C009811EC /* NSString+CUString.h in Headers */,
 				7DBA9B9B1DF9004400F06AF7 /* CUToastView.h in Headers */,
 				7D409A561E13618000E6F247 /* CUAlertView.h in Headers */,
@@ -449,6 +456,7 @@
 				7DFE12521E09213C009811EC /* NSString+CUString.m in Sources */,
 				7D852B9A1DEC3401006E9EB3 /* CUCode.m in Sources */,
 				7D852B9C1DEC3401006E9EB3 /* CUColor.m in Sources */,
+				7D7EC29C20E38C23008793E8 /* CUQueryString.m in Sources */,
 				7DBA9B9C1DF9004400F06AF7 /* CUToastView.m in Sources */,
 				7D852BAA1DEC3401006E9EB3 /* CULabel.m in Sources */,
 				7D409A571E13618000E6F247 /* CUAlertView.m in Sources */,

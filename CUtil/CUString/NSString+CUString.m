@@ -11,11 +11,11 @@
 
 @implementation NSString (CUString)
 
--(BOOL)isEmpty {
+- (BOOL)isEmpty {
     return (self.length == 0 || [self trim].length == 0);
 }
 
--(BOOL)startsWith:(NSString *)string {
+- (BOOL)startsWith:(NSString *)string {
     if (!string) {
         return NO;
     }
@@ -27,7 +27,7 @@
     return NO;
 }
 
--(BOOL)endsWith:(NSString *)string {
+- (BOOL)endsWith:(NSString *)string {
     if (!string) {
         return NO;
     }
@@ -39,7 +39,7 @@
     return NO;
 }
 
--(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex {
+- (NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex {
     if (endIndex < beginIndex || self.length < beginIndex || self.length < endIndex) {
         return @"The indexes may be NOT correct, please check the the indexes or source string.";
     }
@@ -49,7 +49,7 @@
     return substring;
 }
 
--(NSString *)trim {
+- (NSString *)trim {
     NSString *trimedString = self;
     while ([trimedString startsWith:@" "]) {
         trimedString = [trimedString replaceFirst:@" " with:@""];
@@ -62,7 +62,7 @@
     return trimedString;
 }
 
--(NSArray<NSString *> *)splitBy:(NSString *)pattern {
+- (NSArray<NSString *> *)splitBy:(NSString *)pattern {
     NSArray<NSString *> *sourceArray = [self componentsSeparatedByString:pattern];
     if (sourceArray == nil) {
         return nil;
@@ -78,26 +78,26 @@
     return result;
 }
 
--(NSUInteger)indexOf:(NSString *)pattern {
+- (NSUInteger)indexOf:(NSString *)pattern {
     return [self rangeOfString:pattern].location;
 }
 
--(NSUInteger)lastIndexOf:(NSString *)pattern {
+- (NSUInteger)lastIndexOf:(NSString *)pattern {
     return [self rangeOfString:pattern options:NSBackwardsSearch].location;
 }
 
--(NSString *)replaceFirst:(NSString *)pattern with:(NSString *)replacement {
+- (NSString *)replaceFirst:(NSString *)pattern with:(NSString *)replacement {
     NSRange range = [self rangeOfString:pattern];
     return [self stringByReplacingCharactersInRange:range withString:replacement];
 }
 
--(NSString *)replaceLast:(NSString *)pattern with:(NSString *)replacement {
+- (NSString *)replaceLast:(NSString *)pattern with:(NSString *)replacement {
     
     NSRange range = [self rangeOfString:pattern options:NSBackwardsSearch];
     return [self stringByReplacingCharactersInRange:range withString:replacement];
 }
 
--(NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement {
+- (NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement {
     return [self stringByReplacingOccurrencesOfString:pattern withString:replacement];
 }
 

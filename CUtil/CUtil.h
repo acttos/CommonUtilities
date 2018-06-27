@@ -19,6 +19,7 @@
     #import "CUStorage.h"
     #import "CUJSON.h"
     #import "CUConfig.h"
+    #import "CUQueryString.h"
     #import "NSString+CUString.h"
     #import "NSData+CUData.h"
     #import "CULabel.h"

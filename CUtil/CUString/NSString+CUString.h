@@ -17,7 +17,7 @@
 
  @return YES: empty, NO: otherwise
  */
--(BOOL)isEmpty;
+- (BOOL)isEmpty;
 
 /**
  Judge whether the string starts with given string
@@ -25,7 +25,7 @@
  @param string The string to judge with
  @return Starts with the given string: YES, otherwise: NO
  */
--(BOOL)startsWith:(NSString *)string;
+- (BOOL)startsWith:(NSString *)string;
 
 /**
  Judge whether the string ends with given string
@@ -33,7 +33,7 @@
  @param string The string to judge with
  @return Ends with the given string: YES, otherwise: NO
  */
--(BOOL)endsWith:(NSString *)string;
+- (BOOL)endsWith:(NSString *)string;
 
 /**
  Return the substring cut with given indexes.
@@ -42,14 +42,14 @@
  @param endIndex The index where to end, the characher at this index is NOT included in the cut string. Make sure the value of it is bigger than 0 and equal to or less than the length of the source string.
  @return The cut string or a warning string 'The indexes may be NOT correct, please check the the indexes or source string.'.
  */
--(NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex;
+- (NSString *)substring:(NSUInteger)beginIndex to:(NSUInteger)endIndex;
 
 /**
  Return the clean string which deleted the blank characters at the beginning and the ending.
 
  @return The string without blank charachers at the beginning or ending
  */
--(NSString *)trim;
+- (NSString *)trim;
 
 /**
  Return an array split from a string with given separator.
@@ -57,7 +57,7 @@
  @param pattern The separator's pattern
  @return The array split from the string.
  */
--(NSArray<NSString *> *)splitBy:(NSString *)pattern;
+- (NSArray<NSString *> *)splitBy:(NSString *)pattern;
 
 /**
  Return the first index where matches the pattern.
@@ -65,7 +65,7 @@
  @param pattern The string's pattern to match
  @return The first index of the matched string.
  */
--(NSUInteger)indexOf:(NSString *)pattern;
+- (NSUInteger)indexOf:(NSString *)pattern;
 
 /**
  Return the last index where matches the pattern.
@@ -73,7 +73,7 @@
  @param pattern The string's pattern to match
  @return The last index of the matched string.
  */
--(NSUInteger)lastIndexOf:(NSString *)pattern;
+- (NSUInteger)lastIndexOf:(NSString *)pattern;
 
 /**
  Replace the first matched characters with the replacement.
@@ -82,7 +82,7 @@
  @param replacement The replacement string.
  @return The new string replaced the first match.
  */
--(NSString *)replaceFirst:(NSString *)pattern with:(NSString *)replacement;
+- (NSString *)replaceFirst:(NSString *)pattern with:(NSString *)replacement;
 
 /**
  Replace the last matched characters with the replacement.
@@ -91,7 +91,7 @@
  @param replacement The replacement string.
  @return The new string replaced the last match.
  */
--(NSString *)replaceLast:(NSString *)pattern with:(NSString *)replacement;
+- (NSString *)replaceLast:(NSString *)pattern with:(NSString *)replacement;
 
 /**
  Replace all the matched characters with the replacement.
@@ -100,6 +100,6 @@
  @param replacement The replacement string.
  @return The new string replaced the match.
  */
--(NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement;
+- (NSString *)replaceAll:(NSString *)pattern with:(NSString *)replacement;
 
 @end
