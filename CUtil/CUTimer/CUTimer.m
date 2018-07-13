@@ -76,4 +76,8 @@
     }
 }
 
+- (void)terminateWithName:(NSString *)timerName {
+    [self cancelWithName:timerName];
+}
+
 @end
