@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.0
+
+- Add a new class called 'CUTimer' to replace NSTimer because NSTimer is not friendly-use.
+
 ## 1.1.0
 
 - Add a new class called 'CUQueryString' to handle the parameters for HTTP-Get;
