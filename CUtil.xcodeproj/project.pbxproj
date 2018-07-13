@@ -10,6 +10,8 @@
 		7D3D53651DF018DF00E2F346 /* CUtilUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D53641DF018DF00E2F346 /* CUtilUITests.m */; };
 		7D409A561E13618000E6F247 /* CUAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D409A541E13618000E6F247 /* CUAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D409A571E13618000E6F247 /* CUAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D409A551E13618000E6F247 /* CUAlertView.m */; };
+		7D5C2ED920F843DC004239F1 /* CUTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D5C2ED720F843DC004239F1 /* CUTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D5C2EDA20F843DC004239F1 /* CUTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C2ED820F843DC004239F1 /* CUTimer.m */; };
 		7D7EC29C20E38C23008793E8 /* CUQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EC29A20E38C23008793E8 /* CUQueryString.m */; };
 		7D7EC29D20E390D8008793E8 /* CUQueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D7EC29920E38C23008793E8 /* CUQueryString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D852B571DEC314A006E9EB3 /* CUtil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D852B4E1DEC314A006E9EB3 /* CUtil.framework */; };
@@ -61,6 +63,8 @@
 		7D3D53661DF018DF00E2F346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D409A541E13618000E6F247 /* CUAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUAlertView.h; sourceTree = "<group>"; };
 		7D409A551E13618000E6F247 /* CUAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUAlertView.m; sourceTree = "<group>"; };
+		7D5C2ED720F843DC004239F1 /* CUTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CUTimer.h; sourceTree = "<group>"; };
+		7D5C2ED820F843DC004239F1 /* CUTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUTimer.m; sourceTree = "<group>"; };
 		7D7EC29920E38C23008793E8 /* CUQueryString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CUQueryString.h; sourceTree = "<group>"; };
 		7D7EC29A20E38C23008793E8 /* CUQueryString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUQueryString.m; sourceTree = "<group>"; };
 		7D852B4E1DEC314A006E9EB3 /* CUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +142,15 @@
 			path = CUtilUITests;
 			sourceTree = "<group>";
 		};
+		7D5C2ED620F843BD004239F1 /* CUTimer */ = {
+			isa = PBXGroup;
+			children = (
+				7D5C2ED720F843DC004239F1 /* CUTimer.h */,
+				7D5C2ED820F843DC004239F1 /* CUTimer.m */,
+			);
+			path = CUTimer;
+			sourceTree = "<group>";
+		};
 		7D852B5A1DEC314A006E9EB3 /* CUtilTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +170,7 @@
 				7D852B871DEC3401006E9EB3 /* CUFile */,
 				7D852B8A1DEC3401006E9EB3 /* CUStorage */,
 				7D852B8D1DEC3401006E9EB3 /* CUString */,
+				7D5C2ED620F843BD004239F1 /* CUTimer */,
 				7D852B931DEC3401006E9EB3 /* CUView */,
 				7D852B921DEC3401006E9EB3 /* CUtil.h */,
 				7D852B861DEC3401006E9EB3 /* CUDefine.h */,
@@ -305,6 +319,7 @@
 				7D852BA41DEC3401006E9EB3 /* CUConfig.h in Headers */,
 				7D852B9D1DEC3401006E9EB3 /* CUDate.h in Headers */,
 				7D852BA01DEC3401006E9EB3 /* CUFile.h in Headers */,
+				7D5C2ED920F843DC004239F1 /* CUTimer.h in Headers */,
 				7D852B991DEC3401006E9EB3 /* CUCode.h in Headers */,
 				7D852B9F1DEC3401006E9EB3 /* CUDefine.h in Headers */,
 			);
@@ -463,6 +478,7 @@
 				7D852BA51DEC3401006E9EB3 /* CUConfig.m in Sources */,
 				7D852B9E1DEC3401006E9EB3 /* CUDate.m in Sources */,
 				7D852BA11DEC3401006E9EB3 /* CUFile.m in Sources */,
+				7D5C2EDA20F843DC004239F1 /* CUTimer.m in Sources */,
 				7DBFB8071E1E2E6200FBF1BE /* NSData+CUData.m in Sources */,
 				7D852BAC1DEC3401006E9EB3 /* CUTipsView.m in Sources */,
 			);
