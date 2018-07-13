@@ -189,6 +189,19 @@
     Logger(@"%@", [@"1,2,3,4,5,6,7,8,9,,,,,," splitBy:@","]);
 }
 
+- (void)testCUTimer {
+    __block int count = 0;
+    [[CUTimer timer] fireWithName:@"1111" timeInterval:1 delay:3 repeats:YES block:^{
+        count++;
+        Logger(@"Timer fired. %d", count);
+        if (count > 9) {
+            [[CUTimer timer] cancelWithName:@"1111"];
+        }
+        XCTAssertTrue(count == 10);
+    }];
+    XCTAssertTrue(count == 0);
+}
+
 - (void)testQueryString {
     NSDictionary *paramDic = @{@"name":@"Acttos Ma", @"age":@35, @"gender":@"Male"};
     NSString *queryString = [CUQueryString fillParameters:paramDic forPath:@"http://www.acttos.org/#blog"];
