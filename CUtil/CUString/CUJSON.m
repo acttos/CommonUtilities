@@ -15,18 +15,30 @@
 @implementation CUJSON
 
 +(NSString *)JSONStringFromArray:(NSArray *)array {
-    return [CUJSON JSONStringFromObject:array];
+    return [CUJSON JSONStringFromObject:array readable:YES];
+}
+
++(NSString *)JSONStringFromArray:(NSArray *)array readable:(BOOL)readable {
+    return [CUJSON JSONStringFromObject:array readable:readable];
 }
 
 +(NSString *)JSONStringFromDictionary:(NSDictionary *)dictionary {
-    return [CUJSON JSONStringFromObject:dictionary];
+    return [CUJSON JSONStringFromObject:dictionary readable:YES];
+}
+
++(NSString *)JSONStringFromDictionary:(NSDictionary *)dictionary readable:(BOOL)readable {
+    return [CUJSON JSONStringFromObject:dictionary readable:readable];
 }
 
 +(NSString *)JSONStringFromObject:(NSObject *)object {
+    return [CUJSON JSONStringFromObject:object readable:YES];
+}
+
++(NSString *)JSONStringFromObject:(NSObject *)object readable:(BOOL)readable {
     NSString *JSONString = nil;
     NSError *error;
     
-    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:&error];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:readable ? NSJSONWritingPrettyPrinted : NSJSONWritingSortedKeys error:&error];
     if (!data || error) {
         Logger(@"There is an error:%@",error);
         return nil;
@@ -34,7 +46,7 @@
         JSONString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }
     
-//    Logger(@"%@", JSONString);
+    //    Logger(@"%@", JSONString);
     
     return JSONString;
 }

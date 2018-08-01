@@ -1,4 +1,7 @@
 # Change Log
+## 1.2.1
+
+- Add new methods in 'CUJSON' to support returning un-formated JSON string.
 
 ## 1.2.0
 

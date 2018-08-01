@@ -136,20 +136,25 @@
     NSArray *array = @[@"A", @"B", @"C", @"D", @"E"];
     NSString *arrayJSON = [CUJSON JSONStringFromArray:array];
     XCTAssertNotNil(arrayJSON);
+    arrayJSON = [CUJSON JSONStringFromArray:array readable:NO];
+    XCTAssertNotNil(arrayJSON);
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:4];
     [dic setValue:@"Value1" forKey:@"key1"];
     [dic setValue:[NSNumber numberWithInt:2] forKey:@"key2"];
     [dic setValue:array forKey:@"key3"];
     [dic setValue:@"Value4" forKey:@"key4"];
+    [dic setValue:[NSNumber numberWithBool:YES] forKey:@"Key5"];
     
     NSMutableDictionary *subDic = [NSMutableDictionary dictionaryWithCapacity:4];
     [subDic setValue:@"SubValue1" forKey:@"SubKey1"];
     [subDic setValue:[NSNumber numberWithInt:2] forKey:@"SubKey2"];
     [subDic setValue:array forKey:@"SubKey3"];
-    [subDic setValue:@"Value4" forKey:@"SubKey4"];
+    [subDic setValue:@"SubValue4" forKey:@"SubKey4"];
     [dic setValue:subDic forKey:@"subDic"];
     NSString *dicJSON = [CUJSON JSONStringFromDictionary:dic];
+    XCTAssertNotNil(dicJSON);
+    dicJSON = [CUJSON JSONStringFromDictionary:dic readable:YES];
     XCTAssertNotNil(dicJSON);
     
     NSArray *parsedArray = [CUJSON arrayFromJSON:arrayJSON];
