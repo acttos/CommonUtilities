@@ -42,7 +42,7 @@
  @param string The source string to encode with.
  @return Encoded BASE64 string
  */
-+ (NSString*) BASE64EncodeWithString:(NSString*)string;
++ (NSString *) BASE64EncodeWithString:(NSString *)string;
 
 /**
  Decode the BASE64 string
@@ -50,7 +50,7 @@
  @param string The string to decode with.
  @return Decoded string
  */
-+ (NSString*) BASE64DecodeWithString:(NSString*)string;
++ (NSString *) BASE64DecodeWithString:(NSString *)string;
 
 /**
  Return the MD5 digest string of sourceString
@@ -98,7 +98,7 @@
  @param data The data to digest
  @return The SHA1 digest string
  */
-+ (NSString*) SHA1CodeWithData:(NSData*)data;
++ (NSString *) SHA1CodeWithData:(NSData*)data;
 
 /**
  Return the SHA1 digest string of a file at path.

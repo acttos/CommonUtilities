@@ -12,7 +12,7 @@
 
 @implementation CUConfig
 
-+ (NSString*)getDeviceLanguage{
++ (NSString *)getDeviceLanguage{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSArray * allLanguages = [defaults objectForKey:@"AppleLanguages"];
     NSString * prefferedLang = [allLanguages objectAtIndex:0];
